@@ -2,6 +2,7 @@
   width: 100%;
   height: 100vh;
   display: flex;
+
 }
 
 .chat_section_container {
@@ -279,14 +280,14 @@
 }
 
 /* .identity {
-    position: absolute;
-    left: 0px;
-    bottom: 15px;
-    color: white;
-    padding-left: 15px;
-    box-sizing: border-box;
-    z-index: 10;
-  } */
+      position: absolute;
+      left: 0px;
+      bottom: 15px;
+      color: white;
+      padding-left: 15px;
+      box-sizing: border-box;
+      z-index: 10;
+    } */
 
 .video {
   display: flex;
