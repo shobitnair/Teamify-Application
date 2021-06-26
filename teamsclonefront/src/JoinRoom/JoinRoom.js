@@ -1,5 +1,5 @@
 import React from 'react'
-import './JoinPage.css'
+import './JoinRoom.css'
 
 const JoinPage = () => {
     return (
