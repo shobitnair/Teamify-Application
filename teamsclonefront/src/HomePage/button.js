@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Button = ({
+const EventButton = ({
   createRoomButton = false,
   buttonText,
   onClickHandler,
@@ -14,4 +14,4 @@ const Button = ({
   )
 };
 
-export default Button;
+export default EventButton;

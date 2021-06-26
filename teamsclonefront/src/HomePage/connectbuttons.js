@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./button"
+import EventButton from "./button"
 import {useHistory} from "react-router-dom"
 
 
@@ -17,11 +17,11 @@ const ConnectButtons = () => {
 
     return(
         <div className="button_container">
-            <Button
+            <EventButton
             buttonText="Join a Meeting"
             onClickHandler={Join_Room}
             />
-            <Button
+            <EventButton
             buttonText="Host a Meeting"
             onClickHandler={Host_Room}
             createRoomButton
