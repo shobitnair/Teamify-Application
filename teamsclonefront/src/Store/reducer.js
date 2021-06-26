@@ -4,7 +4,7 @@ import Actions from './actions'
 
 const initState = {
     identity:"",
-    isHost:false,
+    isRoomHost:false,
 }
 
 const reducer = (state = initState , action) => {
@@ -12,12 +12,12 @@ const reducer = (state = initState , action) => {
         case Actions.SET_IDENTITY :
             return{
                 ...state,
-                identity:action.identity
+                identity:action.identity,
             }
         case Actions.SET_IS_ROOM_HOST :
             return{
                 ...state,
-                isHost:action.isHost
+                isRoomHost:action.isRoomHost,
             }
         default:
             return state;

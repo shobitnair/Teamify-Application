@@ -7,17 +7,17 @@ const Actions = {
 //Helper action functions for reducers (REDUX STATE MANAGEMENT)
 
 export const setIdentity = (identity) => {
-    return{
-        type: Actions.SET_IDENTITY , 
-        identity: identity,
-    }
-}
-
-export const SetisRoomHost = (isHost) =>{
-    return{
-        type: Actions.SET_IDENTITY , 
-        isHost: isHost,
-    }
-}
+    return {
+        type: Actions.SET_IDENTITY,
+        identity,
+    };
+};
+  
+export const setIsRoomHost = (isRoomHost) => {
+    return {
+        type: Actions.SET_IS_ROOM_HOST,
+        isRoomHost,
+    };
+};
 
 export default Actions

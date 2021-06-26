@@ -1,27 +1,32 @@
 import React , {useEffect} from 'react'
-import './JoinRoom.css'
 import { connect } from 'react-redux'
-import { SetisRoomHost } from '../Store/actions'
+import { setIsRoomHost } from '../Store/actions'
+import JoinRoomTitle from './JoinRoomTitle'
+import { useLocation } from "react-router-dom";
+
+import './JoinRoom.css'
+
 const JoinPage = (props) => {
 
-    const { SetisRoomHostAction , isHost } = props;
-    useEffect( () =>{
-        //comparator to check if the user is a host
-        let currentURL = String(window.location.href);
-        let isHost = currentURL.includes('host');
-        //console.log(isHost)
-        
-        if(isHost){
-            SetisRoomHostAction(true);
+    const { setIsRoomHostAction, isRoomHost } = props;
+
+    const search = useLocation().search;
+
+    useEffect(() => {
+        const isRoomHost = new URLSearchParams(search).get("host");
+        if (isRoomHost) {
+        setIsRoomHostAction(true);
         }
-        else{
-            SetisRoomHostAction(false);
-        }
-    } , [])
+    }, []);
+
+
 
     return (
-        <div>
-            
+        <div className="join_room_page_container">
+            <div className="join_room_page_panel">
+                <JoinRoomTitle
+                isRoomHost={isRoomHost}/>
+            </div>
         </div>
     )
 }
@@ -34,8 +39,8 @@ const mapStoreStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) =>{
     return{
-        SetisRoomHostAction: (isHost) =>{
-            dispatch(SetisRoomHost(isHost))
+        setIsRoomHostAction: (isRoomHost) =>{
+            dispatch(setIsRoomHost(isRoomHost))
         }
     }
 }

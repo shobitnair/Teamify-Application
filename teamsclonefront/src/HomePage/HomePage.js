@@ -4,12 +4,12 @@ import ConnectButtons from './connectbuttons'
 import './HomePage.css'
 import {Card} from 'semantic-ui-react'
 import {connect} from 'react-redux'
-import { SetisRoomHost } from '../Store/actions'
+import { setIsRoomHost } from '../Store/actions'
 
-const HomePage = ({SetisRoomHostAction}) => {
+const HomePage = ({setIsRoomHostAction}) => {
 
     useEffect( ()=>{
-        SetisRoomHostAction(false)
+        setIsRoomHostAction(false)
     } , [])
 
     return (
@@ -29,13 +29,12 @@ const HomePage = ({SetisRoomHostAction}) => {
 }
 
 
-
 const mapDispatchToProps = (dispatch) =>{
     return{
-        SetisRoomHostAction: (isHost) =>{
-            dispatch(SetisRoomHost(isHost))
+        setIsRoomHostAction: (isRoomHost) =>{
+            dispatch(setIsRoomHost(isRoomHost))
         }
     }
 }
 
-export default connect (null , mapDispatchToProps)(HomePage)
+export default connect (null, mapDispatchToProps)(HomePage)
