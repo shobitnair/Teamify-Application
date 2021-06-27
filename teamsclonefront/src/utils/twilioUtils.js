@@ -1,6 +1,7 @@
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import { store } from "../store/store";
+import {setMessages} from "../store/actions"
 import {
   connect,
   LocalAudioTrack,
@@ -21,6 +22,8 @@ const videoConstraints = {
     height: 480,
   },
 };
+
+let dataChannel = null;
 
 export const getTokenFromTwilio = async (setAccessToken, identity) => {
   const randomId = uuidv4();
@@ -51,14 +54,16 @@ export const connectToRoom = async (
 
       // create data track for messages
       const audioTrack = new LocalAudioTrack(stream.getAudioTracks()[0]);
+      const dataTrack = new LocalDataTrack();
+      dataChannel = dataTrack;
 
       let videoTrack;
 
       if (!onlyWithAudio) {
         videoTrack = new LocalVideoTrack(stream.getVideoTracks()[0]);
-        tracks = [audioTrack, videoTrack];
+        tracks = [audioTrack, videoTrack , dataTrack];
       } else {
-        tracks = [audioTrack];
+        tracks = [audioTrack , dataTrack];
       }
 
       const room = await connect(accessToken, {
@@ -85,3 +90,35 @@ export const checkIfRoomExists = async (roomId) => {
 
   return response.data.roomExists;
 };
+
+
+//Data Channel Section.     
+
+export const addMessageToMessenger = (message) =>{
+  const data = [...store.getState().messages]
+  data.push(message);
+  store.dispatch(setMessages(data))
+}
+
+export const sendMessageUsingDataChannel = (
+  content,
+  messageCreatedByMe = false)=>{
+  const identity = store.getState().identity;
+  const ownMessage = {
+    identity ,
+    content ,
+    messageCreatedByMe
+  }
+
+  addMessageToMessenger(ownMessage);
+
+  const messageToSent = {
+    identity,
+    content
+  }
+
+  const MESSAGE = JSON.stringify(messageToSent);
+  dataChannel.send(MESSAGE);
+}
+
+

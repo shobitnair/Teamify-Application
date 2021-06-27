@@ -1,33 +1,6 @@
 import React from "react";
+import {connect} from "react-redux";
 
-const dummyMessages = [
-  {
-    identity: "Martin",
-    content: "Hello. Everything is okay ?",
-  },
-  {
-    identity: "Martin",
-    content: "Do you need my help ?",
-  },
-  {
-    content: "Everything is okay",
-    messageCreatedByMe: true,
-    identity: "me",
-  },
-  {
-    content: "No help needed",
-    messageCreatedByMe: true,
-    identity: "me",
-  },
-  {
-    identity: "Jessica",
-    content: "Hello nice to meet you",
-  },
-  {
-    identity: "Jessica",
-    content: "No worries",
-  },
-];
 
 const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
   const alignClass = messageCreatedByMe
@@ -48,12 +21,13 @@ const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
   );
 };
 
-const Messages = () => {
+const Messages = ({messages}) => {
+  console.log(messages);
   return (
     <div className="messages_container">
-      {dummyMessages.map((message, index) => {
+      {messages.map((message, index) => {
         const sameAuthor =
-          index > 0 && message.identity === dummyMessages[index - 1].identity;
+          index > 0 && message.identity === messages[index - 1].identity;
         return (
           <Message
             key={index}
@@ -68,4 +42,15 @@ const Messages = () => {
   );
 };
 
-export default Messages;
+const mapStoreStateToProps = (state) => {
+  return{
+    ...state,
+  }
+}
+
+const mapDispatchToProps = (dispatch) =>{
+
+}
+
+
+export default connect(mapStoreStateToProps,mapDispatchToProps)(Messages);
