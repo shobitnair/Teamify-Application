@@ -1,8 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 
 const SingleParticipant = ({ identity, lastItem }) => {
   const getParticipantName = (identity) => {
-    return identity;
+    return identity.slice(36, identity.length);
   };
 
   return (
@@ -13,22 +14,7 @@ const SingleParticipant = ({ identity, lastItem }) => {
   );
 };
 
-const participants = [
-  {
-    identity: "Marek",
-  },
-  {
-    identity: "John",
-  },
-  {
-    identity: "Anna",
-  },
-  {
-    identity: "Kyle",
-  },
-];
-
-const Participants = () => {
+const Participants = ({ participants }) => {
   return (
     <div className="participants_container">
       {participants.map((participant, index) => {
@@ -44,4 +30,10 @@ const Participants = () => {
   );
 };
 
-export default Participants;
+const mapStoreStateToProps = (state) => {
+  return {
+    ...state,
+  };
+};
+
+export default connect(mapStoreStateToProps)(Participants);

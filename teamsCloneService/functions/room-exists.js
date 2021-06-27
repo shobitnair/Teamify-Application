@@ -28,13 +28,12 @@ exports.handler = function (context, event, callback) {
             })
         }
         return callback(null, response);
-    }).catch((error)=>{
+    }).catch(err=>{
         response.setBody({
             roomExists: false,
-            error
+            err
         })
+        return callback(null, response);
     })
-
-    return callback(null, response);
 };
   

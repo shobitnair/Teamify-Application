@@ -2,7 +2,7 @@ import React from "react";
 
 const LeaveRoomButton = ({ room }) => {
   const handleRoomDisconnection = () => {
-    // handle disconnection with room
+    room.disconnect();
     const siteUrl = window.location.origin;
     window.location.href = siteUrl;
   };

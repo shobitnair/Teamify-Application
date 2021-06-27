@@ -23,7 +23,7 @@ exports.handler = function (context, event, callback) {
   
     const VideoGrant = AccessToken.VideoGrant;
     const videoGrant = new VideoGrant();
-        token.addGrant(videoGrant);
+    token.addGrant(videoGrant);
     const response = new Twilio.Response();
   
     const headers = {

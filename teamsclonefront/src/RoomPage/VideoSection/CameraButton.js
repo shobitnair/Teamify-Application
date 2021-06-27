@@ -15,10 +15,16 @@ const CameraButton = ({ room }) => {
 
   const startVideo = () => {
     // start sending back video stream to other users
+    room.localParticipant.videoTracks.forEach((localVideoTrackPublication) => {
+      localVideoTrackPublication.track.enable();
+    });
   };
 
   const stopVideo = () => {
     // stop sending camera stream to other users
+    room.localParticipant.videoTracks.forEach((localVideoTrackPublication) => {
+      localVideoTrackPublication.track.disable();
+    });
   };
 
   return (
