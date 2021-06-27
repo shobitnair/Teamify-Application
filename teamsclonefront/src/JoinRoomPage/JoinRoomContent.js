@@ -14,7 +14,6 @@ import { v4 as uuidv4 } from "uuid";
 import { checkIfRoomExists } from "../utils/twilioUtils";
 
 const JoinRoomContent = (props) => {
-  
   const {
     isRoomHost,
     setConnectOnlyWithAudioAction,
@@ -30,30 +29,26 @@ const JoinRoomContent = (props) => {
 
   const history = useHistory();
 
-
   const handleJoinToRoom = async () => {
     setIdentityAction(nameValue);
     if (!isRoomHost) {
-      
-      //animate until we get response for the roomid.
       setShowLoadingOverlay(true);
-        const roomExists = await checkIfRoomExists(roomIdValue);
+      const roomExists = await checkIfRoomExists(roomIdValue);
       setShowLoadingOverlay(false);
-      
       if (roomExists) {
         setRoomId(roomIdValue);
         history.push("/room");
-      } 
-      else setShowRoomNotFoundMessage(true);
-    } 
-    else {
+      } else {
+        setShowRoomNotFoundMessage(true);
+      }
+    } else {
       setRoomIdAction(uuidv4());
       history.push("/room");
     }
   };
 
   return (
-    <div>
+    <>
       <JoinRoomInputs
         roomIdValue={roomIdValue}
         setRoomIdValue={setRoomIdValue}
@@ -70,7 +65,7 @@ const JoinRoomContent = (props) => {
         isRoomHost={isRoomHost}
         handleJoinToRoom={handleJoinToRoom}
       />
-    </div>
+    </>
   );
 };
 

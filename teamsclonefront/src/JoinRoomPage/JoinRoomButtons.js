@@ -2,7 +2,10 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 const Button = ({ buttonText, cancelButton, onClickHandler }) => {
-  const buttonClass = cancelButton? "join_room_cancel_button": "join_room_success_button";
+  const buttonClass = cancelButton
+    ? "join_room_cancel_button"
+    : "join_room_success_button";
+
   return (
     <button onClick={onClickHandler} className={buttonClass}>
       {buttonText}

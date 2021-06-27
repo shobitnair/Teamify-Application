@@ -2,7 +2,6 @@
   width: 100%;
   height: 100vh;
   display: flex;
-
 }
 
 .chat_section_container {
@@ -49,7 +48,7 @@
   outline: none;
 }
 
-.new_messsage_button {
+.new_message_button {
   position: absolute;
   right: 10%;
 }
