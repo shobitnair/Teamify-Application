@@ -1,11 +1,14 @@
+/*
+This component contains the Button Click and Input events for joining / Hosting a Room.
+
+*/
+
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import JoinRoomInputs from "./JoinRoomInputs";
 import { useHistory } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { checkIfRoomExists } from "../utils/twilioUtils";
-
-
 import {
   setConnectOnlyWithAudio,
   setIdentity,
@@ -20,6 +23,8 @@ import {
 
 
 const JoinRoomContent = (props) => {
+
+  //State definitions.
   const {
     isRoomHost,
     setConnectOnlyWithAudioAction,
@@ -27,22 +32,29 @@ const JoinRoomContent = (props) => {
     setRoomIdAction,
     setIdentityAction,
   } = props;
-
   const [roomIdValue, setRoomIdValue] = useState("");
   const [nameValue, setNameValue] = useState("");
   const [RoomError, setRoomError] = useState(false);
   const [JoinClicked, setJoinClicked] = useState(false);
-  const [circleState , setCircleState] = useState('static')
   const history = useHistory();
 
+  //Function to handle Join/Host room event.
   const handleJoinToRoom = async () => {
+    if(nameValue.length === 0){
+      alert("Name feild cant be empty")
+      return;
+    }
     setIdentityAction(nameValue);
     if (!isRoomHost) {
+
+      if(roomIdValue.length === 0){
+        alert("Room ID cant be empty")
+        return;
+      }
       setJoinClicked(true);
-      setCircleState('indeterminate')
       const roomExists = await checkIfRoomExists(roomIdValue);
       setJoinClicked(false);
-      setCircleState('static')
+
       if (roomExists) {
         setRoomIdAction(roomIdValue);
         history.push("/room");
@@ -54,20 +66,20 @@ const JoinRoomContent = (props) => {
       history.push("/room");
     }
   };
-
+  
+  
   return (
     <>
-    <Grid xs={1} md={4} id="dummy">
-    </Grid>
+    <Grid xs={1} md={4}></Grid>
     <JoinRoomInputs
         roomIdValue={roomIdValue}
         setRoomIdValue={setRoomIdValue}
         nameValue={nameValue}
         setNameValue={setNameValue}
         isRoomHost={isRoomHost}
-      />
-    <Grid xs={1} md={4} id="dummy"></Grid>
-    <Grid xs={1} md={4} id="dummy"></Grid>
+    />
+    <Grid xs={1} md={4} ></Grid>
+    <Grid xs={1} md={4} ></Grid>
     <Grid xs={10} md={4}
     container
     direction="column"
@@ -75,31 +87,29 @@ const JoinRoomContent = (props) => {
     alignItems="center"
     justify="center"
     >
-          <Grid item>
-          </Grid>
-          <Grid item>
-          <LinearProgress hidden={!JoinClicked} />
-          <p 
-          hidden={!RoomError}
-          id="error">Invalid Room ID !!</p>
-          <Button id="bt1" onClick={handleJoinToRoom}>
+      <Grid item>
+        <LinearProgress hidden={!JoinClicked} />
+        <p 
+        hidden={!RoomError}
+        style={{"textAlign":'center'}}
+        id="error">
+          <i class="fas fa-exclamation-triangle"></i>  Invalid Room ID
+        </p>
+        <Button id="bt1" onClick={handleJoinToRoom}>
           {isRoomHost ? "Host" : "Join"}
-          </Button>
-          </Grid>
-          <Grid item>
-          
-          <Button
-          id="bt2" 
-          disabled={JoinClicked}
-          onClick={() => history.push("/")}>
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button
+        id="bt2" 
+        disabled={JoinClicked}
+        onClick={() => history.push("/")}>
           Cancel
-          </Button>
-          </Grid>
+        </Button>
+      </Grid>
     </Grid>
-    <Grid xs={1} md={4} id="dummy">
+    <Grid xs={1} md={4}>
     </Grid>
-
-    
     </>
   );
 };

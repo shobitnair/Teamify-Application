@@ -23,15 +23,17 @@ const JoinRoomPage = (props) => {
   const titleText = isRoomHost ? "Host meeting" : "Join meeting";
 
   return (
-    <div>
+    <div style={{"backgroundColor":'#BDBDE6'}}>
+      <Hidden smDown>
       <img src={chat} id="img1"></img>
       <img src={chat2} id="img2"></img>
-      <Grid container spacing={4}>
-        <Grid xs={1} md={4} id="dummy"></Grid>
+      </Hidden>
+      <Grid container >
+        <Grid xs={1} md={4} ></Grid>
         <Grid xs={10} md={4} id="title_container">
           <p id="title">{titleText}</p>
         </Grid>
-        <Grid xs={1} md={4} id="dummy"></Grid>
+        <Grid xs={1} md={4}></Grid>
         <JoinRoomContent />
       </Grid>
     </div>
