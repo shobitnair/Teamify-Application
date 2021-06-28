@@ -3,9 +3,10 @@ import { connect } from "react-redux";
 import { setIsRoomHost } from "../store/actions";
 import { useLocation } from "react-router-dom";
 import JoinRoomContent from "./JoinRoomContent";
-import LoadingOverlay from "./LoadingOverlay";
-
+import {Grid , Hidden} from "@material-ui/core" 
 import "./JoinRoomPage.css";
+import chat from "../resources/images/chat.svg"
+import chat2 from "../resources/images/chat2.svg"
 
 const JoinRoomPage = (props) => {
   const { setIsRoomHostAction, isRoomHost } = props;
@@ -19,16 +20,20 @@ const JoinRoomPage = (props) => {
     }
   }, []);
 
-  const [showLoadingOverlay, setShowLoadingOverlay] = useState(false);
   const titleText = isRoomHost ? "Host meeting" : "Join meeting";
 
   return (
-    <div className="join_room_page_container">
-      <div className="join_room_page_panel">
-        <p className="join_room_title">{titleText}</p>
-        <JoinRoomContent setShowLoadingOverlay={setShowLoadingOverlay} />
-        {showLoadingOverlay && <LoadingOverlay />}
-      </div>
+    <div>
+      <img src={chat} id="img1"></img>
+      <img src={chat2} id="img2"></img>
+      <Grid container spacing={4}>
+        <Grid xs={1} md={4} id="dummy"></Grid>
+        <Grid xs={10} md={4} id="title_container">
+          <p id="title">{titleText}</p>
+        </Grid>
+        <Grid xs={1} md={4} id="dummy"></Grid>
+        <JoinRoomContent />
+      </Grid>
     </div>
   );
 };

@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import JoinRoomInputs from "./JoinRoomInputs";
+import { useHistory } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
+import { checkIfRoomExists } from "../utils/twilioUtils";
+
+
 import {
   setConnectOnlyWithAudio,
   setIdentity,
   setRoomId,
 } from "../store/actions";
-import JoinRoomInputs from "./JoinRoomInputs";
-import OnlyWithAudioCheckbox from "./OnlyWithAudioCheckbox";
-import RoomNotFoundMessage from "./RoomNotFoundMessage";
-import JoinRoomButtons from "./JoinRoomButtons";
-import { useHistory } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
-import { checkIfRoomExists } from "../utils/twilioUtils";
+
+import { 
+  Button,
+  LinearProgress,
+  Grid 
+} from "@material-ui/core";
+
 
 const JoinRoomContent = (props) => {
   const {
@@ -20,26 +26,28 @@ const JoinRoomContent = (props) => {
     connectOnlyWithAudio,
     setRoomIdAction,
     setIdentityAction,
-    setShowLoadingOverlay,
   } = props;
 
   const [roomIdValue, setRoomIdValue] = useState("");
   const [nameValue, setNameValue] = useState("");
-  const [showRoomNotFoundMessage, setShowRoomNotFoundMessage] = useState(false);
-
+  const [RoomError, setRoomError] = useState(false);
+  const [JoinClicked, setJoinClicked] = useState(false);
+  const [circleState , setCircleState] = useState('static')
   const history = useHistory();
 
   const handleJoinToRoom = async () => {
     setIdentityAction(nameValue);
     if (!isRoomHost) {
-      setShowLoadingOverlay(true);
+      setJoinClicked(true);
+      setCircleState('indeterminate')
       const roomExists = await checkIfRoomExists(roomIdValue);
-      setShowLoadingOverlay(false);
+      setJoinClicked(false);
+      setCircleState('static')
       if (roomExists) {
         setRoomIdAction(roomIdValue);
         history.push("/room");
       } else {
-        setShowRoomNotFoundMessage(true);
+        setRoomError(true);
       }
     } else {
       setRoomIdAction(uuidv4());
@@ -49,22 +57,49 @@ const JoinRoomContent = (props) => {
 
   return (
     <>
-      <JoinRoomInputs
+    <Grid xs={1} md={4} id="dummy">
+    </Grid>
+    <JoinRoomInputs
         roomIdValue={roomIdValue}
         setRoomIdValue={setRoomIdValue}
         nameValue={nameValue}
         setNameValue={setNameValue}
         isRoomHost={isRoomHost}
       />
-      <OnlyWithAudioCheckbox
-        setConnectOnlyWithAudio={setConnectOnlyWithAudioAction}
-        connectOnlyWithAudio={connectOnlyWithAudio}
-      />
-      <RoomNotFoundMessage showRoomNotFoundMessage={showRoomNotFoundMessage} />
-      <JoinRoomButtons
-        isRoomHost={isRoomHost}
-        handleJoinToRoom={handleJoinToRoom}
-      />
+    <Grid xs={1} md={4} id="dummy"></Grid>
+    <Grid xs={1} md={4} id="dummy"></Grid>
+    <Grid xs={10} md={4}
+    container
+    direction="column"
+    id="button_container"
+    alignItems="center"
+    justify="center"
+    >
+          <Grid item>
+          </Grid>
+          <Grid item>
+          <LinearProgress hidden={!JoinClicked} />
+          <p 
+          hidden={!RoomError}
+          id="error">Invalid Room ID !!</p>
+          <Button id="bt1" onClick={handleJoinToRoom}>
+          {isRoomHost ? "Host" : "Join"}
+          </Button>
+          </Grid>
+          <Grid item>
+          
+          <Button
+          id="bt2" 
+          disabled={JoinClicked}
+          onClick={() => history.push("/")}>
+          Cancel
+          </Button>
+          </Grid>
+    </Grid>
+    <Grid xs={1} md={4} id="dummy">
+    </Grid>
+
+    
     </>
   );
 };

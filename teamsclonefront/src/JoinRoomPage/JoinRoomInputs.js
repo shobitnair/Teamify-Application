@@ -1,43 +1,54 @@
 import React from "react";
+import {
+   Grid,
+} from "@material-ui/core";
 
-const Input = ({ placeholder, value, changeHandler }) => {
-  return (
-    <input
-      value={value}
-      onChange={changeHandler}
-      className="join_room_input"
-      placeholder={placeholder}
-    />
-  );
-};
+
 
 const JoinRoomInputs = (props) => {
-  const { nameValue, setNameValue, roomIdValue, setRoomIdValue, isRoomHost } =
-    props;
+  const { 
+    nameValue,
+    setNameValue,
+    roomIdValue,
+    setRoomIdValue,
+    isRoomHost 
+  } = props;
 
-  const handleRoomIdValueChange = (event) => {
+  const handleRoomID = (event) => {
     setRoomIdValue(event.target.value);
   };
 
-  const handleNameValueChange = (event) => {
+  const handleName = (event) => {
     setNameValue(event.target.value);
   };
 
   return (
-    <div className="join_room_inputs_container">
-      {!isRoomHost && (
-        <Input
-          placeholder="Enter meeting ID"
-          value={roomIdValue}
-          changeHandler={handleRoomIdValueChange}
-        />
-      )}
-      <Input
-        placeholder="Enter your Name"
-        value={nameValue}
-        changeHandler={handleNameValueChange}
-      />
-    </div>
+    <>
+      <Grid 
+      container 
+      xs={10} md={4}
+      id="input_container"
+      alignItems="center"
+      justify="center">
+        <form>
+          {!isRoomHost &&(
+            <>
+            <input
+            id="room_input" 
+            placeholder="Meeting ID" 
+            value={roomIdValue}
+            onChange={handleRoomID} />
+            <br/>
+            </>
+          )}
+          <input
+          id="name_input" 
+          placeholder="Name" 
+          value={nameValue}
+          onChange={handleName} />
+        </form>
+      </Grid>
+    </>
   );
 };
 

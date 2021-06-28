@@ -10,7 +10,7 @@ const HomeButtons = () => {
   let history = useHistory();
   return (
     <>
-    <Button 
+      <Button 
       id="bt_default"
       onClick={() => {history.push("/join-room?host=true");}}
       >
