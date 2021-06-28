@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
-import logo from "../resources/images/logo.png";
-import ConnectingButtons from "./ConnectingButtons";
+import HomeButtons from "./HomeButtons";
 import { connect } from "react-redux";
 import { setIsRoomHost } from "../store/actions";
+import "./IntroductionPage.css"
+import home1 from "../resources/images/home1.svg"
+import home3 from "../resources/images/home3.svg"
+import {
+  Grid,
+} from "@material-ui/core"
 
-import "./IntroductionPage.css";
+
 
 const IntroductionPage = ({ setIsRoomHostAction }) => {
   useEffect(() => {
@@ -12,12 +17,23 @@ const IntroductionPage = ({ setIsRoomHostAction }) => {
   }, []);
 
   return (
-    <div className="introduction_page_container">
-      <div className="introduction_page_panel">
-        <img src={logo} className="introduction_page_image" />
-        <ConnectingButtons />
-      </div>
-    </div>
+    <>
+      <Grid container spacing={2}>
+        <Grid xs={11} md={6} id="Grid1">
+          <img src={home1} id="logo1"/>
+        </Grid>
+        <Grid xs={1} md={6} id="Grid1"></Grid>
+        <Grid xs={1} md={4} id="Grid2"></Grid>
+        <Grid xs={10} md={4} id="Grid2">
+          <HomeButtons/>
+        </Grid>
+        <Grid xs={1} md={4} id="Grid2"></Grid>
+        <Grid xs={1} md={6} id="Grid1"></Grid>
+        <Grid xs={11} md={6} id="Grid1">
+          <img src={home3} id="logo2"></img>
+        </Grid>
+      </Grid>
+    </>
   );
 };
 

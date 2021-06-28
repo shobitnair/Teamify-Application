@@ -1,60 +1,43 @@
-.introduction_page_container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+
+#Grid1{
+  height:300px;
+  background-color: #BDBDE6;
 }
 
-.introduction_page_panel {
-  width: 600px;
-  height: 400px;
-  background-color: white;
-  border: 1px solid grey;
-  filter: drop-shadow(0 0 0.2rem grey);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+#Grid2{
+    height:180px;
+    background-color: #BDBDE6;
 }
 
-.introduction_page_image {
-  width: 150px;
+
+#logo1{
+    height:80%;
+    width: 90%;
+    border-radius:5px;
+    border-right:10px solid #6264A7;
+    border-bottom:10px solid #6264A7;
+    margin-left:3%;
+    margin-top:3%;
+    padding:5px;
 }
 
-.connecting_buttons_container {
-  display: flex;
-  flex-direction: column;
+#logo2{
+    height:80%;
+    width: 90%;
+    border-radius:5px;
+    border-left:10px solid #6264A7;
+    border-top:10px solid #6264A7;
+    margin-left:3%;
+    margin-top:3%;
+    padding:5px;
 }
 
-.join_room_button {
-  background-color: #2d8cff;
-  border: 1px solid #e5e5e5;
-  color: white;
-  font-size: 13px;
-  font-weight: 700;
-  width: 180px;
-  height: 30px;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.join_room_button:hover {
-  background-color: blue;
-}
-
-.create_room_button {
-  margin-top: 15px;
-  background-color: white;
-  border: 1px solid #e5e5e5;
-  color: black;
-  font-size: 13px;
-  width: 180px;
-  height: 30px;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.create_room_button:hover {
-  background-color: #e5e5e5;
+#bt_default{
+    background-color:#6264A7;
+    color:white;
+    padding:15px;
+    margin-left: 30%;
+    margin-top:20px;
+    width:150px;
 }
