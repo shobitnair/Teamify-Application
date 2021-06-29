@@ -1,7 +1,6 @@
 import React, { useState } from "react";
+import {Button} from "@material-ui/core"
 
-import MicButtonImg from "../../resources/images/mic.svg";
-import MicButtonImgOff from "../../resources/images/micOff.svg";
 
 const MicButton = ({ room }) => {
   const [isMicMuted, setIsMicMuted] = useState(false);
@@ -25,14 +24,16 @@ const MicButton = ({ room }) => {
     });
   };
 
+  let mic_class = 
+    isMicMuted?"fas fa-microphone-slash":"fas fa-microphone";
   return (
-    <div className="video_button_container">
-      <img
-        src={isMicMuted ? MicButtonImgOff : MicButtonImg}
-        onClick={handleMicButtonPressed}
-        className="video_button_image"
-      />
-    </div>
+    <>
+      <Button 
+      id="button_mute"
+      onClick={handleMicButtonPressed}>
+        <i class={mic_class}></i> 
+      </Button>
+    </>
   );
 };
 
