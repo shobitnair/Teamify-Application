@@ -1,30 +1,59 @@
 import React from "react";
 import {connect} from "react-redux";
+import { Grid } from "@material-ui/core";
 
+/*<p 
+      hidden={sameAuthor}
+      id={author==="You"?"chat_right":"chat_left"}
+      >
+        {author}
+      </p>
+      <div id={author==="You"?"chat_bubble_right":"chat_bubble_left"}>
+        {content}
+      </div>*/
 
 const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
-  const alignClass = messageCreatedByMe
-    ? "message_align_right"
-    : "message_align_left";
 
-  const authorText = messageCreatedByMe ? "You" : author;
-
-  const contentAdditionalStyles = messageCreatedByMe
-    ? "message_right_styles"
-    : "message_left_styles";
-
-  return (
-    <div className={`message_container ${alignClass}`}>
-      {!sameAuthor && <p className="message_title">{authorText}</p>}
-      <p className={`message_content ${contentAdditionalStyles}`}>{content}</p>
-    </div>
-  );
+  if(messageCreatedByMe)return (
+    <>
+      <Grid container direction="row">
+        <Grid item md={4}></Grid>
+        <Grid item md={8}>
+          <Grid container direction="column">
+            {!sameAuthor &&(
+              <div id="chat_head_A">{author}</div>
+            )}
+            <div id="chat_bubble_A">
+              {content}
+            </div>
+          </Grid>
+        </Grid>
+      </Grid>
+    </>
+  )
+  else return(
+    <>
+      <Grid container direction="row">
+        <Grid item md={8}>
+          <Grid container direction="column">
+            {!sameAuthor &&(
+              <div id="chat_head_B">{author}</div>
+            )}
+            <div id="chat_bubble_B">
+              {content}
+            </div>
+          </Grid>
+        </Grid>
+        <Grid item md={4}></Grid>
+      </Grid>
+    </>
+  )
 };
 
 const Messages = ({messages}) => {
-  console.log(messages);
+  //console.log(messages);
   return (
-    <div className="messages_container">
+    <div id="message_section">
       {messages.map((message, index) => {
         const sameAuthor =
           index > 0 && message.identity === messages[index - 1].identity;
