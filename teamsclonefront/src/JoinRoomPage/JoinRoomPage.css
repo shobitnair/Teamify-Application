@@ -28,13 +28,13 @@
 }
 
 #button_container{
-  height:350px;
+  height:50%;
   background-color: #BDBDE6;
   
 }
 
 #Grid1{
-  height:200px;
+  height:30%;
   background-color: #BDBDE6;
 }
 
@@ -58,7 +58,7 @@
 }
 
 #title_container{
-  height:90px;
+  height:10%;
   align-items: center;
   text-align:center;
   background-color:#E2E2F6;
@@ -71,7 +71,6 @@
   font-size: 40px;
   color:#464775;
   font-weight: 700;
-
 }
 
 

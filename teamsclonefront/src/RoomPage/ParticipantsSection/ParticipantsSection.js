@@ -1,13 +1,14 @@
 import React from "react";
 import Participants from "./Participants";
-import ParticipantsLabel from "./ParticipantsLabel";
 
 const ParticipantsSection = () => {
   return (
-    <div className="participants_section_container">
-      <ParticipantsLabel />
+    <>
+      <div id="participant_header">
+        PARTICIPANTS
+      </div>
       <Participants />
-    </div>
+    </>
   );
 };
 

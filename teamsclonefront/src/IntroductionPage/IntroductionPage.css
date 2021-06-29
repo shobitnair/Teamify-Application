@@ -1,12 +1,12 @@
 
 
 #Grid1{
-  height:300px;
+  height:40%;
   background-color: #BDBDE6;
 }
 
 #Grid2{
-    height:180px;
+    height:20%;
     background-color: #BDBDE6;
 }
 
@@ -43,3 +43,6 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+#whole{
+    height:100vh;
+  }

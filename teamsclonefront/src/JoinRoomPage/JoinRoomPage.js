@@ -23,7 +23,8 @@ const JoinRoomPage = (props) => {
   const titleText = isRoomHost ? "Host meeting" : "Join meeting";
 
   return (
-    <div style={{"backgroundColor":'#BDBDE6'}}>
+    <div 
+    style={{"backgroundColor":'#BDBDE6' , "height":'100vh' }}>
       <Hidden smDown>
       <img src={chat} id="img1"></img>
       <img src={chat2} id="img2"></img>

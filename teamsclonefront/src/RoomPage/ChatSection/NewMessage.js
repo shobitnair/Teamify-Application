@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import SendMessageButton from "../../resources/images/sendMessageButton.svg";
 import { sendMessageUsingDataChannel } from "../../utils/twilioUtils";
-
+import {
+  Button,
+} from "@material-ui/core"
 const NewMessage = () => {
   const [message, setMessage] = useState("");
 
@@ -24,7 +26,7 @@ const NewMessage = () => {
   };
 
   return (
-    <div className="new_message_container">
+    <div>
       <input
         className="new_message_input"
         value={message}
@@ -33,11 +35,11 @@ const NewMessage = () => {
         type="text"
         onKeyDown={handleKeyPressed}
       />
-      <img
+      <Button
         className="new_message_button"
         src={SendMessageButton}
         onClick={sendMessage}
-      />
+      > X </Button>
     </div>
   );
 };

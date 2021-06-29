@@ -1,12 +1,13 @@
 import React from "react";
-import ChatLabel from "./ChatLabel";
 import Messages from "./Messages";
 import NewMessage from "./NewMessage";
 
 const ChatSection = () => {
   return (
-    <div className="chat_section_container">
-      <ChatLabel />
+    <div>
+      <div id="chat_header">
+        MESSAGES
+      </div>
       <Messages />
       <NewMessage />
     </div>
