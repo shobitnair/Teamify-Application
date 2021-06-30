@@ -1,7 +1,6 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
-
-import CameraButtonImg from "../../resources/images/camera.svg";
-import CameraButtonImgOff from "../../resources/images/cameraOff.svg";
+import{Button} from "@material-ui/core"
 
 const CameraButton = ({ room }) => {
   const [isLocalVideoTrackDisabled, setIsLocalVideoTrackDisabled] =
@@ -27,14 +26,15 @@ const CameraButton = ({ room }) => {
     });
   };
 
+  let cameraON = <i class="fas fa-video"></i> ;
+  let cameraOFF = <i class="fas fa-video-slash"></i>;
   return (
-    <div className="video_button_container">
-      <img
-        src={isLocalVideoTrackDisabled ? CameraButtonImgOff : CameraButtonImg}
-        className="video_button_image"
-        onClick={handleCameraButtonPressed}
-      />
-    </div>
+    <Button
+      onClick={handleCameraButtonPressed}>
+      <div >
+      {!isLocalVideoTrackDisabled ? cameraON : cameraOFF}
+      </div>
+    </Button>
   );
 };
 

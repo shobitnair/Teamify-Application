@@ -186,57 +186,9 @@
   transform : scale(1.1);
 }
 
-.messages_container {
-  width: calc(100% - 70px);
-  margin-left: 30px;
-  margin-right: 30px;
-  flex-grow: 1;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
 
-.message_container {
-  margin-top: 5px;
-  display: flex;
-  flex-direction: column;
-}
 
-.message_align_left {
-  align-items: flex-start;
-}
 
-.message_align_right {
-  align-items: flex-end;
-}
-
-.message_left_styles {
-  background: rgba(0, 82, 201, 0.1);
-  color: black;
-}
-
-.message_right_styles {
-  background: linear-gradient(168.68deg, #0052c9 1.12%, #0a91db 100%);
-  color: white;
-}
-
-.message_title {
-  margin: 0 0 10px 0;
-  padding: 0 10px;
-  color: black;
-  font-size: 16px;
-  font-weight: 500;
-  display: block;
-}
-
-.message_content {
-  margin: 0px 10px;
-  padding: 10px 30px 10px 20px;
-  border-radius: 25px;
-  font-size: 16px;
-  display: inline-block;
-  height:fit-content;
-  word-wrap: break-word
-}
 
 /* width */
 ::-webkit-scrollbar {

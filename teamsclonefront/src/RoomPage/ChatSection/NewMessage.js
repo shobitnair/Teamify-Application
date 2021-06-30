@@ -10,11 +10,11 @@ const NewMessage = () => {
   const [message, setMessage] = useState("");
 
   const sendMessage = async() => {
-    // send message to other user , true denotes (its send by me)
+    if(message==="")return;
+    //send message and scroll down immediately after that.
     await sendMessageUsingDataChannel(message, true);
     updateScroll();
     setMessage("");
-    
   };
 
   const handleKeyPressed = (event) => {
@@ -39,7 +39,7 @@ const NewMessage = () => {
     <div>
       <Grid container direction="row">
         <Grid item md={10}>
-          <input
+          <textarea
             id="chat_input"
             value={message}
             onChange={handleTextChange}
