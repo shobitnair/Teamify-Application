@@ -2,15 +2,6 @@ import React from "react";
 import {connect} from "react-redux";
 import { Grid } from "@material-ui/core";
 
-/*<p 
-      hidden={sameAuthor}
-      id={author==="You"?"chat_right":"chat_left"}
-      >
-        {author}
-      </p>
-      <div id={author==="You"?"chat_bubble_right":"chat_bubble_left"}>
-        {content}
-      </div>*/
 
 const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
 
@@ -50,17 +41,19 @@ const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
   )
 };
 
-const Messages = ({messages}) => {
+const Messages = ({messages , identity}) => {
   //console.log(messages);
   return (
     <div id="message_section">
       {messages.map((message, index) => {
         const sameAuthor =
           index > 0 && message.identity === messages[index - 1].identity;
+        const author 
+          = identity===message.identity ?"You":identity;
         return (
           <Message
             key={index}
-            author={message.identity}
+            author={author}
             content={message.content}
             sameAuthor={sameAuthor}
             messageCreatedByMe={message.messageCreatedByMe}
