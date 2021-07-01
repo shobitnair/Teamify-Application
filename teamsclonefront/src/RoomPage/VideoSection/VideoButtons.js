@@ -4,8 +4,10 @@ import MicButton from "./MicButton";
 import CameraButton from "./CameraButton";
 import LeaveRoomButton from "./LeaveRoomButton";
 import SwitchToScreenSharingButton from "./SwitchToScreenSharingButton";
+import ShareLinkButton from "./ShareLinkButton";
 import { Grid, Button } from "@material-ui/core";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+
+
 
 const VideoButtons = (props) => {
   const { roomId, room, connectOnlyWithAudio } = props;
@@ -34,11 +36,7 @@ const VideoButtons = (props) => {
         </Grid>
         <Grid item md={2} id="dock_bt">
           <Grid container md={12} id="dock_bt">
-            <CopyToClipboard text={roomId}>
-              <Button id="other_bt">
-                <i class="fas fa-share-alt"></i>
-              </Button>
-            </CopyToClipboard>
+            <ShareLinkButton text={roomId} />
           </Grid>
         </Grid>
       </Grid>

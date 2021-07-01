@@ -2,10 +2,22 @@ import React, { Component } from "react";
 import Participant from "./Participant";
 import { setParticipants } from "../../../store/actions";
 import { store } from "../../../store/store";
-import { Grid , Snackbar } from "@material-ui/core";
-import ReactDOM from 'react-dom';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 
-
+//toast notify utility
+toast.configure();
+const notify = (str) =>{
+  toast.dark(str , {
+    position: "bottom-left",
+    autoClose: 1700,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+}
 
 class TwilioRoom extends Component {
   constructor(props) {
@@ -45,8 +57,11 @@ class TwilioRoom extends Component {
   }
 
   addParticipant(participant) {
-    //Add snackBar.
-    console.log(`${participant.identity} has joined the room`);
+    //Add Toast Notification.
+    //console.log(`${participant.identity} has joined the room`);
+    let name = `${participant.identity}`;
+    name = name.slice(36,name.length);
+    notify(name+" has joined the room ");
     //Update participant state.
     this.addParticipantToStore(participant);
     this.setState({
@@ -63,8 +78,11 @@ class TwilioRoom extends Component {
   }
 
   removeParticipant(participant) {
-    //Add snackBar.
-    console.log(`${participant.identity} has left the room`);
+    //Add Toast notification.
+    //console.log(`${participant.identity} has left the room`);
+    let name = `${participant.identity}`;
+    name = name.slice(36,name.length);
+    notify(name+" has left the room ");
     this.removeParticipantFromStore(participant);
 
     //Update participant state.

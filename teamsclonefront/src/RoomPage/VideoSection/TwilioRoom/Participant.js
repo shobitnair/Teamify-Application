@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import AudioTrack from "./AudioTrack";
 import VideoTrack from "./VideoTrack";
 import { addMessageToMessenger } from "../../../utils/twilioUtils";
-import {SnackBar} from "@material-ui/core"
+
 
 
 class Participant extends Component {
