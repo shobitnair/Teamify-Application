@@ -373,9 +373,7 @@ video:hover{
   border-radius:3px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
 }
-#other_bt:hover{
-  transform:scale(1.1);
-}
-#leave_bt:hover{
-  transform: scale(1.05);
+
+.tooltip{
+  font-size:20px;
 }

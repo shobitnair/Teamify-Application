@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { LocalVideoTrack } from "twilio-video";
 import LocalScreenSharingPreview from "./ScreenSharePreview";
 import { Button } from "@material-ui/core";
+import { LightTooltip } from "./Tooltip";
 
 const SwitchToScreenSharingButton = ({ room }) => {
   //ScreenShare states
@@ -46,9 +47,11 @@ const SwitchToScreenSharingButton = ({ room }) => {
 
   return (
     <>
-      <Button onClick={handleScreenShareEvent} id="other_bt">
-        <i class="fab fa-chromecast"></i>
-      </Button>
+      <LightTooltip title="Present your screen">
+        <Button onClick={handleScreenShareEvent} id="other_bt">
+          <i class="fab fa-chromecast"></i>
+        </Button>
+      </LightTooltip>
       {isActive && <LocalScreenSharingPreview stream={screenShareStream} />}
     </>
   );

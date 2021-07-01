@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import VideoButtons from "./VideoButtons";
+import VideoButtons from "./VideoDock/VideoButtons";
 import Videos from "./Videos";
 import { Grid } from "@material-ui/core";
 

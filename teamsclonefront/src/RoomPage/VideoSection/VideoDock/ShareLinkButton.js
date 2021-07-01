@@ -2,7 +2,8 @@ import React , {useState} from 'react'
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
-import {Button} from "@material-ui/core"
+import {Button } from "@material-ui/core"
+import {LightTooltip} from "./Tooltip"
 
 //toast notify utility
 toast.configure();
@@ -33,10 +34,12 @@ const ShareLinkButton = ({text}) => {
     }
     return (
         <CopyToClipboard text={text}>
-            <Button id="other_bt"
-              onClick={notify}>
-                <i class="fas fa-share-alt"></i>
-            </Button>
+            <LightTooltip title="Copy Room ID to clipboard">
+                <Button id="other_bt"
+                onClick={notify}>
+                    <i class="fas fa-share-alt"></i>
+                </Button>
+            </LightTooltip>
         </CopyToClipboard>
     )
 }

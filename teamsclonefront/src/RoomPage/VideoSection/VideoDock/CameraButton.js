@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import { Button } from "@material-ui/core";
+import { LightTooltip } from "./Tooltip";
 
 const CameraButton = ({ room }) => {
   // Camera states and event handler
@@ -33,9 +34,11 @@ const CameraButton = ({ room }) => {
   let cameraON = <i class="fas fa-video"></i>;
   let cameraOFF = <i class="fas fa-video-slash"></i>;
   return (
-    <Button id="other_bt" onClick={handleCameraEvent}>
+    <LightTooltip title="Turn On/Off your Camera">
+      <Button id="other_bt" onClick={handleCameraEvent}>
       {!isCameraOff ? cameraON : cameraOFF}
-    </Button>
+      </Button>
+    </LightTooltip>
   );
 };
 

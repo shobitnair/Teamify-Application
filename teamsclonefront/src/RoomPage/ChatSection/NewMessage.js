@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SendMessageButton from "../../resources/images/sendMessageButton.svg";
 import { sendMessageUsingDataChannel } from "../../utils/twilioUtils";
 import { Grid } from "@material-ui/core";
-
+import { LightTooltip } from "../VideoSection/VideoDock/Tooltip";
 
 
 const NewMessage = () => {
@@ -53,19 +53,23 @@ const NewMessage = () => {
           direction="column"
           alignItems="center">
             <Grid item md={12}>
-              <div id="chat_util"
-                src={SendMessageButton}
-                onClick={sendMessage}
-              >
-                <i class="fas fa-paper-plane"></i>
-              </div>
+              <LightTooltip title="Send Message">
+                <div id="chat_util"
+                  src={SendMessageButton}
+                  onClick={sendMessage}
+                >
+                  <i class="fas fa-paper-plane"></i>
+                </div>
+              </LightTooltip>
             </Grid>
             <Grid item md={12}>
-              <div 
-              onClick={updateScroll}
-              id="chat_util">
-                <i class="fas fa-arrow-down"></i>
-              </div>
+              <LightTooltip title="Scroll down messages">
+                <div 
+                onClick={updateScroll}
+                id="chat_util">
+                  <i class="fas fa-arrow-down"></i>
+                </div>
+              </LightTooltip>
             </Grid>
           </Grid>
         </Grid>

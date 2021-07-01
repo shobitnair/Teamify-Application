@@ -5,7 +5,13 @@ import CameraButton from "./CameraButton";
 import LeaveRoomButton from "./LeaveRoomButton";
 import SwitchToScreenSharingButton from "./SwitchToScreenSharingButton";
 import ShareLinkButton from "./ShareLinkButton";
-import { Grid, Button } from "@material-ui/core";
+import { 
+  Grid, 
+  Button,
+  makeStyles,
+  withStyles,
+  Tooltip 
+} from "@material-ui/core";
 
 
 
