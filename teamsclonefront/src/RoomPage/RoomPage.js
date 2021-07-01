@@ -35,16 +35,14 @@ const RoomPage = (props) => {
 */
 
   return (
-    <><div className="room_container">
-    <VideoSection />
-    {showOverlay && <Overlay />}
-    </div>
+    <>
       <Hidden smDown>
-        <Grid container spacing={2} id="whole">
+        <Grid container direction="row" spacing={2} id="whole">
           <Grid item id="participant">
             <ParticipantsSection/>
           </Grid>
           <Grid item id="room">
+            <VideoSection />
           </Grid>
           <Grid item id="chat">
             <ChatSection />

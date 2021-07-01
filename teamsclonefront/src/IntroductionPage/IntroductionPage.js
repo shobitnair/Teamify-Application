@@ -19,17 +19,17 @@ const IntroductionPage = ({ setIsRoomHostAction }) => {
   return (
     <>
       <Grid container spacing={2} id="whole">
-        <Grid xs={11} md={6} id="Grid1">
+        <Grid item xs={11} md={8} id="Grid1">
           <img src={home1} id="logo1"/>
         </Grid>
-        <Grid xs={1} md={6} id="Grid1"></Grid>
-        <Grid xs={1} md={4} id="Grid2"></Grid>
-        <Grid xs={10} md={4} id="Grid2">
+        <Grid item xs={1} md={4} id="Grid1"></Grid>
+        <Grid item xs={1} md={4} id="Grid2"></Grid>
+        <Grid item xs={10} md={4} id="Grid2">
           <HomeButtons/>
         </Grid>
-        <Grid xs={1} md={4} id="Grid2"></Grid>
-        <Grid xs={1} md={6} id="Grid1"></Grid>
-        <Grid xs={11} md={6} id="Grid1">
+        <Grid item xs={1} md={4} id="Grid2"></Grid>
+        <Grid item xs={1} md={4} id="Grid1"></Grid>
+        <Grid item xs={11} md={8} id="Grid1">
           <img src={home3} id="logo2"></img>
         </Grid>
       </Grid>

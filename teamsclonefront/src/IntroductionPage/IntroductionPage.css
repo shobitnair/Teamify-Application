@@ -45,13 +45,13 @@
 #bt_default{
     background-color:#464775;
     color:white;
-    padding:15px;
-    margin-left: 30%;
-    margin-top:20px;
-    width:150px;
+    padding:10px;
+    width:60%;
+    margin-left:20%;
+    font-size:2vh;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 #whole{
-    height:100vh;
+    height:110vh;
   }

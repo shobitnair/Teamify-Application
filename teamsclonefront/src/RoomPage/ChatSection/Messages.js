@@ -2,9 +2,10 @@ import React from "react";
 import {connect} from "react-redux";
 import { Grid } from "@material-ui/core";
 
+//function to display an individual block of message.
 
 const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
-
+  const authorText = messageCreatedByMe ? "You" : author;
   if(messageCreatedByMe)return (
     <>
       <Grid container direction="row">
@@ -12,7 +13,7 @@ const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
         <Grid item md={8}>
           <Grid container direction="column">
             {!sameAuthor &&(
-              <div id="chat_head_A">{author}</div>
+              <div id="chat_head_A">{authorText}</div>
             )}
             <div id="chat_bubble_A">
               {content}
@@ -41,6 +42,8 @@ const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
   )
 };
 
+
+//function to display and array of blocks
 const Messages = ({messages , identity}) => {
   //console.log(messages);
   return (
@@ -48,12 +51,11 @@ const Messages = ({messages , identity}) => {
       {messages.map((message, index) => {
         const sameAuthor =
           index > 0 && message.identity === messages[index - 1].identity;
-        const author 
-          = identity===message.identity ?"You":identity;
+
         return (
           <Message
             key={index}
-            author={author}
+            author={message.identity}
             content={message.content}
             sameAuthor={sameAuthor}
             messageCreatedByMe={message.messageCreatedByMe}

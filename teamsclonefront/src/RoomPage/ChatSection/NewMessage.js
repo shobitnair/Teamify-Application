@@ -38,7 +38,7 @@ const NewMessage = () => {
   return (
     <div>
       <Grid container direction="row">
-        <Grid item md={10}>
+        <Grid item md={9}>
           <textarea
             id="chat_input"
             value={message}
@@ -48,7 +48,7 @@ const NewMessage = () => {
             onKeyDown={handleKeyPressed}
           />
         </Grid>
-        <Grid item md={2}>
+        <Grid item md={3}>
           <Grid container 
           direction="column"
           alignItems="center">

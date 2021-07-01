@@ -24,17 +24,17 @@ const JoinRoomPage = (props) => {
 
   return (
     <div 
-    style={{"backgroundColor":'#BDBDE6' , "height":'100vh' }}>
+    style={{"backgroundColor":'#BDBDE6' , "height":'120vh' }}>
       <Hidden smDown>
       <img src={chat} id="img1"></img>
       <img src={chat2} id="img2"></img>
       </Hidden>
       <Grid container >
-        <Grid xs={1} md={4} ></Grid>
-        <Grid xs={10} md={4} id="title_container">
+        <Grid item xs={1} md={4} ></Grid>
+        <Grid item xs={10} md={4} id="title_container">
           <p id="title">{titleText}</p>
         </Grid>
-        <Grid xs={1} md={4}></Grid>
+        <Grid item xs={1} md={4}></Grid>
         <JoinRoomContent />
       </Grid>
     </div>

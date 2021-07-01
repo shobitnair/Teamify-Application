@@ -17,7 +17,7 @@ const VideoTrack = ({ track }) => {
   }, []);
 
   const content = (
-    <div className="video_track_container">
+    <div className="vido">
       <div ref={trackRef}></div>
     </div>
   );

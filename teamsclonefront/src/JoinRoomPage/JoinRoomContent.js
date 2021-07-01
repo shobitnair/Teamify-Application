@@ -20,6 +20,7 @@ import {
   LinearProgress,
   Grid 
 } from "@material-ui/core";
+import { Alert, AlertTitle } from '@material-ui/lab';
 
 
 const JoinRoomContent = (props) => {
@@ -87,26 +88,32 @@ const JoinRoomContent = (props) => {
     alignItems="center"
     justify="center"
     >
-      <Grid item>
+      <Grid container xs={12} md={12}
+      direction="column"
+      alignItems="center">
+        <Grid item xs={8} md={8}>
+          <div hidden={!RoomError} >
+            <Alert severity="error">
+              <AlertTitle>Invalid Room ID </AlertTitle>
+            </Alert>
+          </div>
+        </Grid>
+        <Grid item xs={8} md={8}>
         <LinearProgress hidden={!JoinClicked} />
-        <p 
-        hidden={!RoomError}
-        style={{"textAlign":'center'}}
-        id="error">
-          <i class="fas fa-exclamation-triangle"></i>  Invalid Room ID
-        </p>
-        <Button id="bt1" onClick={handleJoinToRoom}>
-          {isRoomHost ? "Host" : "Join"}
-        </Button>
-      </Grid>
-      <Grid item>
+          <Button id="bt1" onClick={handleJoinToRoom}>
+            {isRoomHost ? "Host" : "Join"}
+          </Button>
+        </Grid>
+        <Grid item xs={8} md={8}>
         <Button
-        id="bt2" 
-        disabled={JoinClicked}
-        onClick={() => history.push("/")}>
+          id="bt2" 
+          disabled={JoinClicked}
+          onClick={() => history.push("/")}>
           Cancel
         </Button>
       </Grid>
+      </Grid>
+      
     </Grid>
     <Grid xs={1} md={4}>
     </Grid>

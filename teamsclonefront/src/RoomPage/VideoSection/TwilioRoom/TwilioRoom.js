@@ -3,6 +3,8 @@ import Participant from "./Participant";
 import { setParticipants } from "../../../store/actions";
 import { store } from "../../../store/store";
 
+import {Grid} from "@material-ui/core"
+
 class TwilioRoom extends Component {
   constructor(props) {
     super(props);
@@ -70,6 +72,7 @@ class TwilioRoom extends Component {
 
   render() {
     return (
+      <>
       <div className="room">
         <div className="participants">
           <Participant
@@ -87,6 +90,7 @@ class TwilioRoom extends Component {
           })}
         </div>
       </div>
+      </>
     );
   }
 }

@@ -18,7 +18,7 @@ const Participants = ({ participants }) => {
       <div 
       id="participant_block"
       style={{"height":'30px' , "textAlign":'center' , "fontWeight":'500'}}>
-        Total Participants : {participants.length}
+        Other Participants : {participants.length}
       </div>
       {participants.map((person) => {
         return (
