@@ -1,22 +1,20 @@
 import React, { Component } from "react";
 import AudioTrack from "./AudioTrack";
 import VideoTrack from "./VideoTrack";
-import {addMessageToMessenger} from "../../../utils/twilioUtils"
+import { addMessageToMessenger } from "../../../utils/twilioUtils";
+import {SnackBar} from "@material-ui/core"
+
 
 class Participant extends Component {
   constructor(props) {
     super(props);
-
     const existingPublications = Array.from(
       this.props.participant.tracks.values()
     );
-
     const existingTracks = existingPublications.map(
       (publication) => publication.track
     );
-
     const nonNullTracks = existingTracks.filter((track) => track !== null);
-
     this.state = {
       tracks: nonNullTracks,
     };
@@ -26,10 +24,9 @@ class Participant extends Component {
     if (!this.props.localParticipant) {
       this.props.participant.on("trackSubscribed", (track) => {
         if (track.kind === "data") {
-          track.on('message',(data)=>{
+          track.on("message", (data) => {
             addMessageToMessenger(JSON.parse(data));
-          })
-          
+          });
         } else {
           this.addTrack(track);
         }
@@ -68,7 +65,6 @@ class Participant extends Component {
           if (track.kind === "audio") {
             return <AudioTrack key={track} track={track} />;
           }
-
           if (track.kind === "video") {
             return <VideoTrack key={track} track={track} />;
           }

@@ -8,22 +8,16 @@ const VideoTrack = ({ track }) => {
     const child = track.attach();
     trackRef.current.classList.add(track.kind);
     trackRef.current.appendChild(child);
-
     const videosPortal = document.getElementById("videos_portal");
-
     if (!videosPortal.classList.contains("videos_portal_styles")) {
       videosPortal.classList.add("videos_portal_styles");
     }
   }, []);
 
-  const content = (
+  return ReactDOM.createPortal(
     <div className="vido">
       <div ref={trackRef}></div>
-    </div>
-  );
-
-  return ReactDOM.createPortal(
-    content,
+    </div>,
     document.getElementById("videos_portal")
   );
 };

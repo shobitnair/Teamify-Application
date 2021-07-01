@@ -4,17 +4,45 @@ import MicButton from "./MicButton";
 import CameraButton from "./CameraButton";
 import LeaveRoomButton from "./LeaveRoomButton";
 import SwitchToScreenSharingButton from "./SwitchToScreenSharingButton";
+import { Grid, Button } from "@material-ui/core";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const VideoButtons = (props) => {
-  const { room, connectOnlyWithAudio } = props;
-
+  const { roomId, room, connectOnlyWithAudio } = props;
   return (
-    <div className="video_buttons_container">
-      <MicButton room={room} />
-      {!connectOnlyWithAudio && <CameraButton room={room} />}
-      <LeaveRoomButton room={room} />
-      <SwitchToScreenSharingButton room={room} />
-    </div>
+    <>
+      <Grid container md={12} direction="row" justify="center">
+        <Grid item md={2}>
+          <Grid container md={12} id="dock_bt">
+            <MicButton room={room} />
+          </Grid>
+        </Grid>
+        <Grid item md={2}>
+          <Grid container md={12} id="dock_bt">
+            <CameraButton room={room} onlyaudio={connectOnlyWithAudio} />
+          </Grid>
+        </Grid>
+        <Grid item md={4}>
+          <Grid container md={12} id="dock_bt">
+            <LeaveRoomButton room={room} />
+          </Grid>
+        </Grid>
+        <Grid item md={2}>
+          <Grid container md={12} id="dock_bt">
+            <SwitchToScreenSharingButton room={room} />
+          </Grid>
+        </Grid>
+        <Grid item md={2} id="dock_bt">
+          <Grid container md={12} id="dock_bt">
+            <CopyToClipboard text={roomId}>
+              <Button id="other_bt">
+                <i class="fas fa-share-alt"></i>
+              </Button>
+            </CopyToClipboard>
+          </Grid>
+        </Grid>
+      </Grid>
+    </>
   );
 };
 

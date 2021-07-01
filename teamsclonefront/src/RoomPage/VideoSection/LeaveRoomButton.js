@@ -1,18 +1,19 @@
 import React from "react";
+import { Button } from "@material-ui/core";
 
 const LeaveRoomButton = ({ room }) => {
-  const handleRoomDisconnection = () => {
+
+  const handleLeaveEvent = () => {
     room.disconnect();
+    //disconnect and go to Home
     const siteUrl = window.location.origin;
     window.location.href = siteUrl;
   };
-  
+
   return (
-    <div className="video_button_container">
-      <button className="video_button_end" onClick={handleRoomDisconnection}>
-        Leave Room
-      </button>
-    </div>
+    <Button onClick={handleLeaveEvent} id="leave_bt">
+      Leave Room
+    </Button>
   );
 };
 

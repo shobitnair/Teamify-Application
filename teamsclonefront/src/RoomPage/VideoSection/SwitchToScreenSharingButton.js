@@ -1,57 +1,55 @@
 import React, { useState } from "react";
 import { LocalVideoTrack } from "twilio-video";
-import SwitchImg from "../../resources/images/switchToScreenSharing.svg";
-import LocalScreenSharingPreview from "./LocalScreenSharingPreview";
+import LocalScreenSharingPreview from "./ScreenSharePreview";
+import { Button } from "@material-ui/core";
 
 const SwitchToScreenSharingButton = ({ room }) => {
-  const [isScreenSharingActive, setIsScreenSharingActive] = useState(false);
+  //ScreenShare states
+  const [isActive, setIsActive] = useState(false);
   const [screenShareTrack, setScreenShareTrack] = useState(null);
   const [screenShareStream, setScreenShareStream] = useState(null);
 
-  const handleScreenSharingEnabling = () => {
+  const handleScreenShareEvent = () => {
     // handle screen sharing
-    if (!isScreenSharingActive) {
+    if (!isActive) {
       navigator.mediaDevices
         .getDisplayMedia()
         .then((stream) => {
           setScreenShareStream(stream);
-          setIsScreenSharingActive(true);
+          setIsActive(true);
           const screenTrack = new LocalVideoTrack(stream.getVideoTracks()[0], {
             name: "screen-share-track",
           });
 
           room.localParticipant.publishTrack(screenTrack);
           setScreenShareTrack(screenTrack);
-          //event listener for chrome based web browsers popup
+
+          // Accept event from browser pop-up window.
           stream.getVideoTracks()[0].onended = () => {
             room.localParticipant.unpublishTrack(screenTrack);
             setScreenShareTrack(null);
-            setIsScreenSharingActive(false);
+            setIsActive(false);
           };
         })
         .catch((err) => {
-          console.error("cound not get an access to share screen", err);
+          alert("cound not get an access to share screen");
+          console.log(err);
         });
-    } else {
+    } 
+    else {
       screenShareTrack.stop();
       room.localParticipant.unpublishTrack(screenShareTrack);
       setScreenShareTrack(null);
-      setIsScreenSharingActive(false);
+      setIsActive(false);
     }
   };
 
   return (
     <>
-      <div className="video_button_container">
-        <img
-          src={SwitchImg}
-          onClick={handleScreenSharingEnabling}
-          className="video_button_image"
-        />
-      </div>
-      {isScreenSharingActive && (
-        <LocalScreenSharingPreview stream={screenShareStream} />
-      )}
+      <Button onClick={handleScreenShareEvent} id="other_bt">
+        <i class="fab fa-chromecast"></i>
+      </Button>
+      {isActive && <LocalScreenSharingPreview stream={screenShareStream} />}
     </>
   );
 };

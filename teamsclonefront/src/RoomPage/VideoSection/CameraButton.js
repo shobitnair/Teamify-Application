@@ -1,39 +1,40 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
-import{Button} from "@material-ui/core"
+import { Button } from "@material-ui/core";
 
 const CameraButton = ({ room }) => {
-  const [isLocalVideoTrackDisabled, setIsLocalVideoTrackDisabled] =
-    useState(false);
-
-  const handleCameraButtonPressed = () => {
-    isLocalVideoTrackDisabled ? startVideo() : stopVideo();
-
-    setIsLocalVideoTrackDisabled(!isLocalVideoTrackDisabled);
+  // Camera states and event handler
+  const [isCameraOff, setisCameraOff] = useState(false);
+  const handleCameraEvent = () => {
+    isCameraOff ? startVideo() : stopVideo();
+    setisCameraOff(!isCameraOff);
   };
 
   const startVideo = () => {
     // start sending back video stream to other users
-    room.localParticipant.videoTracks.forEach((localVideoTrackPublication) => {
-      localVideoTrackPublication.track.enable();
+    room.localParticipant.videoTracks.forEach((stream) => {
+      stream.track.enable();
     });
   };
 
   const stopVideo = () => {
     // stop sending camera stream to other users
-    room.localParticipant.videoTracks.forEach((localVideoTrackPublication) => {
-      localVideoTrackPublication.track.disable();
+
+    room.localParticipant.videoTracks.forEach((stream) => {
+      //console.log(stream.track.name);
+      //Delete user video streams that are videos.
+      if(stream.track.name !== "screen-share-track"){
+        stream.track.disable();
+      }
     });
   };
 
-  let cameraON = <i class="fas fa-video"></i> ;
+  //Camera icon states
+  let cameraON = <i class="fas fa-video"></i>;
   let cameraOFF = <i class="fas fa-video-slash"></i>;
   return (
-    <Button
-      onClick={handleCameraButtonPressed}>
-      <div >
-      {!isLocalVideoTrackDisabled ? cameraON : cameraOFF}
-      </div>
+    <Button id="other_bt" onClick={handleCameraEvent}>
+      {!isCameraOff ? cameraON : cameraOFF}
     </Button>
   );
 };

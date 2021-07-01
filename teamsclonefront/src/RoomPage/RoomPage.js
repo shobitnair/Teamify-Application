@@ -37,7 +37,7 @@ const RoomPage = (props) => {
   return (
     <>
       <Hidden smDown>
-        <Grid container direction="row" spacing={2} id="whole">
+        <Grid container direction="row" spacing={2} id="page">
           <Grid item id="participant">
             <ParticipantsSection/>
           </Grid>

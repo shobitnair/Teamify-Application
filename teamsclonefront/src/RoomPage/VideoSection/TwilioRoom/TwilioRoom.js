@@ -2,26 +2,26 @@ import React, { Component } from "react";
 import Participant from "./Participant";
 import { setParticipants } from "../../../store/actions";
 import { store } from "../../../store/store";
+import { Grid , Snackbar } from "@material-ui/core";
+import ReactDOM from 'react-dom';
 
-import {Grid} from "@material-ui/core"
+
 
 class TwilioRoom extends Component {
   constructor(props) {
     super(props);
-
     const remoteParticipants = Array.from(
       this.props.room.participants.values()
     );
-
     this.state = {
       remoteParticipants: remoteParticipants,
     };
-
     remoteParticipants.forEach((participant) => {
       this.addParticipantToStore(participant);
     });
   }
 
+  // Define mount class of the participant.
   componentDidMount() {
     this.props.room.on("participantConnected", (participant) =>
       this.addParticipant(participant)
@@ -34,7 +34,7 @@ class TwilioRoom extends Component {
 
   addParticipantToStore(participant) {
     const participants = store.getState().participants;
-
+    //check if the participant already exists
     if (participants.find((p) => p.identity === participant.identity)) {
       return;
     } else {
@@ -45,15 +45,17 @@ class TwilioRoom extends Component {
   }
 
   addParticipant(participant) {
+    //Add snackBar.
     console.log(`${participant.identity} has joined the room`);
+    //Update participant state.
     this.addParticipantToStore(participant);
-
     this.setState({
       remoteParticipants: [...this.state.remoteParticipants, participant],
     });
   }
 
   removeParticipantFromStore(participant) {
+    // find and erase participant from state.
     const participants = store
       .getState()
       .participants.filter((p) => p.identity !== participant.identity);
@@ -61,8 +63,11 @@ class TwilioRoom extends Component {
   }
 
   removeParticipant(participant) {
+    //Add snackBar.
     console.log(`${participant.identity} has left the room`);
     this.removeParticipantFromStore(participant);
+
+    //Update participant state.
     this.setState({
       remoteParticipants: this.state.remoteParticipants.filter(
         (p) => p.identity !== participant.identity
@@ -73,23 +78,16 @@ class TwilioRoom extends Component {
   render() {
     return (
       <>
-      <div className="room">
-        <div className="participants">
-          <Participant
-            key={this.props.room.localParticipant.identity}
-            localParticipant
-            participant={this.props.room.localParticipant}
-          />
-          {this.state.remoteParticipants.map((participant) => {
-            return (
-              <Participant
-                key={participant.identity}
-                participant={participant}
-              />
-            );
-          })}
-        </div>
-      </div>
+        <Participant
+          key={this.props.room.localParticipant.identity}
+          localParticipant
+          participant={this.props.room.localParticipant}
+        />
+        {this.state.remoteParticipants.map((participant) => {
+          return (
+            <Participant key={participant.identity} participant={participant} />
+          );
+        })}
       </>
     );
   }

@@ -15,9 +15,7 @@ const Participants = ({ participants }) => {
 
   return (
     <div id="participant_container">
-      <div 
-      id="participant_block"
-      style={{"height":'30px' , "textAlign":'center' , "fontWeight":'500'}}>
+      <div id="participant_count">
         Other Participants : {participants.length}
       </div>
       {participants.map((person) => {
