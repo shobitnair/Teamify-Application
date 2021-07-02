@@ -70,7 +70,7 @@
 }
 
 #chat{
-  width:21%;
+  width:20%;
   height:100vh;
   background:#BDBDE6;
   align-items: center;
@@ -220,7 +220,7 @@
 
 
 #room{
-  width:78%;
+  width:59%;
   height:100vh;
   background-color: #33344A;
 }
@@ -311,17 +311,49 @@ video:hover{
 
 #video_head{
   position:absolute;
-  font-size: 2vw;
+  font-size: 1vw;
   width:fit-content;
   height:fit-content;
-  margin-left:2%;
-  margin-top:4%;
+  left:2%;
+  top:4%;
   color:white;
   opacity:0.4;
   font-weight: 500;
   background: rgb(0,0,0,0.1);
   padding:3px;
   border-radius: 5px;
+}
+
+#video_expand{
+  position:absolute;
+  font-size: 1vw;
+  width:fit-content;
+  height:fit-content;
+  bottom:5%;
+  right:5%;
+  color:white;
+  opacity:0.4;
+  font-weight: 500;
+  background: rgb(0,0,0,0.1);
+  padding:3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#video_contract{
+  position:absolute;
+  font-size: 1vw;
+  width:fit-content;
+  height:fit-content;
+  top:5%;
+  right:5%;
+  color:white;
+  opacity:0.4;
+  font-weight: 500;
+  background: rgb(0,0,0,0.1);
+  padding:3px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .videos_container {

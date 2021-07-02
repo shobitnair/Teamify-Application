@@ -1,12 +1,9 @@
-import React, { useState ,useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ReactDOM from "react-dom";
 
+const VideoTrack = ({ track, name, count }) => {
+  const [width, setwidth] = useState("49%");
 
-
-const VideoTrack = ({ track , name }) => {
-
-  const [width , setwidth] = useState("49%")
-  const [height,setheight] = useState("49%")
   const trackRef = useRef();
   useEffect(() => {
     const child = track.attach();
@@ -18,28 +15,33 @@ const VideoTrack = ({ track , name }) => {
     }
   }, []);
 
-  
-  const handleClick=()=>{
-    console.log(width , height);
-    if(width==="99%"){
-      setwidth("49%");
-      setheight("49%");
-    }
-    else
-    {
+  const handleExpand = () => {
+    if (width === "49%") {
       setwidth("99%");
-      setheight("99%");
+    } else if (width === "24%") {
+      setwidth("49%");
     }
-  }
-  
+  };
+
+  const handleContract = () => {
+    if (width === "49%") {
+      setwidth("24%");
+    } else if (width === "99%") {
+      setwidth("49%");
+    }
+  };
+
   return ReactDOM.createPortal(
     <>
-      <div id="video_player" 
-      onCLick={handleClick}
-      style={{"width":width , "height":height}}>
+      <div id="video_player" style={{ width: width, height: width }}>
         <p id="video_head">{name}</p>
-        <div ref={trackRef}>
-        </div>
+        <div ref={trackRef}></div>
+        <p onClick={handleExpand} id="video_expand">
+          <i class="fas fa-expand"></i>
+        </p>
+        <p onClick={handleContract} id="video_contract">
+          <i class="fas fa-compress"></i>
+        </p>
       </div>
     </>,
     document.getElementById("videos_portal")

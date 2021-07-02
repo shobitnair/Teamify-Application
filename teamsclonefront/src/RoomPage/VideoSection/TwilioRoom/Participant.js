@@ -63,6 +63,14 @@ class Participant extends Component {
     let userID = this.props.participant.identity;
     let name = userID.slice(36,userID.length);
     //extracting username for displaying as video header. 
+    let count = 1;
+    this.state.tracks.forEach((track)=>{
+      if(track.kind === "video"){
+        count++;
+      }
+    })
+    console.log(count);
+  
     return (
       <div className="participant" id={userID}>
         {this.state.tracks.map((track) => {
@@ -75,6 +83,7 @@ class Participant extends Component {
               key={track} 
               track={track} 
               name={name}
+              count={count}
                />
             );
           }
