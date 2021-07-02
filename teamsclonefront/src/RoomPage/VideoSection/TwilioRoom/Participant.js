@@ -58,6 +58,7 @@ class Participant extends Component {
     }
   }
   render() {
+
     let userID = this.props.participant.identity;
     let name = userID.slice(36,userID.length);
     //extracting username for displaying as video header. 
@@ -68,7 +69,13 @@ class Participant extends Component {
             return <AudioTrack key={track} track={track} />;
           }
           if (track.kind === "video") {
-            return <VideoTrack key={track} track={track} name={name} />;
+            return(
+              <VideoTrack 
+              key={track} 
+              track={track} 
+              name={name}
+              room={this.props.room} />
+            );
           }
         })}
       </div>

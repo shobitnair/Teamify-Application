@@ -12,8 +12,8 @@ import {
   Hidden,
 } from "@material-ui/core"
 
-
 import "./RoomPage.css";
+
 
 const RoomPage = (props) => {
   const { identity, setTwilioAccessTokenAction, roomId , showOverlay } = props;

@@ -9,19 +9,19 @@ const MicButton = ({ room }) => {
   //Mic states
   const [isMicMuted, setIsMicMuted] = useState(false);
   const handleMicButtonPressed = () => {
-    isMicMuted ? unmute() : mute();
+    isMicMuted ? unmute(room) : mute(room);
     setIsMicMuted(!isMicMuted);
   };
 
   //turn off the local audio track
-  const mute = () => {
+  const mute = ({room}) => {
     room.localParticipant.audioTracks.forEach((localAudioTrackPublication) => {
       localAudioTrackPublication.track.disable();
     });
   };
 
   //turn oon the local audio track
-  const unmute = () => {
+  const unmute = ({room}) => {
     room.localParticipant.audioTracks.forEach((localAudioTrackPublication) => {
       localAudioTrackPublication.track.enable();
     });

@@ -103,6 +103,7 @@ class TwilioRoom extends Component {
           key={this.props.room.localParticipant.identity}
           localParticipant
           participant={this.props.room.localParticipant}
+          room={this.props.room}
         />
         {this.state.remoteParticipants.map((participant) => {
           return (

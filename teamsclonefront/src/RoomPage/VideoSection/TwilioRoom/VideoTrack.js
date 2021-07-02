@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import ReactDOM from "react-dom";
 
-const VideoTrack = ({ track , name }) => {
+
+
+const VideoTrack = ({ track , name , room }) => {
   const trackRef = useRef();
   useEffect(() => {
     const child = track.attach();

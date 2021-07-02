@@ -70,11 +70,11 @@
 }
 
 #chat{
-  width:24%;
+  width:21%;
   height:100vh;
   background:#BDBDE6;
   align-items: center;
-  padding:10px;
+  padding:5px;
   
 }
 
@@ -121,7 +121,7 @@
 #chat_bubble_A{
   word-wrap: break-word;
   max-width: 80%;
-  background-color: #464775;
+  background-color: #6264A7;
   color:#F4F4FC;
   height:fit-content;
   width:fit-content;
@@ -173,8 +173,8 @@
 }
 
 #chat_input {
-  font-size: 15px;
-  height:2.2vw;
+  font-size: 1.1vw;
+  height:24%;;
   background-color:white; 
   padding:15px;
   width:90%;
@@ -220,7 +220,7 @@
 
 
 #room{
-  width:55%;
+  width:58%;
   height:100vh;
   background-color: #33344A;
 }
@@ -315,7 +315,7 @@ video:hover{
   width:fit-content;
   height:fit-content;
   margin-left:2%;
-  margin-top:2%;
+  margin-top:4%;
   color:white;
   opacity:0.4;
   font-weight: 500;
