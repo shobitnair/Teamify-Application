@@ -39,7 +39,7 @@ const SwitchToScreenSharingButton = ({ room }) => {
     } 
     else {
       screenShareTrack.stop();
-
+      room.localParticipant.unpublishTrack(screenShareTrack);
       setScreenShareTrack(null);
       setIsActive(false);
     }

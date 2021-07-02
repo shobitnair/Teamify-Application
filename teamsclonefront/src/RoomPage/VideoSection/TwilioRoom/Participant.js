@@ -57,6 +57,7 @@ class Participant extends Component {
       });
     }
   }
+
   render() {
 
     let userID = this.props.participant.identity;
@@ -70,11 +71,11 @@ class Participant extends Component {
           }
           if (track.kind === "video") {
             return(
-              <VideoTrack 
+                <VideoTrack 
               key={track} 
               track={track} 
               name={name}
-              room={this.props.room} />
+               />
             );
           }
         })}

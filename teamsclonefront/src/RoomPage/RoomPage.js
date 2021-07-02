@@ -31,14 +31,12 @@ const RoomPage = (props) => {
     {showOverlay && <Overlay />}
       <Hidden smDown>
         <Grid container direction="row" spacing={2} id="page">
-          <Grid item id="participant">
-            <ParticipantsSection/>
-          </Grid>
-          <Grid item id="room">
+          <Grid item  id="room">
             <VideoSection />
           </Grid>
           <Grid item id="chat">
             <ChatSection />
+            <ParticipantsSection/>
           </Grid>
         </Grid>
       </Hidden>

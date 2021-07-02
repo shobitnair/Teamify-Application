@@ -7,7 +7,6 @@ const LeaveRoomButton = ({ room }) => {
 
   const handleLeaveEvent = () => {
     room.disconnect();
-
     //disconnect and go to Home
     const siteUrl = window.location.origin;
     window.location.href = siteUrl;
