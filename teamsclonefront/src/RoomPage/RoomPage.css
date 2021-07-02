@@ -133,7 +133,7 @@
   font-size:0.9vw;
   align-self:flex-end;
   margin-right: 7px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+  box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.2);
   border-radius: 3px;
 }
 
@@ -149,7 +149,7 @@
   width:fit-content;
   margin-top:2px;
   margin-left:10px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+  box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.2);
   border-radius: 3px;
 }
 
@@ -331,7 +331,7 @@ video:hover{
 }
 
 
-.vido{
+#video_player{
   width:49%;
   height:49%;
   margin-left:1%;
@@ -374,6 +374,13 @@ video:hover{
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
 }
 
-.tooltip{
-  font-size:20px;
+#video_head{
+  position:absolute;
+  font-size: 2vw;
+  top:0px;
+  left:0px;
+  margin-left:5%;
+  color:white;
+  opacity:0.4;
+  font-weight: 500;
 }

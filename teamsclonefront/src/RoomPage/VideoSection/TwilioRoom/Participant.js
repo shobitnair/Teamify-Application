@@ -57,16 +57,18 @@ class Participant extends Component {
       });
     }
   }
-
   render() {
+    let userID = this.props.participant.identity;
+    let name = userID.slice(36,userID.length);
+    console.log("kk",name);
     return (
-      <div className="participant" id={this.props.participant.identity}>
+      <div className="participant" id={userID}>
         {this.state.tracks.map((track) => {
           if (track.kind === "audio") {
             return <AudioTrack key={track} track={track} />;
           }
           if (track.kind === "video") {
-            return <VideoTrack key={track} track={track} />;
+            return <VideoTrack key={track} track={track} name={name} />;
           }
         })}
       </div>

@@ -17,6 +17,7 @@ import {
 
 const VideoButtons = (props) => {
   const { roomId, room, connectOnlyWithAudio } = props;
+  //console.log("a",roomId);
   return (
     <>
       <Grid container md={12} direction="row" justify="center">
@@ -42,7 +43,7 @@ const VideoButtons = (props) => {
         </Grid>
         <Grid item md={2} id="dock_bt">
           <Grid container md={12} id="dock_bt">
-            <ShareLinkButton text={roomId} />
+            <ShareLinkButton roomId={roomId} />
           </Grid>
         </Grid>
       </Grid>

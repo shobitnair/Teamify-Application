@@ -8,7 +8,9 @@ import {LightTooltip} from "./Tooltip"
 //toast notify utility
 toast.configure();
 
-const ShareLinkButton = ({text}) => {
+const ShareLinkButton = (props) => {
+
+    const {roomId} = props;
 
     //notification state.
     const [notif , setNotif] = useState(false);
@@ -17,6 +19,7 @@ const ShareLinkButton = ({text}) => {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
     const notify = async() =>{
+        alert(String(roomId))
         if(notif)return;
         setNotif(true);
         console.log(notif)
@@ -33,14 +36,15 @@ const ShareLinkButton = ({text}) => {
         setNotif(false)
     }
     return (
-        <CopyToClipboard text={text}>
-            <LightTooltip title="Copy Room ID to clipboard">
-                <Button id="other_bt"
-                onClick={notify}>
-                    <i class="fas fa-share-alt"></i>
-                </Button>
-            </LightTooltip>
-        </CopyToClipboard>
+        <LightTooltip title="Copy Room ID to clipboard">
+            <CopyToClipboard text={String(roomId)}>
+            <Button id="other_bt"
+            onClick={notify}>
+                <i class="fas fa-share-alt"></i>
+            </Button>
+            </CopyToClipboard>
+        </LightTooltip>
+
     )
 }
 

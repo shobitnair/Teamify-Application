@@ -9,8 +9,8 @@ import chat from "../resources/images/chat.svg"
 import chat2 from "../resources/images/chat2.svg"
 
 const JoinRoomPage = (props) => {
+  
   const { setIsRoomHostAction, isRoomHost } = props;
-
   const search = useLocation().search;
 
   useEffect(() => {
