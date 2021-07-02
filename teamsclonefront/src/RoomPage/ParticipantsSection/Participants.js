@@ -19,6 +19,7 @@ const Participants = ({ participants }) => {
         Other Participants : {participants.length}
       </div>
       {participants.map((person) => {
+        console.log(person);
         return (
           <Person
             key={person.identity}

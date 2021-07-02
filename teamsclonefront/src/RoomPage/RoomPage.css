@@ -16,8 +16,8 @@
   height:5%;
   padding:4px;
   font-weight: 500;
-  background-color:#464775;
-  color:#E2E2F6;
+  background-color:#6264A7;
+  color:white;
   text-align: left;
   border-radius:3px;
   margin-left:2%;
@@ -27,17 +27,14 @@
 
 #participant_count{
   font-weight: 500;
-  text-align: center;
-  background: #F4F4FC;
-  border-radius: 5px;
+  text-align: left;
+  border-bottom:3px solid #464775;
   width:80%;
   margin-left:1vw;
   height:30px;
   font-size: 1.2vw;
   margin-top: 10px;
-  padding:7px;
   color:#464775;
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2);
 }
 
 #participant_container {
@@ -87,8 +84,8 @@
   height:6%;
   padding:4px;
   font-weight: 500;
-  background-color:#464775;
-  color:#E2E2F6;
+  background-color:#6264A7;
+  color:white;
   text-align:left;
   border-radius:3px;
   margin-left:2%;
@@ -220,34 +217,7 @@
   border-radius: 2px;
 }
 
-.overlay_container {
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 82, 201, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  z-index: 2;
-}
 
-.loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #0052c9; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 #room{
   width:55%;
@@ -336,9 +306,23 @@ video:hover{
   height:49%;
   margin-left:1%;
   margin-top:1%;
+  position:relative;
 }
 
-
+#video_head{
+  position:absolute;
+  font-size: 2vw;
+  width:fit-content;
+  height:fit-content;
+  margin-left:2%;
+  margin-top:2%;
+  color:white;
+  opacity:0.4;
+  font-weight: 500;
+  background: rgb(0,0,0,0.1);
+  padding:3px;
+  border-radius: 5px;
+}
 
 .videos_container {
   height: 100%;
@@ -360,6 +344,8 @@ video:hover{
   padding:15px;
   width: 80%;
   height:50%;
+  font-size:1vw;
+  border-radius: 15px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
 }
 
@@ -370,17 +356,7 @@ video:hover{
   padding:7px;
   text-align: center;
   background-color: #464775;
-  border-radius:3px;
+  border-radius:5px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
 }
 
-#video_head{
-  position:absolute;
-  font-size: 2vw;
-  top:0px;
-  left:0px;
-  margin-left:5%;
-  color:white;
-  opacity:0.4;
-  font-weight: 500;
-}

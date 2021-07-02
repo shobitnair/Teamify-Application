@@ -19,7 +19,7 @@ const ShareLinkButton = (props) => {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
     const notify = async() =>{
-        alert(String(roomId))
+
         if(notif)return;
         setNotif(true);
         console.log(notif)

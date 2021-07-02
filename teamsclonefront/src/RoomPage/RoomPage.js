@@ -25,17 +25,10 @@ const RoomPage = (props) => {
     getTokenFromTwilio(setTwilioAccessTokenAction, identity);
   }, []);
 
-/*
-<div className="room_container">
-        <ParticipantsSection />
-        <VideoSection />
-        <ChatSection />
-        {showOverlay && <Overlay />}
-        </div>
-*/
 
   return (
     <>
+    {showOverlay && <Overlay />}
       <Hidden smDown>
         <Grid container direction="row" spacing={2} id="page">
           <Grid item id="participant">

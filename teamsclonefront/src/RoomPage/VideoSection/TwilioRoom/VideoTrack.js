@@ -15,8 +15,8 @@ const VideoTrack = ({ track , name }) => {
 
   return ReactDOM.createPortal(
     <>
-      <p id="video_head">{name}</p>
       <div id="video_player">
+        <p id="video_head">{name}</p>
         <div ref={trackRef}>
         </div>
       </div>

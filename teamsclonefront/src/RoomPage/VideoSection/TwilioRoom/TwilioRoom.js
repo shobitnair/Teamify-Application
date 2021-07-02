@@ -44,29 +44,6 @@ class TwilioRoom extends Component {
     });
   }
 
-  removeParticipantFromStore(participant) {
-    // find and erase participant from state.
-    const participants = store
-      .getState()
-      .participants.filter((p) => p.identity !== participant.identity);
-    store.dispatch(setParticipants(participants));
-  }
-
-  removeParticipant(participant) {
-    //Add Toast notification.
-    //console.log(`${participant.identity} has left the room`);
-    let name = `${participant.identity}`;
-    name = name.slice(36,name.length);
-    notify(name+" has left the room ");
-    this.removeParticipantFromStore(participant);
-
-    //Update participant state.
-    this.setState({
-      remoteParticipants: this.state.remoteParticipants.filter(
-        (p) => p.identity !== participant.identity
-      ),
-    });
-  }
 
   addParticipantToStore(participant) {
     const participants = store.getState().participants;
@@ -90,6 +67,30 @@ class TwilioRoom extends Component {
     this.addParticipantToStore(participant);
     this.setState({
       remoteParticipants: [...this.state.remoteParticipants, participant],
+    });
+  }
+
+  removeParticipantFromStore(participant) {
+    // find and erase participant from state.
+    const participants = store
+      .getState()
+      .participants.filter((p) => p.identity !== participant.identity);
+    store.dispatch(setParticipants(participants));
+  }
+
+  removeParticipant(participant) {
+    //Add Toast notification.
+    //console.log(`${participant.identity} has left the room`);
+    let name = `${participant.identity}`;
+    name = name.slice(36,name.length);
+    notify(name+" has left the room ");
+    this.removeParticipantFromStore(participant);
+
+    //Update participant state.
+    this.setState({
+      remoteParticipants: this.state.remoteParticipants.filter(
+        (p) => p.identity !== participant.identity
+      ),
     });
   }
 

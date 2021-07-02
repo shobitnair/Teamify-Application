@@ -60,7 +60,7 @@ class Participant extends Component {
   render() {
     let userID = this.props.participant.identity;
     let name = userID.slice(36,userID.length);
-    console.log("kk",name);
+    //extracting username for displaying as video header. 
     return (
       <div className="participant" id={userID}>
         {this.state.tracks.map((track) => {
