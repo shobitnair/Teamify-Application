@@ -13,6 +13,8 @@ const HomeButtons = () => {
     <>
       <Grid 
       container 
+      xs={12}
+      alignItems="center"
       direction="column">
         <Grid item>
           <Button 

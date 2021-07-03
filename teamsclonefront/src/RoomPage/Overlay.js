@@ -1,5 +1,5 @@
 import React from "react";
-import "./Overlay.css"
+import "../resources/css/Overlay.css"
 
 const Overlay = () => {
   return (

@@ -1,20 +1,27 @@
+#join-room-page{
+  background-color:var(--p20) ;
+  height:120vh;
+}
+
 #bt1{
-  background-color:#464775;
+  background-color:var(--d10);
   color:white;
   padding:15px;
   margin-top:10px;
-  width:200px;
+  max-width:200px;
+  width:40vw;
   height:50px;
   z-index:3;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 #bt2{
-  background-color:#ef5350;
+  background-color:var(--s);
   color:white;
   padding:15px;
   margin-top:10px;
-  width:200px;
+  max-width:200px;
+  width:40vw;;
   height:50px;
   z-index:3;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -29,19 +36,19 @@
 
 #button_container{
   height:50%;
-  background-color: #BDBDE6;
+  background-color: var(--p20);
   
 }
 
 #Grid1{
   height:30%;
-  background-color: #BDBDE6;
+  background-color: var(--p20);
 }
 
 #input_container{
   margin-top: 10px;
   height:250px;
-  background-color:#BDBDE6;
+  background-color:var(--p20);
 }
 
 #room_input, #name_input {
@@ -50,7 +57,7 @@
   padding:15px;
   width:200px;
   height:30px;
-  border:5px solid #464775;
+  border:5px solid var(--d10);
   border-radius:10px;
   margin-top:10px;
   z-index: index 4;;
@@ -61,28 +68,28 @@
   height:10%;
   align-items: center;
   text-align:center;
-  background-color:#E2E2F6;
+  background-color:var(--p30);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 #title{
-  font-size: 5vh;
-  color:#464775;
+  font-size: 30px;
+  color:var(--d10);
   font-weight: 700;
 }
 
 
 #img1{
-  width:40%;
+  width:35%;
   position:fixed;
   left:0;bottom:0;
   z-index:2;
 }
 
 #img2{
-  width:40%;
+  width:35%;
   position:fixed;
   right:0;bottom:0;
   z-index:2;

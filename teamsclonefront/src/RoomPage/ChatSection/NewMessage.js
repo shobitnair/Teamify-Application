@@ -38,7 +38,7 @@ const NewMessage = () => {
   return (
     <div>
       <Grid container direction="row">
-        <Grid item md={9}>
+        <Grid item xs={8}>
           <textarea
             id="chat_input"
             value={message}
@@ -48,11 +48,11 @@ const NewMessage = () => {
             onKeyDown={handleKeyPressed}
           />
         </Grid>
-        <Grid item md={3}>
+        <Grid item xs={4}>
           <Grid container 
           direction="column"
           alignItems="center">
-            <Grid item md={12}>
+            <Grid item xs={8}>
               <LightTooltip title="Send Message">
                 <div id="chat_util"
                   src={SendMessageButton}
@@ -62,7 +62,7 @@ const NewMessage = () => {
                 </div>
               </LightTooltip>
             </Grid>
-            <Grid item md={12}>
+            <Grid item xs={8}>
               <LightTooltip title="Scroll down messages">
                 <div 
                 onClick={updateScroll}

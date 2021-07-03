@@ -9,8 +9,8 @@ const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
   if(messageCreatedByMe)return (
     <>
       <Grid container direction="row">
-        <Grid item md={4}></Grid>
-        <Grid item md={8}>
+        <Grid item xs={4}></Grid>
+        <Grid item xs={8}>
           <Grid container direction="column">
             {!sameAuthor &&(
               <div id="chat_head_A">{authorText}</div>
@@ -26,7 +26,7 @@ const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
   else return(
     <>
       <Grid container direction="row">
-        <Grid item md={8}>
+        <Grid item xs={8}>
           <Grid container direction="column">
             {!sameAuthor &&(
               <div id="chat_head_B">{author}</div>
@@ -36,7 +36,7 @@ const Message = ({ author, content, sameAuthor, messageCreatedByMe }) => {
             </div>
           </Grid>
         </Grid>
-        <Grid item md={4}></Grid>
+        <Grid item xs={4}></Grid>
       </Grid>
     </>
   )

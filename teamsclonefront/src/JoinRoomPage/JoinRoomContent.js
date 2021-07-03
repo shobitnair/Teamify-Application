@@ -71,7 +71,7 @@ const JoinRoomContent = (props) => {
   
   return (
     <>
-    <Grid xs={1} md={4}></Grid>
+    <Grid item xs={1} md={4}></Grid>
     <JoinRoomInputs
         roomIdValue={roomIdValue}
         setRoomIdValue={setRoomIdValue}
@@ -79,43 +79,45 @@ const JoinRoomContent = (props) => {
         setNameValue={setNameValue}
         isRoomHost={isRoomHost}
     />
-    <Grid xs={1} md={4} ></Grid>
-    <Grid xs={1} md={4} ></Grid>
-    <Grid xs={10} md={4}
-    container
-    direction="column"
-    id="button_container"
-    alignItems="center"
-    justify="center"
-    >
-      <Grid container xs={12} md={12}
+    <Grid item xs={1} md={4} ></Grid>
+    <Grid item xs={1} md={4} ></Grid>
+    <Grid item xs={10} md={4}>
+      <Grid xs={12} 
+      container
       direction="column"
-      alignItems="center">
-        <Grid item xs={8} md={8}>
-          <div hidden={!RoomError} >
-            <Alert severity="error">
-              <AlertTitle>Invalid Room ID </AlertTitle>
-            </Alert>
-          </div>
-        </Grid>
-        <Grid item xs={8} md={8}>
-        <LinearProgress hidden={!JoinClicked} />
-          <Button id="bt1" onClick={handleJoinToRoom}>
-            {isRoomHost ? "Host" : "Join"}
+      id="button_container"
+      alignItems="center"
+      justify="center"
+      >
+        <Grid container xs={12}
+        direction="column"
+        alignItems="center">
+          <Grid item xs={12} >
+            <div hidden={!RoomError} >
+              <Alert severity="error">
+                <AlertTitle>Invalid Room ID </AlertTitle>
+              </Alert>
+            </div>
+          </Grid>
+          <Grid item xs={12}>
+          <LinearProgress hidden={!JoinClicked} />
+            <Button id="bt1" onClick={handleJoinToRoom}>
+              {isRoomHost ? "Host" : "Join"}
+            </Button>
+          </Grid>
+          <Grid item xs={12}>
+          <Button
+            id="bt2" 
+            disabled={JoinClicked}
+            onClick={() => history.push("/")}>
+            Cancel
           </Button>
         </Grid>
-        <Grid item xs={8} md={8}>
-        <Button
-          id="bt2" 
-          disabled={JoinClicked}
-          onClick={() => history.push("/")}>
-          Cancel
-        </Button>
+        </Grid>
+        
       </Grid>
-      </Grid>
-      
     </Grid>
-    <Grid xs={1} md={4}>
+    <Grid item xs={1} md={4}>
     </Grid>
     </>
   );

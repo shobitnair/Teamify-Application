@@ -4,9 +4,10 @@ import { setIsRoomHost } from "../store/actions";
 import { useLocation } from "react-router-dom";
 import JoinRoomContent from "./JoinRoomContent";
 import {Grid , Hidden} from "@material-ui/core" 
-import "./JoinRoomPage.css";
+import "../resources/css/JoinRoomPage.css";
 import chat from "../resources/images/chat.svg"
 import chat2 from "../resources/images/chat2.svg"
+import home4 from "../resources/images/home4.svg"
 
 const JoinRoomPage = (props) => {
   
@@ -23,11 +24,10 @@ const JoinRoomPage = (props) => {
   const titleText = isRoomHost ? "Host meeting" : "Join meeting";
 
   return (
-    <div 
-    style={{"backgroundColor":'#BDBDE6' , "height":'120vh' }}>
+    <div id="join-room-page">
       <Hidden smDown>
       <img src={chat} id="img1"></img>
-      <img src={chat2} id="img2"></img>
+      <img src={home4} id="img2"></img>
       </Hidden>
       <Grid container >
         <Grid item xs={1} md={4} ></Grid>

@@ -12,7 +12,7 @@ import {
   Hidden,
 } from "@material-ui/core"
 
-import "./RoomPage.css";
+import "../resources/css/RoomPage.css";
 
 
 const RoomPage = (props) => {
@@ -29,9 +29,8 @@ const RoomPage = (props) => {
   return (
     <>
     {showOverlay && <Overlay />}
-
         <Grid container direction="row" spacing={2} id="page">
-          <Grid item id="chat">
+          <Grid item id="participant">
             <ParticipantsSection/>
           </Grid>
           <Grid item  id="room">
@@ -41,7 +40,6 @@ const RoomPage = (props) => {
             <ChatSection />
           </Grid>
         </Grid>
-
     </>
   );
 };

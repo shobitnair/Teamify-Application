@@ -1,0 +1,48 @@
+
+
+#Grid1{
+  height:40%;
+  background-color: var(--p20);
+}
+
+#Grid2{
+    height:20%;
+    background-color: var(--p20);
+}
+
+
+#logo1{
+    height:80%;
+    width: 90%;
+    border-radius:5px;
+    border-right:10px solid var(--d10);
+    border-bottom:10px solid var(--d10);
+    margin-left:3%;
+    margin-top:3%;
+    padding:5px;
+}
+
+#logo2{
+    height:80%;
+    width: 90%;
+    border-radius:5px;
+    border-left:10px solid var(--d10);
+    border-top:10px solid var(--d10);
+    margin-left:3%;
+    margin-top:3%;
+    padding:5px;
+}
+
+#bt_default{
+    background-color:var(--d10);
+    color:white;
+    padding:10px;
+    width:min(50vw,200px);
+    margin-top:10px;
+    font-size:min(2vh , 30px);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#whole{
+    height:110vh;
+  }
