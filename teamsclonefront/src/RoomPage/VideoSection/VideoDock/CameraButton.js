@@ -24,7 +24,7 @@ const CameraButton = ({ room }) => {
     room.localParticipant.videoTracks.forEach((stream) => {
       //console.log(stream.track.name);
       //Delete user video streams that are videos.
-      if(stream.track.name !== "screen-share-track"){
+      if (stream.track.name !== "screen-share-track") {
         stream.track.disable();
       }
     });
@@ -36,7 +36,7 @@ const CameraButton = ({ room }) => {
   return (
     <LightTooltip title="Turn On/Off your Camera">
       <Button id="other_bt" onClick={handleCameraEvent}>
-      {!isCameraOff ? cameraON : cameraOFF}
+        {!isCameraOff ? cameraON : cameraOFF}
       </Button>
     </LightTooltip>
   );

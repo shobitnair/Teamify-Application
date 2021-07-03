@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import JoinRoomPage from "./JoinRoomPage/JoinRoomPage";
 import RoomPage from "./RoomPage/RoomPage";
 import IntroductionPage from "./IntroductionPage/IntroductionPage";
-import LeaveRoomButton from "./RoomPage/VideoSection/VideoDock/LeaveRoomButton"
 
 import "./App.css";
 

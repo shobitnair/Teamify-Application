@@ -10,13 +10,13 @@ const VideoSection = () => {
     <>
       <Grid container direction="column">
         <Grid item md={12}>
-          <div id="video_container">
-            <Videos room={room} setRoom={setRoom} />
+          <div id="video_dock">
+            <VideoButtons room={room} />
           </div>
         </Grid>
         <Grid item md={12}>
-          <div id="video_dock">
-            <VideoButtons room={room} />
+          <div id="video_container">
+            <Videos room={room} setRoom={setRoom} />
           </div>
         </Grid>
       </Grid>

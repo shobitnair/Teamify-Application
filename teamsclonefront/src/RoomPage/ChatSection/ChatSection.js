@@ -6,13 +6,13 @@ import {Grid} from "@material-ui/core"
 const ChatSection = () => {
   return (
     <>
-      <Grid item md={12} id="chat_header">
+      <Grid item xs={12} id="chat_header">
           MESSAGES
       </Grid>
-      <Grid item md={12} id="chat_bubble_block">
+      <Grid item xs={12} id="chat_bubble_block">
         <Messages></Messages>
       </Grid>
-      <Grid item md={12} id="chat_input_block">
+      <Grid item xs={12} id="chat_input_block">
         <NewMessage></NewMessage>
       </Grid>
     </>

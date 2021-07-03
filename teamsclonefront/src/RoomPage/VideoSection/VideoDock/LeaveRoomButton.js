@@ -1,6 +1,6 @@
 import React  from "react";
 import { Button } from "@material-ui/core";
-
+import {LightTooltip} from "./Tooltip"
 
 
 const LeaveRoomButton = ({ room }) => {
@@ -14,9 +14,11 @@ const LeaveRoomButton = ({ room }) => {
 
   
   return (
-    <Button onClick={handleLeaveEvent} id="leave_bt">
-      Leave Room
+    <LightTooltip title="Leave Room">
+      <Button onClick={handleLeaveEvent} id="leave_bt">
+      <i class="fas fa-phone-slash"></i>
     </Button>
+    </LightTooltip>
   );
 };
 

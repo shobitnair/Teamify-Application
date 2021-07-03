@@ -5,45 +5,50 @@ import CameraButton from "./CameraButton";
 import LeaveRoomButton from "./LeaveRoomButton";
 import SwitchToScreenSharingButton from "./SwitchToScreenSharingButton";
 import ShareLinkButton from "./ShareLinkButton";
-import { 
-  Grid, 
+import {
+  Grid,
   Button,
   makeStyles,
   withStyles,
-  Tooltip 
+  Tooltip,
 } from "@material-ui/core";
 
-
+//Omit screenshare feature for mobile devices.
+var windowWidth =
+  window.screen.width < window.outerWidth
+    ? window.screen.width
+    : window.outerWidth;
+var isSmall = windowWidth <= 960;
 
 const VideoButtons = (props) => {
   const { roomId, room, connectOnlyWithAudio } = props;
   //console.log("a",roomId);
   return (
     <>
-      <Grid container xs={12} direction="row" justify="center">
-        <Grid item xs={2}>
+      <Grid container xs={12}  direction="row" justify="space-evenly">
+        <Grid item>
           <Grid container xs={12} id="dock_bt">
             <MicButton room={room} />
           </Grid>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item>
           <Grid container xs={12} id="dock_bt">
-            <CameraButton room={room} onlyaudio={connectOnlyWithAudio} />
+            <CameraButton room={room}/>
           </Grid>
         </Grid>
-        <Grid item xs={4}>
-          <Grid container xs={12} id="dock_bt">
-            <LeaveRoomButton room={room} />
-          </Grid>
-        </Grid>
-        <Grid item xs={2}>
+        <Grid item hidden={isSmall}>
           <Grid container xs={12} id="dock_bt">
             <SwitchToScreenSharingButton room={room} />
           </Grid>
         </Grid>
-        <Grid item xs={2} id="dock_bt">
+        <Grid item>
           <Grid container xs={12} id="dock_bt">
             <ShareLinkButton roomId={roomId} />
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Grid container xs={12} id="dock_bt">
+            <LeaveRoomButton room={room} />
           </Grid>
         </Grid>
       </Grid>

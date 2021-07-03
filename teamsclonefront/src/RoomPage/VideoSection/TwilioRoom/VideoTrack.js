@@ -1,9 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
 import ReactDOM from "react-dom";
-import {LightTooltip} from "../VideoDock/Tooltip"
+import { LightTooltip } from "../VideoDock/Tooltip";
+
+var windowWidth =
+  window.screen.width < window.outerWidth
+    ? window.screen.width
+    : window.outerWidth;
+var isSmall = windowWidth <= 960;
 
 const VideoTrack = ({ track, name, count }) => {
-  const [width, setwidth] = useState("49%");
+  //nearly
+
+  let large = isSmall ? 95 : 56; //video portal widths
+  let medium = large / 2;
+  let small = large / 4;
+
+  //width and preview states for each video element.
+  const [width, setwidth] = useState(medium);
 
   //twilio documented way to pass video streams into DOM.
   const trackRef = useRef();
@@ -12,42 +25,51 @@ const VideoTrack = ({ track, name, count }) => {
     trackRef.current.classList.add(track.kind);
     trackRef.current.appendChild(child);
     const videosPortal = document.getElementById("videos_portal");
-    if (!videosPortal.classList.contains("videos_portal_styles")) {
-      videosPortal.classList.add("videos_portal_styles");
+    if (isSmall) {
+      if (!videosPortal.classList.contains("videos_mobile_portal_styles")) {
+        videosPortal.classList.add("videos_mobile_portal_styles");
+      }
+    } else {
+      if (!videosPortal.classList.contains("videos_portal_styles")) {
+        videosPortal.classList.add("videos_portal_styles");
+      }
     }
   }, []);
 
+  console.log(windowWidth);
   const handleExpand = () => {
-    if (width === "49%") {
-      setwidth("99%");
-    } else if (width === "24%") {
-      setwidth("49%");
-    }
+    if (width === medium) setwidth(large);
+    else if (width === small) setwidth(medium);
   };
 
   const handleContract = () => {
-    if (width === "49%") {
-      setwidth("24%");
-    } else if (width === "99%") {
-      setwidth("49%");
-    }
+    if (width === large) setwidth(medium);
+    else if (!isSmall && width === medium) setwidth(small);
   };
 
   return ReactDOM.createPortal(
     <>
-      <div id="video_player" style={{ width: width, height: width }}>
-        <p id="video_head">{name}</p>
+      <div
+        id="video_player"
+        style={{
+          width: String(width) + "vw",
+          height: String(width / 1.5) + "vw",
+        }}
+      >
         <div ref={trackRef}></div>
-        <LightTooltip title="Expand Video">
-          <p onClick={handleExpand} id="video_expand">
-            <i class="fas fa-expand"></i>
-          </p>
-        </LightTooltip>
-        <LightTooltip title="Contract Video">
-          <p onClick={handleContract} id="video_contract">
-            <i class="fas fa-compress"></i>
-          </p>
-        </LightTooltip>
+          <LightTooltip title={name}>
+            <p id="video_head">{name}</p>
+          </LightTooltip>
+          <LightTooltip title="Expand Video">
+            <p onClick={handleExpand} id="video_expand">
+              <i class="fas fa-expand"></i>
+            </p>
+          </LightTooltip>
+          <LightTooltip title="Contract Video">
+            <p onClick={handleContract} id="video_contract">
+              <i class="fas fa-compress"></i>
+            </p>
+          </LightTooltip>
       </div>
     </>,
     document.getElementById("videos_portal")

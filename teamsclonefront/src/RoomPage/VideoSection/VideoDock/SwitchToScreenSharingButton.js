@@ -4,6 +4,7 @@ import LocalScreenSharingPreview from "./ScreenSharePreview";
 import { Button } from "@material-ui/core";
 import { LightTooltip } from "./Tooltip";
 
+
 const SwitchToScreenSharingButton = ({ room }) => {
   //ScreenShare states
   const [isActive, setIsActive] = useState(false);

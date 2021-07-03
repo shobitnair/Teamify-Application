@@ -20,7 +20,7 @@ const MicButton = ({ room }) => {
     });
   };
 
-  //turn oon the local audio track
+  //turn on the local audio track
   const unmute = () => {
     room.localParticipant.audioTracks.forEach((localAudioTrackPublication) => {
       localAudioTrackPublication.track.enable();
