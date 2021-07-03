@@ -26,7 +26,6 @@ const JoinRoomInputs = (props) => {
     <>
       <Grid 
       container 
-      xs={10} md={4}
       id="input_container"
       alignItems="center"
       justify="center">

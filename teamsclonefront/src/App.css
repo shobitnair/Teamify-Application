@@ -31,3 +31,7 @@
     --s:#ef5350;
 }
 
+#main{
+    height:fit-content;
+    background-color:var(--p20);
+}

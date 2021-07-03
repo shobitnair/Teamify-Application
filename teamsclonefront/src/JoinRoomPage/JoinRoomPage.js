@@ -29,13 +29,18 @@ const JoinRoomPage = (props) => {
       <img src={chat} id="img1"></img>
       <img src={home4} id="img2"></img>
       </Hidden>
+      <Hidden mdUp>
+        <img src={home4} id="img_mobile"></img>
+      </Hidden>
       <Grid container >
         <Grid item xs={1} md={4} ></Grid>
         <Grid item xs={10} md={4} id="title_container">
           <p id="title">{titleText}</p>
         </Grid>
         <Grid item xs={1} md={4}></Grid>
-        <JoinRoomContent />
+        <Grid item xs={12}>
+          <JoinRoomContent />
+        </Grid>
       </Grid>
     </div>
   );

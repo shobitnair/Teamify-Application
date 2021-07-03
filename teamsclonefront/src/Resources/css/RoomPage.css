@@ -200,22 +200,6 @@
   transform : scale(1.1);
 }
 
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 2px;
-  background-color: rgb(0,0,0,0.2);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--d10);
-  opacity:0.2;
-  border-radius: 2px;
-}
-
-
 
 #room{
   width:59%;

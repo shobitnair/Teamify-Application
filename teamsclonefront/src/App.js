@@ -9,7 +9,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="theme_default">
+    <div className="theme_default" id="main">
       <Router>
         <Switch>
           <Route path="/join-room">
