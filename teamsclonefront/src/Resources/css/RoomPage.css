@@ -4,206 +4,6 @@
   background:var(--p30);
 }
 
-#participant{
-  position:relative;
-  width:100%;
-  height:100%;
-  background:var(--d20);
-  z-index:2;
-}
-
-
-#participant_header{
-  font-size: max(18px,1.4vw);
-  height:max(40px , 6%);
-  padding:10px;
-  font-weight: 500;
-  background-color:var(--p);
-  color:white;
-  text-align:left;
-  border-radius:3px;
-  width:96%;
-  margin-left: 1.5%;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);;
-}
-
-#participant_count{
-  font-weight: 500;
-  text-align: left;
-  border-bottom:3px solid var(--d10);
-  margin-left: 2%;
-  margin-right: 2%;
-  width:96%;
-  height:30px;
-  font-size: max(14,1.2vw);
-  margin-top: 10px;
-  color:var(--d10);
-}
-
-#participant_container {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  align-content: flex-start;
-  height:60vh;
-  margin-top: 5px;
-  margin-left: 1.5%;
-  width:94%;
-  padding:2px;
-  background: var(--p40);
-  border-radius:5px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
-  background-color: var(--p40);
-
-}
-
-#participant_block{
-  background: var(--p40);
-  border-radius: 5px;
-  width:80%;
-  margin-left:5px;
-  margin-right:5px;
-  height:20px;
-  font-size: max(14px,1vw);
-  margin-top: 10px;
-  padding:7px;
-  color:var(--d10);
-}
-
-#chat{
-  position:relative;
-  width:100%;
-  height:98%;
-  background:var(--d20);
-  align-items: center;
-  padding:5px;
-  z-index:2;
-}
-
-
-#chat_header{
-  font-size: max(16px,1.4vw);
-  height:max(40px , 6%);
-  padding:10px;
-  font-weight: 600;
-  background-color:var(--p);
-  color:white;
-  text-align:left;
-  border-radius:3px;
-  margin-left: 2%;
-  margin-right:3%;
-  width:96%;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);;
-}
-
-#chat_head_A{
-  align-self:flex-end;
-  text-align: right;
-  font-size:max(12px,1.1vw);
-  width:100%;
-  font-weight: 500; 
-  color: var(--d10);
-  margin-top: 10px; 
-  margin-bottom:3px;
-  border-bottom: 3px solid var(--d10);
-}
-
-#chat_head_B{
-  align-self:flex-start;
-  text-align: left;
-  width:100%;
-  font-size:max(12px,1.1vw);
-  font-weight: 500;
-  margin-top: 10px;
-  margin-bottom:3px; 
-  color: var(--d10);
-  border-bottom: 3px solid var(--d10);
-}
-
-
-#chat_bubble_A{
-  word-wrap: break-word;
-  max-width: 80%;
-  background-color: var(--p);
-  color:var(--p40);
-  height:fit-content;
-  width:fit-content;
-  padding:10px;
-  margin-top:2px;
-  font-size:max(12px,0.9vw);
-  align-self:flex-end;
-  margin-right: 5px;
-  border-radius: 3px;
-}
-
-#chat_bubble_B{
-  word-wrap: break-word;
-  background-color:var(--p30);
-  color:var(--d20);
-  font-weight:400;
-  height:fit-content;
-  padding:10px;
-  max-width: 80%;
-  font-size:max(12px,0.9vw);
-  width:fit-content;
-  margin-left:5px;
-  border-radius: 3px;
-}
-
-
-#chat_bubble_block{
-  height:76%;
-  margin-top: 5px;
-  margin-left: 2%;
-  margin-right:2%;
-  width:96%;
-  padding:2px;
-  background: var(--p40);
-  border-radius:3px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  background-color: var(--p40);
-}
-
-#chat_input_block{
-  margin-top:10px;
-  margin-left:min(10px , 5%);
-  width:100%;
-}
-
-#chat_input {
-  font-size: max(12px,0.9vw);
-  height:50%;
-  background-color:white; 
-  padding:min(15px,8%);
-  width:90%;
-  border:5px solid var(--d10);
-  border-radius:10px;
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
-  word-wrap: break-word;
-  font-family: 'Roboto';
-}
-
-#chat_util {
-  font-size: max(16px,1.4vw);
-  color:var(--p40);
-  width: max(22px,1.8vw);;
-  padding:5px;
-  margin-top:2px;
-  margin-left:15px;
-  text-align: center;
-  background-color: var(--d20);
-  border-radius:3px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-#chat_util :hover{
-  transform : scale(1.1);
-}
-
 ::-webkit-scrollbar {
   position:fixed;
   width: 3px;
@@ -219,8 +19,6 @@
   opacity:0.1;
 }
 
-
-
 #room{
   width:100%;
   height:100%;
@@ -233,12 +31,12 @@
 }
 
 #video_container{
-  height:80vh;
+  height:80%;
 }
 
 #video_dock{
   margin-top:12px;
-  height: 9vh;
+  height:max(40px,7%);
   width:94%;
   margin-left:3%;
   margin-right: 3%;
@@ -283,131 +81,17 @@
 }
 
 
-video {
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
-  border-radius:10px;
-  background-color: #484644;
-}
-
-
-
-.room_label {
-  position: absolute;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  z-index: 4;
-}
-
-
-#video_player{
-  margin-left:1%;
-  margin-top:1%;
-  position:relative;
-}
-
-#video_head{
-  position:absolute;
-  font-size: max(14px,1.2vw);
-  left:1%;
-  top:0px;
-  color:white;
-  opacity:0.4;
-  background: rgb(0,0,0,0.2);
-  padding:3px;
-  border-radius: 5px;
-}
-
-#video_expand{
-  position:absolute;
-  font-size: max(12px,1vw);
-  bottom:2%;
-  right:2%;
-  color:white;
-  padding:5px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#video_contract{
-  position:absolute;
-  font-size: max(12px,1vw);
-  width:fit-content;
-  height:fit-content;
-  top:2%;
-  right:2%;
-  font-weight: 700;
-  color:white;
-  padding:5px;
-  border-radius:4px;
-  cursor: pointer;
-}
-
-.participant{
-  flex-grow: 1;
-}
-
-#dock_bt{
-  width:95%;
-  align-items: center;
-  height:10vh;
-}
-
-#leave_bt{
-  height:90%;
-  width:20%;
-  font-size:20px;
-  color:var(--s);
-}
-
-#other_bt{
-  z-index:50;
-  color:var(--d10);
-  font-size:20px;
-  height:90%;
-  width:20%;
-}
-
-.videos_portal_styles {
-  position: absolute;
-  display: flex;
-  flex-wrap: wrap;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  width: 59%;
-  margin-left:21%;
-  height: 80vh;
-  left: 0;
-  top: 14%;
-}
-
-.videos_mobile_portal_styles {
-  position: absolute;
-  display: flex;
-  flex-wrap: wrap;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  width: 99%;
-  margin-left:4px;
-  height: 77vh;
-  left: 0;
-  top: 14%;
-  z-index:1;
-}
-
 #navbar{
-  height:10vh;
+  height:max(40px,7%);
   width:100%;
   background:var(--p40);
-  position:relative;
-  bottom:0;
+  position:fixed;
+  bottom:0px;
 }
 
 #nav_bt{
   z-index:50;
-  color:var(--d10);
+  color:var(--p);
   font-size:20px;
   height:90%;
   width:25%;

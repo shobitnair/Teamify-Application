@@ -10,11 +10,13 @@ const Person = ({ identity}) => {
   );
 };
 
+const kapa =["Shobit" , "Vinay ", "Sony","Kpakane"];
+
 //participant block with header , count and array of participants.
 const Participants = ({ participants }) => {
 
   return (
-    <div id="participant_container">
+    <>
       <div id="participant_count">
         Other Participants : {participants.length}
       </div>
@@ -26,7 +28,7 @@ const Participants = ({ participants }) => {
           />
         );
       })}
-    </div>
+    </>
   );
 };
 

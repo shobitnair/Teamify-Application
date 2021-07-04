@@ -11,8 +11,6 @@ import Overlay from "./Overlay";
 import { useHistory } from "react-router-dom";
 import { Grid, Hidden } from "@material-ui/core";
 
-import "../resources/css/RoomPage.css";
-
 const RoomPage = (props) => {
   const { identity, setTwilioAccessTokenAction, roomId, showOverlay } = props;
   const history = useHistory();

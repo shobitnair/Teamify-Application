@@ -3,12 +3,18 @@ import Participant from "./Participant";
 import { setParticipants } from "../../../store/actions";
 import { store } from "../../../store/store";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"
+import "react-toastify/dist/ReactToastify.css";
+
+var windowWidth =
+  window.screen.width < window.outerWidth
+    ? window.screen.width
+    : window.outerWidth;
+var isSmall = windowWidth <= 960;
 
 //toast notify utility
 toast.configure();
-const notify = (str) =>{
-  toast.dark(str , {
+const notify = (str) => {
+  toast.dark(str, {
     position: "bottom-left",
     autoClose: 1700,
     hideProgressBar: true,
@@ -17,7 +23,9 @@ const notify = (str) =>{
     draggable: true,
     progress: undefined,
   });
-}
+};
+
+// Methods follow as per the twilio API documentation
 
 class TwilioRoom extends Component {
   constructor(props) {
@@ -44,7 +52,6 @@ class TwilioRoom extends Component {
     });
   }
 
-
   addParticipantToStore(participant) {
     const participants = store.getState().participants;
     //check if the participant already exists
@@ -57,13 +64,13 @@ class TwilioRoom extends Component {
     }
   }
 
+  //update state and notify if a person enters
   addParticipant(participant) {
-    //Add Toast Notification.
-    //console.log(`${participant.identity} has joined the room`);
     let name = `${participant.identity}`;
-    name = name.slice(36,name.length);
-    notify(name+" has joined the room ");
-    //Update participant state.
+    name = name.slice(36, name.length);
+    if (!isSmall) {
+      notify(name + " has joined the room ");
+    }
     this.addParticipantToStore(participant);
     this.setState({
       remoteParticipants: [...this.state.remoteParticipants, participant],
@@ -78,12 +85,13 @@ class TwilioRoom extends Component {
     store.dispatch(setParticipants(participants));
   }
 
+  //update state and notify if a person leaves.
   removeParticipant(participant) {
-    //Add Toast notification.
-    //console.log(`${participant.identity} has left the room`);
     let name = `${participant.identity}`;
-    name = name.slice(36,name.length);
-    notify(name+" has left the room ");
+    name = name.slice(36, name.length);
+    if (!isSmall) {
+      notify(name + " has left the room ");
+    }
     this.removeParticipantFromStore(participant);
 
     //Update participant state.

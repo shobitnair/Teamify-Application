@@ -5,6 +5,13 @@ import RoomPage from "./RoomPage/RoomPage";
 import IntroductionPage from "./IntroductionPage/IntroductionPage";
 
 import "./App.css";
+import "./resources/css/ChatSection.css"
+import "./resources/css/IntroductionPage.css";
+import "./resources/css/JoinRoomPage.css";
+import "./resources/css/Overlay.css";
+import "./resources/css/RoomPage.css";
+import "./resources/css/VideoSection.css";
+import "./resources/css/ParticipantSection.css"
 
 function App() {
   return (

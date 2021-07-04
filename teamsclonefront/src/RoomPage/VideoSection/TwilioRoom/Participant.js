@@ -3,8 +3,6 @@ import AudioTrack from "./AudioTrack";
 import VideoTrack from "./VideoTrack";
 import { addMessageToMessenger } from "../../../utils/twilioUtils";
 
-
-
 class Participant extends Component {
   constructor(props) {
     super(props);
@@ -59,18 +57,17 @@ class Participant extends Component {
   }
 
   render() {
-
     let userID = this.props.participant.identity;
-    let name = userID.slice(36,userID.length);
-    //extracting username for displaying as video header. 
+    let name = userID.slice(36, userID.length);
+
+    //extracting username for displaying as video header.
     let count = 1;
-    this.state.tracks.forEach((track)=>{
-      if(track.kind === "video"){
+    this.state.tracks.forEach((track) => {
+      if (track.kind === "video") {
         count++;
       }
-    })
-    console.log(count);
-  
+    });
+
     return (
       <div className="participant" id={userID}>
         {this.state.tracks.map((track) => {
@@ -78,13 +75,8 @@ class Participant extends Component {
             return <AudioTrack key={track} track={track} />;
           }
           if (track.kind === "video") {
-            return(
-                <VideoTrack 
-              key={track} 
-              track={track} 
-              name={name}
-              count={count}
-               />
+            return (
+              <VideoTrack key={track} track={track} name={name} count={count} />
             );
           }
         })}

@@ -8,11 +8,11 @@ const RoomPageLarge = () => {
   return (
     <Grid container direction="row" id="page" style={{height: "100vh"}}>
 
-      <Grid item style={{ width: "20%" }}>
+      <Grid item style={{ width: "20%" }} >
         <div id="participant"><ParticipantsSection /></div>
       </Grid>
 
-      <Grid item style={{ width: "59%" }}>
+      <Grid item style={{ width: "60%" }}>
         <div id="room"><VideoSection /></div>
       </Grid>
 

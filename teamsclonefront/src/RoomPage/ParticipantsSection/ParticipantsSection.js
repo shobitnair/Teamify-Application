@@ -8,7 +8,7 @@ const ParticipantsSection = () => {
       <Grid item xs={12} id="participant_header">
           PARTICIPANTS
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} id="participant_container">
         <Participants />
       </Grid>
     </>
