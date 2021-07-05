@@ -11,7 +11,7 @@ var isSmall = windowWidth <= 960;
 const VideoTrack = ({ track, name, count }) => {
   //nearly
 
-  let large = isSmall ? 95 : 56; //video portal widths
+  let large = isSmall ? 95 : 55; //video portal widths
   let medium = large / 2;
   let small = large / 4;
 

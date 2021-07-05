@@ -4,13 +4,12 @@ import { sendMessageUsingDataChannel } from "../../utils/twilioUtils";
 import { Grid } from "@material-ui/core";
 import { LightTooltip } from "../VideoSection/VideoDock/Tooltip";
 
-
 const NewMessage = () => {
   //current message input state
   const [message, setMessage] = useState("");
 
-  const sendMessage = async() => {
-    if(message==="")return;
+  const sendMessage = async () => {
+    if (message === "") return;
     //send message and scroll down immediately after that.
     await sendMessageUsingDataChannel(message, true);
     updateScroll();
@@ -38,7 +37,7 @@ const NewMessage = () => {
   return (
     <div>
       <Grid container direction="row">
-        <Grid item xs={8}>
+        <Grid item xs={10}>
           <textarea
             id="chat_input"
             value={message}
@@ -48,30 +47,12 @@ const NewMessage = () => {
             onKeyDown={handleKeyPressed}
           />
         </Grid>
-        <Grid item xs={4}>
-          <Grid container 
-          direction="column"
-          alignItems="center">
-            <Grid item xs={8}>
-              <LightTooltip title="Send Message">
-                <div id="chat_util"
-                  src={SendMessageButton}
-                  onClick={sendMessage}
-                >
-                  <i class="fas fa-paper-plane"></i>
-                </div>
-              </LightTooltip>
-            </Grid>
-            <Grid item xs={8}>
-              <LightTooltip title="Scroll down messages">
-                <div 
-                onClick={updateScroll}
-                id="chat_util">
-                  <i class="fas fa-arrow-down"></i>
-                </div>
-              </LightTooltip>
-            </Grid>
-          </Grid>
+        <Grid item xs={2}>
+          <LightTooltip title="Send Message">
+            <div id="chat_util" src={SendMessageButton} onClick={sendMessage}>
+              <i class="fas fa-paper-plane"></i>
+            </div>
+          </LightTooltip>
         </Grid>
       </Grid>
     </div>
