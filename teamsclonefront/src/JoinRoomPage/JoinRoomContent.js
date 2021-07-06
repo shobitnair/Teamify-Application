@@ -53,7 +53,7 @@ const JoinRoomContent = (props) => {
         setRoomIdAction(roomIdValue);
         history.push("/room");
       } else {
-        alert("Invalid Room ID , Try again with a proper one")
+        alert("Invalid Room ID , Try again with a proper one");
       }
     } else {
       setRoomIdAction(uuidv4());
@@ -66,18 +66,21 @@ const JoinRoomContent = (props) => {
       <Grid container xs={12} direction="row">
         <Grid item xs={1} md={4}></Grid>
         <Grid item xs={10} md={4}>
-          <Grid item xs={12}>
+          <Grid item xs={12} id="content">
             <JoinRoomInputs
-            roomIdValue={roomIdValue}
-            setRoomIdValue={setRoomIdValue}
-            nameValue={nameValue}
-            setNameValue={setNameValue}
-            isRoomHost={isRoomHost} />
+              roomIdValue={roomIdValue}
+              setRoomIdValue={setRoomIdValue}
+              nameValue={nameValue}
+              setNameValue={setNameValue}
+              isRoomHost={isRoomHost}
+            />
           </Grid>
         </Grid>
         <Grid item xs={1} md={4}></Grid>
         <Grid item xs={1} md={4}></Grid>
-        <Grid item xs={10} md={4}>
+        <Grid item xs={10} md={4} 
+        id="content"
+        style={{"borderRadius":"0px 0px 5px 5px"}}>
           <Grid
             container
             xs={12}

@@ -1,11 +1,11 @@
 #join-room-page{
-  background:var(--p20) ;
-  height:110vh;
+  background:var(--bg) ;
+  height:100vh;;
 }
 
 #bt1{
-  background-color:var(--d10);
-  color:white;
+  background-color:var(--join_p);
+  color:var(--join_font);
   padding:15px;
   margin-top: 20px;
   width:min(40vw , 200px);
@@ -15,8 +15,8 @@
 }
 
 #bt2{
-  background-color:var(--s);
-  color:white;
+  background-color:var(--join_s);
+  color:var(--join_font);
   padding:15px;
   margin-top: 20px;
   width:min(40vw,200px);
@@ -26,48 +26,46 @@
 }
 
 #button_container{
-  height:min(400px , 60vh);
+  height:50%;
   margin-top: 30px;
+  margin-bottom:30px;
 }
 
-#Grid1{
-  height:40%;
-  background-color: var(--p20);
-}
 
 #input_container{
-  margin-top: 10px;
   align-items: center;
-  justify-content: center;
+  height:30vh;
+  border-radius: 10px;
 }
 
 
 #room_input, #name_input {
-  font-size: 20px;
-  border:5px solid var(--d10);
-  width:90%;
-  border-radius:10px;
-  color:var(--d10);
+  font-size: 17px;
+  border:5px solid var(--join_t3);
+  width:80%;
+  border-radius:5px;
+  color:var(--join_tfont);
   padding:10px;
   margin-top: 10px;
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+  margin-left:3%;
   z-index:3;
 }
 
 #title_container{
-  height:80%;
   align-items: center;
   text-align:center;
-  background-color:var(--p40);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color:var(--join_t);
+  margin-top:10px;
+  height:70px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 #title{
   font-size: min(10vh,30px);
-  color:var(--d10);
-  font-weight: 700;
+  color:var(--join_tfont);
+  font-weight: 650;
+  padding:10px;
+  
 }
 
 
@@ -93,4 +91,9 @@
   position:fixed;
   left:0;bottom:0;
   z-index:2;
+}
+
+#content{
+  background-color: var(--join_t2);
+  z-index:5;
 }

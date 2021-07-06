@@ -15,7 +15,7 @@ import "./resources/css/ParticipantSection.css"
 
 function App() {
   return (
-    <div className="theme_default" id="main">
+    <div className="theme_default_dark" id="main">
       <Router>
         <Switch>
           <Route path="/join-room">

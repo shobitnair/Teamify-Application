@@ -6,8 +6,9 @@ import JoinRoomContent from "./JoinRoomContent";
 import {Grid , Hidden} from "@material-ui/core" 
 import "../resources/css/JoinRoomPage.css";
 import chat from "../resources/images/chat.svg"
-import chat2 from "../resources/images/chat2.svg"
-import home4 from "../resources/images/home4.svg"
+import join2 from "../resources/images/join2.svg"
+import join3 from "../resources/images/join3.svg"
+import join4 from "../resources/images/join4.svg"
 
 const JoinRoomPage = (props) => {
   
@@ -27,18 +28,18 @@ const JoinRoomPage = (props) => {
     <div id="join-room-page">
       <Hidden smDown>
       <img src={chat} id="img1"></img>
-      <img src={home4} id="img2"></img>
+      <img src={join4} id="img2"></img>
       </Hidden>
       <Hidden mdUp>
-        <img src={home4} id="img_mobile"></img>
+        <img src={join3} id="img_mobile"></img>
       </Hidden>
       <Grid container >
         <Grid item xs={1} md={4} ></Grid>
         <Grid item xs={10} md={4} id="title_container">
-          <p id="title">{titleText}</p>
+          <div id="title">{titleText}</div>
         </Grid>
         <Grid item xs={1} md={4}></Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} >
           <JoinRoomContent />
         </Grid>
       </Grid>

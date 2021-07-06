@@ -7,28 +7,49 @@
     --d10:#464775;
     --d20:#33344A;
     --s:#ef5350;
+    
+    --bg:#BDBDE6;
+
+    --intro_p:#464775;
+    --intro_p2:#6264A7;
+
+    --join_p:#6264A7;
+    --join_s:#ef5350;
+    --join_t:#F4F4FC;
+    --join_t2:#E2E2F6;
+    --join_t3:#BDBDE6;
+    --join_font:white;
+    --join_tfont:#464775;
 }
 
-.theme_green{
-    --p40:#e9f5ee;
-    --p30:#9fcdb3;
-    --p20:#4e9668;
-    --p10:#3f8159;
-    --p:#217346;
-    --d10:#0e5c2f;
-    --d20:#004b1c;
+.theme_default_dark{
+    --p40:#F4F4FC;
+    --p30:#E2E2F6;
+    --p20:#BDBDE6;
+    --p10:#8B8CC7;
+    --p:#6264A7;
+    --d10:#464775;
+    --d20:#33344A;
     --s:#ef5350;
-}
 
-.theme_blue{
-    --p40:#e3ecfa;
-    --p30:#a5b9d1;
-    --p20:#4a78b0;
-    --p10:#3c65a4;
-    --p:#2b579a;
-    --d10:#124078;
-    --d20:#002050;
-    --s:#ef5350;
+    --bg:#464775;
+
+    --intro_p:#33344A;
+    --intro_p2:#33344A;
+
+    --join_p:#6264A7;
+    --join_s:#ef5350;
+    --join_t:#323130;
+    --join_t2:#484644;
+    --join_t3:#F4F4FC;
+    --join_font:white;
+    --join_tfont:white;
+
+    --room_h:#323130;
+    --room_h2:#484644;
+    --room_h3:#605e5c;
+    --room_hf:#faf9f8;
+    --room_hf2:#faf9f8;
 }
 
 
