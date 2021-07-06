@@ -1,7 +1,7 @@
 #page{
   width:100vw;
   overflow-x:hidden;
-  background:var(--p30);
+  background:var(--room_bg);
 }
 
 ::-webkit-scrollbar {
@@ -16,7 +16,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--d10);
+  background: var(--room_bg);
   opacity:0.1;
 }
 
@@ -59,14 +59,15 @@
 #navbar{
   height:max(40px,7%);
   width:100%;
-  background:var(--p40);
+  background:var(--room_navbg);
   position:fixed;
   bottom:0px;
+  z-index:50;
 }
 
 #nav_bt{
   z-index:50;
-  color:var(--p);
+  color:var(--room_navicon);
   font-size:20px;
   height:90%;
   width:25%;

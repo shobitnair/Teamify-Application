@@ -6,7 +6,7 @@ const ParticipantsSection = () => {
   return (
     <>
       <Grid item xs={12} id="participant_header">
-          PARTICIPANTS
+          Participants
       </Grid>
       <Grid item xs={12} id="participant_container">
         <Participants />

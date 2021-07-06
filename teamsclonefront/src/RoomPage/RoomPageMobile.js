@@ -10,7 +10,7 @@ const RoomPageMobile = () => {
 
   return (
     <>
-      <Grid container direction="row" id="page" style={{ height: "90vh" }}>
+      <Grid container direction="row" id="page" style={{ height: "97vh" }}>
         <Grid item xs={12} hidden={page !== "participant"}>
           <div id="participant">
             <ParticipantsSection />
@@ -32,10 +32,10 @@ const RoomPageMobile = () => {
 
       <div id="navbar">
         <Button id="nav_bt" onClick={() => setPage("participant")}>
-          <i class="fas fa-id-card-alt"></i>
+          <i class="fas fa-users"></i>
         </Button>
         <Button id="nav_bt" onClick={() => setPage("video")}>
-          <i class="fab fa-joomla"></i>
+        <i class="fas fa-ticket-alt"></i>
         </Button>
         <Button id="nav_bt" onClick={() => setPage("message")}>
           <i class="fas fa-comment-alt"></i>

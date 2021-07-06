@@ -3,7 +3,7 @@
     position:relative;
     width:100%;
     height:100%;
-    background:var(--p40);
+    background:var(--room_h3);
     z-index:2;
   }
   
@@ -13,8 +13,8 @@
     height: 50px;
     padding:10px;
     font-weight: 600;
-    background-color:var(--p);
-    color:white;
+    background-color:var(--room_h);
+    color:var(--room_hf);
     width:100%;
   }
   
@@ -24,11 +24,10 @@
     font-size:max(12px,1.1vw);
     width:80%;
     font-weight: 500; 
-    color: var(--d10);
+    color: var(--room_hf2);
     margin-top: 10px;
     margin-bottom:3px;
     margin-right: 5px;
-    border-bottom: 3px solid var(--p);
   }
   
   #chat_head_B{
@@ -40,16 +39,15 @@
     margin-top: 10px;
     margin-bottom:3px; 
     margin-left: 5px;
-    color: var(--d10);
-    border-bottom: 3px solid var(--p);
+    color: var(--room_hf2);
   }
   
   
   #chat_bubble_A{
     word-wrap: break-word;
     max-width: 70%;
-    background-color: var(--p);
-    color:var(--p40);
+    background-color: var(--room_bubble1);
+    color:var(--room_font_b1);
     height:fit-content;
     width:fit-content;
     padding:10px;
@@ -62,8 +60,8 @@
   
   #chat_bubble_B{
     word-wrap: break-word;
-    background-color:var(--p30);
-    color:var(--d20);
+    background-color:var(--room_bubble2);
+    color:var(--room_font_b2);
     font-weight:400;
     height:fit-content;
     padding:10px;
@@ -79,7 +77,7 @@
     height:60vh;
     width:100%;
     margin-top:5px;
-    background: var(--p40);
+    background: var(--room_h3);
     overflow-y: scroll;
     overflow-x: hidden;
   }
@@ -91,28 +89,31 @@
   
   #chat_input {
     font-size: 14px;
-    background-color:white; 
+    background-color:var(--room_h3); 
+    color:var(--room_hf2);
     padding:3px;
-    width:95%;
+    width:93%;
     height:40px;
     border-radius:5px;
     margin-top:5px;
     margin-left: 5px;
     word-wrap: break-word;
     font-family:"Roboto";
-    border: solid 5px var(--p30);
+    border: solid 5px var(--room_h2);
+    z-index:1;
   }
   
   #chat_util {
     font-size: 20px;
-    color:var(--p);
-    width: 60%;
+    color:var(--room_hf2);
+    width: 70%;
     height:40px;
     padding:5px;
     margin-top:5px;
     text-align: center;
-    background-color: var(--p30);
-    border-bottom: solid 6px var(--p30);
+    background-color: var(--room_h2);
+    border-bottom: solid 6px var(--room_h2);
+    z-index:2;
   }
 
   

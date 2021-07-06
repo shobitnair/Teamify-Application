@@ -2,7 +2,7 @@
 #room{
   width:100%;
   height:100%;
-  background-color: var(--d20);
+  background-color: var(--room_bg);
 }
 
 .room_container {
@@ -12,11 +12,11 @@
 
 
 #video_dock{
-  height:min(30px,7%);
+  height:min(50px,6%);
   width:94%;
   margin-left:3%;
   background-color:#f3f3f3;
-  background-color: var(--p40);
+  background-color: var(--room_dock);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   
@@ -93,7 +93,7 @@ video {
   
   #other_bt{
     z-index:50;
-    color:var(--p);
+    color:var(--room_dockicon);
     font-size:20px;
     height:90%;
     width:20%;

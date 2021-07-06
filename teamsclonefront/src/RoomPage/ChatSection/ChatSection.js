@@ -7,7 +7,7 @@ const ChatSection = () => {
   return (
     <>
       <Grid item xs={12} id="chat_header">
-          MESSAGES
+          Messages
       </Grid>
       <Grid item xs={12} id="chat_bubble_block">
         <Messages></Messages>

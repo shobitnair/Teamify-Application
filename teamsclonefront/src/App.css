@@ -18,21 +18,30 @@
     --join_t:#F4F4FC;
     --join_t2:#E2E2F6;
     --join_t3:#BDBDE6;
-    --join_font:white;
-    --join_tfont:#464775;
+    --join_tf:#464775;
+    --join_btf:#faf9f8;
+
+    --room_h:#6264A7;
+    --room_h2:#E2E2F6;
+    --room_h3:#F4F4FC;
+    --room_hf:#F4F4FC;
+    --room_hf2:#33344A;
+    --room_font_b1:#faf9f8;;
+    --room_font_b2:#33344A;
+    --room_bubble1:#6264A7;
+    --room_bubble2:#E2E2F6;
+    --room_bg:#BDBDE6;
+    --room_dock:#F4F4FC;
+    --room_dockicon:#6264A7;
+    --room_navbg:#E2E2F6;
+    --room_navicon:#6264A7;
+
+    --over1:#6264A7;
+    --over2:#33344A;
 }
 
 .theme_default_dark{
-    --p40:#F4F4FC;
-    --p30:#E2E2F6;
-    --p20:#BDBDE6;
-    --p10:#8B8CC7;
-    --p:#6264A7;
-    --d10:#464775;
-    --d20:#33344A;
-    --s:#ef5350;
-
-    --bg:#464775;
+    --bg:#6264A7;
 
     --intro_p:#33344A;
     --intro_p2:#33344A;
@@ -40,16 +49,28 @@
     --join_p:#6264A7;
     --join_s:#ef5350;
     --join_t:#323130;
-    --join_t2:#484644;
-    --join_t3:#F4F4FC;
-    --join_font:white;
-    --join_tfont:white;
+    --join_t2:#252423;
+    --join_t3:#484644;
+    --join_tf:#faf9f8;
+    --join_btf:#faf9f8;
 
     --room_h:#323130;
     --room_h2:#484644;
-    --room_h3:#605e5c;
+    --room_h3:#252423;
     --room_hf:#faf9f8;
     --room_hf2:#faf9f8;
+    --room_font_b1:#faf9f8;;
+    --room_font_b2:#faf9f8;;
+    --room_bubble1:#464775;
+    --room_bubble2:#484644;
+    --room_bg:#33344A;
+    --room_dock:#252423;
+    --room_dockicon:#8B8CC7;
+    --room_navbg:#252423;;
+    --room_navicon:#8B8CC7;
+
+    --over1:#6264A7;
+    --over2:#33344A;
 }
 
 
