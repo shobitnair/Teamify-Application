@@ -1,35 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import JoinRoomPage from "./JoinRoomPage/JoinRoomPage";
 import RoomPage from "./RoomPage/RoomPage";
 import IntroductionPage from "./IntroductionPage/IntroductionPage";
+import ChannelPage from "./ChannelPage/ChannelPage"
+import { Fab } from "@material-ui/core";
+import { LightTooltip } from "./RoomPage/VideoSection/VideoDock/Tooltip";
 
 import "./App.css";
-import "./resources/css/ChatSection.css"
+import "./resources/css/ChatSection.css";
 import "./resources/css/IntroductionPage.css";
 import "./resources/css/JoinRoomPage.css";
 import "./resources/css/Overlay.css";
 import "./resources/css/RoomPage.css";
 import "./resources/css/VideoSection.css";
-import "./resources/css/ParticipantSection.css"
+import "./resources/css/ParticipantSection.css";
 
 function App() {
+  const [theme, setTheme] = useState("theme_default");
+  const handleChange = () => {
+    if (theme === "theme_default") setTheme("theme_dark");
+    else setTheme("theme_default");
+  };
+
   return (
-    <div className="theme_default" id="main">
-      <Router>
-        <Switch>
-          <Route path="/join-room">
-            <JoinRoomPage />
-          </Route>
-          <Route path="/room">
-            <RoomPage />
-          </Route>
-          <Route path="/">
-            <IntroductionPage />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+    <>
+      <div className={theme} id="main">
+        <LightTooltip title="Change Theme">
+          <Fab onClick={handleChange} aria-label="add" id="themer"></Fab>
+        </LightTooltip>
+        <Router>
+          <Switch>
+            <Route path="/channel">
+              <ChannelPage/>
+            </Route>
+            <Route path="/join-room">
+              <JoinRoomPage />
+            </Route>
+            <Route path="/room">
+              <RoomPage />
+            </Route>
+            <Route path="/">
+              <IntroductionPage />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </>
   );
 }
 

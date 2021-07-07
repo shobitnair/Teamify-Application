@@ -32,6 +32,14 @@ const HomeButtons = () => {
             Join a Meeting
           </Button>
         </Grid>
+        <Grid item>
+          <Button 
+          id="bt_default"
+          href="/channel"
+          >
+            Channel
+          </Button>
+        </Grid>
       </Grid>
     </>
   );

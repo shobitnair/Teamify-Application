@@ -40,9 +40,6 @@ const RoomPageMobile = () => {
         <Button id="nav_bt" onClick={() => setPage("message")}>
           <i class="fas fa-comment-alt"></i>
         </Button>
-        <Button id="nav_bt">
-          <i class="fas fa-bars"></i>
-        </Button>
       </div>
     </>
   );

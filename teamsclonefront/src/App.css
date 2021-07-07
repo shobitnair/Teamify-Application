@@ -1,11 +1,5 @@
 .theme_default{
-    --p40:#F4F4FC;
-    --p30:#E2E2F6;
-    --p20:#BDBDE6;
-    --p10:#8B8CC7;
-    --p:#6264A7;
-    --d10:#464775;
-    --d20:#33344A;
+
     --s:#ef5350;
     
     --bg:#BDBDE6;
@@ -40,7 +34,9 @@
     --over2:#33344A;
 }
 
-.theme_default_dark{
+.theme_dark{
+    --s:#ef5350;
+
     --bg:#6264A7;
 
     --intro_p:#33344A;
@@ -63,9 +59,9 @@
     --room_font_b2:#faf9f8;;
     --room_bubble1:#464775;
     --room_bubble2:#484644;
-    --room_bg:#33344A;
+    --room_bg:#605e5c;
     --room_dock:#252423;
-    --room_dockicon:#8B8CC7;
+    --room_dockicon:#8B8CC7;;
     --room_navbg:#252423;;
     --room_navicon:#8B8CC7;
 
@@ -76,5 +72,15 @@
 
 #main{
     height:fit-content;
-    background-color:var(--p20);
+    background-color:var(--bg);
+}
+
+#themer{
+    position:fixed;
+    bottom:-30px;
+    right:-40px;
+    z-index:1000;
+    margin-right:20px;
+    background-color:rgb(0,0,0,0.3);
+    font-size: 30px;
 }

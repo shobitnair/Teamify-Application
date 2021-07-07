@@ -1,0 +1,69 @@
+.chat {
+    display: flex;
+    flex-direction: column;
+    flex: 0.8;
+    height: 100vh;
+    background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color:#282828;
+    background-size:16px 16px;
+  }
+  
+  .chat__header {
+    padding: 20px;
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    background-color: #f5f5f5;
+  }
+  
+  .chat__header > h4 {
+    font-weight: 500;
+    color: gray;
+  }
+  
+  .chat__name {
+    color: black;
+  }
+  
+  .chat__input {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-top: 1px solid lightgray;
+    background-color: #f5f5f5;
+  }
+  
+  .chat__input > form {
+    flex: 1;
+  }
+  
+  .chat__input > form > input {
+    width: 98%;
+    outline-width: 0;
+    border: 1px solid lightgray;
+    border-radius: 999px;
+    padding: 5px;
+  }
+  
+  .chat__input > form > button {
+    display: none;
+  }
+  
+  .chat__messages {
+    flex: 1;
+    overflow: scroll;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .chat__messages::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .chat__messages {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }

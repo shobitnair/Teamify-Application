@@ -7,6 +7,8 @@ const Actions = {
   SET_SHOW_OVERLAY: "SET_SHOW_OVERLAY",
   SET_PARTICIPANTS: "SET_PARTICIPANTS",
   SET_MESSAGES: "SET_MESSAGES",
+  SET_LOGIN: "SET_LOGIN",
+  SET_USER: "SET_USER",
 };
 
 export const setIdentity = (identity) => {
@@ -64,5 +66,6 @@ export const setMessages = (messages)=>{
     messages,
   }
 }
+
 
 export default Actions;

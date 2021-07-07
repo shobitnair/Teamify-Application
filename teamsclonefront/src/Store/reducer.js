@@ -9,6 +9,9 @@ const initState = {
   showOverlay: true,
   participants: [],
   messages: [],
+  user:"",
+  chatId: "",
+  chatName: "",
 };
 
 const reducer = (state = initState, action) => {
@@ -57,5 +60,6 @@ const reducer = (state = initState, action) => {
       return state;
   }
 };
+
 
 export default reducer;

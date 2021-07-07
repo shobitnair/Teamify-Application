@@ -1,0 +1,63 @@
+.sidebar {
+    flex: 0.2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    border-right: 1px solid lightgray;
+}
+
+.sidebar__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 50px;
+}
+
+.sidebar__avatar {
+    cursor: pointer;
+    margin: 10px;
+}
+
+.modal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal__input {
+    flex: 1;
+}
+
+.sidebar__create{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar__chats {
+    overflow: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sidebar__chats::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sidebar__chats {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.logout {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+}
+
+.logout > small {
+    margin-bottom: 6px;
+    margin-top: -10px;
+}
