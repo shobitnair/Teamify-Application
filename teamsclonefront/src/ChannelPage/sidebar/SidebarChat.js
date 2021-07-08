@@ -1,13 +1,14 @@
 import { Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { setChat } from "../features/chatSlice";
+import { connect } from "react-redux";
+import { setChatId , setChatName } from "../../store/actions"
 import { db } from "../firebase";
 import "./sidebarChat.css";
 
 
-const SidebarChat = ({ id, chatName }) => {
-  const dispatch = useDispatch();
+const SidebarChat = (props) => {
+
+  const {id , chatName , setChatIdAction , setChatNameAction} = props;
   const [chatInfo, setChatInfo] = useState("");
   
   // on component mount fetch room by id and get its messages
@@ -20,27 +21,29 @@ const SidebarChat = ({ id, chatName }) => {
         setChatInfo(snapshot.docs.map((doc) => doc.data()))
       );
   }, [id]);
-
+  console.log(chatInfo[0]);
   return (
     <div
       onClick={() => {
-        dispatch(
-          setChat({
-            chatId: id,
-            chatName: chatName,
-          })
-        );
+        setChatIdAction(id);
+        setChatNameAction(chatName);
       }}
       className="sidebarChat"
     >
-
-      <div className="sidebarChat__info">
-        <h3>{chatName}</h3>
-        <p>{chatInfo[0]?.message}</p>
-
+      <div id="channel_bar">
+        <div id="channel_name">{chatName}</div>
+        <div id="last_message">{chatInfo[0]?.message}</div>
       </div>
     </div>
   );
 };
 
-export default SidebarChat;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setChatIdAction: (chatId) => dispatch(setChatId(chatId)),
+    setChatNameAction: (chatName) => dispatch(setChatName(chatName))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(SidebarChat);

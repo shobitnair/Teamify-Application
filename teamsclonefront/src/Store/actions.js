@@ -7,8 +7,9 @@ const Actions = {
   SET_SHOW_OVERLAY: "SET_SHOW_OVERLAY",
   SET_PARTICIPANTS: "SET_PARTICIPANTS",
   SET_MESSAGES: "SET_MESSAGES",
-  SET_LOGIN: "SET_LOGIN",
   SET_USER: "SET_USER",
+  SET_CHATID: "SET_CHATID",
+  SET_CHATNAME: "SET_CHATNAME",
 };
 
 export const setIdentity = (identity) => {
@@ -67,5 +68,25 @@ export const setMessages = (messages)=>{
   }
 }
 
+export const setUser = (user) => {
+  return{
+    type: Actions.SET_USER,
+    user,
+  }
+}
+
+export const setChatId = (chatId) =>{
+  return{
+    type: Actions.SET_CHATID,
+    chatId,
+  }
+}
+
+export const setChatName = (chatName) =>{
+  return{
+    type: Actions.SET_CHATNAME,
+    chatName,
+  }
+}
 
 export default Actions;

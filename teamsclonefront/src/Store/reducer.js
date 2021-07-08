@@ -56,6 +56,21 @@ const reducer = (state = initState, action) => {
         ...state,
         messages: action.messages,
       }
+    case Actions.SET_USER :
+      return{
+        ...state,
+        user: action.user,
+      }
+    case Actions.SET_CHATID :
+      return{
+        ...state,
+        chatId: action.chatId,
+      }
+    case Actions.SET_CHATNAME :
+      return{
+        ...state,
+        chatName: action.chatName,
+      }
     default:
       return state;
   }

@@ -17,6 +17,7 @@ const JoinRoomPage = (props) => {
 
   useEffect(() => {
     const isRoomHost = new URLSearchParams(search).get("host");
+    console.log(isRoomHost);
     if (isRoomHost) {
       setIsRoomHostAction(true);
     }

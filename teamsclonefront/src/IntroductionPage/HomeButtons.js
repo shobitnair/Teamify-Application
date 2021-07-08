@@ -35,7 +35,7 @@ const HomeButtons = () => {
         <Grid item>
           <Button 
           id="bt_default"
-          href="/channel"
+          onClick={()=>{history.push("/channel")}}
           >
             Channel
           </Button>

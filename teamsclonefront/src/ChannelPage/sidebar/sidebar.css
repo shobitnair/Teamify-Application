@@ -20,14 +20,13 @@
     margin: 10px;
 }
 
-.modal {
-    display: flex;
-    justify-content: space-between;
+
+#channel_menu{
+    height:200px;
+    margin-top:10px;
 }
 
-.modal__input {
-    flex: 1;
-}
+
 
 .sidebar__create{
     display: flex;
@@ -36,19 +35,10 @@
 }
 
 .sidebar__chats {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x:hidden;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.sidebar__chats::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.sidebar__chats {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
 
 .logout {
     display: flex;

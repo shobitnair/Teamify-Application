@@ -5,12 +5,13 @@ import "./login.css";
 
 // google sign in method powered by firebase auth system
 const Login = () => {
+  
   const signin = () => {
     auth.signInWithPopup(provider).catch((error) => alert(error.message));
   };
 
   return (
-    <div className="login">
+    <div >
       <h1 style={{fontSize: "40px" }}>Teams</h1>
       <Button onClick={signin}>Sign In</Button>
     </div>
