@@ -1,17 +1,10 @@
 import { Avatar } from "@material-ui/core";
 import React, { forwardRef } from "react";
-import { useSelector } from "react-redux";
-import { selectUser } from "../features/userSlice";
+import { connect } from "react-redux";
 import "./message.css";
 
-const Message = forwardRef(
-  (
-    { id, contents: { timestamp, displayName, email, message, photo, uid } },
-    ref
-  ) => {
-    const user = useSelector(selectUser);
-
-    return (
+const Message = forwardRef(({ user, id, contents: { timestamp, displayName, email, message, photo, uid } },ref) => {
+  return (
       <div
         ref={ref}
         className={`message ${user.email === email && "message__sender"}`}
@@ -24,4 +17,10 @@ const Message = forwardRef(
   }
 );
 
-export default Message;
+const mapStoreStateToProps = (state) => {
+  return {
+    ...state,
+  };
+};
+
+export default connect(mapStoreStateToProps, null)(Message);

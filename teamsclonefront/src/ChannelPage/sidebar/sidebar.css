@@ -1,34 +1,36 @@
-.sidebar {
+#sidebar {
     flex: 0.2;
-    height: 100vh;
+    height: 90vh;
+    width:25vw;
     display: flex;
     flex-direction: column;
-    background-color: #f5f5f5;
     border-right: 1px solid lightgray;
+    overflow-x:hidden;
+    background-color:var(--room_h3);
 }
 
-.sidebar__header {
+#sidebar__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    height: 50px;
-}
-
-.sidebar__avatar {
-    cursor: pointer;
-    margin: 10px;
+    height: 60px;
+    background-color:var(--room_h);
+    color:var(--room_hf);
+    font-size: 15px;
+    font-weight:600;
+    cursor:pointer;
 }
 
 
 #channel_menu{
     height:200px;
     margin-top:10px;
+    border-bottom: 1px solid lightgray;
 }
 
 
-
-.sidebar__create{
+#sidebar__create{
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -39,15 +41,3 @@
     overflow-x:hidden;
 }
 
-
-.logout {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    cursor: pointer;
-}
-
-.logout > small {
-    margin-bottom: 6px;
-    margin-top: -10px;
-}

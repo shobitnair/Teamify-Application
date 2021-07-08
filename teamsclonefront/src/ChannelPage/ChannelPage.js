@@ -42,6 +42,7 @@ const ChannelPage = (props) => {
   );
 };
 
+
 const mapStoreStateToProps = (state) => {
   return {
     ...state,

@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
-import "./sidebar.css";
-import { Avatar, Modal, TextField } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Avatar, TextField } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import { Button, Grid } from "@material-ui/core";
 import SidebarChat from "./SidebarChat.js";
-import { useSelector } from "react-redux";
-import { selectUser } from "../features/userSlice";
 import { db, auth } from "../firebase";
+import { setChatId, setChatName } from "../../store/actions";
+import { connect } from "react-redux";
+import "./sidebar.css";
 
-const Sidebar = () => {
-  const user = useSelector(selectUser);
-
+const Sidebar = (props) => {
+  const { user, setChatIdAction, setChatNameAction } = props;
   //State management
   const [chats, setChats] = useState([]);
   const [rooms, setrooms] = useState([]);
@@ -92,20 +90,26 @@ const Sidebar = () => {
     setPassword("");
   };
 
+  const logOut = () => {
+    //Clear local user channel states before logout.
+    setChatIdAction("");
+    setChatNameAction("");
+    auth.signOut();
+  };
+
   return (
     <>
-      <div className="sidebar">
-
-        <div className="sidebar__header">
-          <div className="logout" onClick={() => auth.signOut()}>
-            <Avatar src={user.photo} className="sidebar__avatar" />
-            <small>Logout</small>
+      <div id="sidebar">
+        <div id="sidebar__header">
+          <div onClick={logOut}>
+            <Avatar src={user.photo}/>
+            <small type="submit">Logout</small>
           </div>
-          <div className="sidebar__create" onClick={(e) => setOpen(!open)}>
+          <div id="sidebar__create" onClick={(e) => setOpen(!open)}>
             <AddIcon style={{ paddingRight: "10px" }} />
           </div>
         </div>
-        
+
         <div hidden={!open} id="channel_menu">
           <Grid container xs={12} justify="center">
             <form>
@@ -125,16 +129,12 @@ const Sidebar = () => {
               </Grid>
               <Grid item xs={12}>
                 <Grid container xs={12} justify="center">
-                  <Button  onClick={addChat}>
-                    Create
-                  </Button>
+                  <Button onClick={addChat}>Create</Button>
                 </Grid>
               </Grid>
               <Grid item xs={12}>
                 <Grid container xs={12} justify="center">
-                  <Button  onClick={joinChat}>
-                    Join
-                  </Button>
+                  <Button onClick={joinChat}>Join</Button>
                 </Grid>
               </Grid>
             </form>
@@ -151,4 +151,17 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+const mapStoreStateToProps = (state) => {
+  return {
+    ...state,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setChatIdAction: (chatId) => dispatch(setChatId(chatId)),
+    setChatNameAction: (chatName) => dispatch(setChatName(chatName)),
+  };
+};
+
+export default connect(mapStoreStateToProps, mapDispatchToProps)(Sidebar);

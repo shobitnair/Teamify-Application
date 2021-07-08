@@ -1,20 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./chat.css";
 import Message from "./Message";
-import { useSelector } from "react-redux";
-import { selectchatId, selectchatName } from "../features/chatSlice";
 import { db } from "../firebase";
 import firebase from "firebase";
-import { selectUser } from "../features/userSlice";
-
+import { connect } from "react-redux";
 import { useRef } from "react";
 
-const Chat = () => {
-  const user = useSelector(selectUser);
+const Chat = (props) => {
+  const { user, chatName, chatId } = props;
   const chatRef = useRef(null);
   const [input, setInput] = useState("");
-  const chatName = useSelector(selectchatName);
-  const chatId = useSelector(selectchatId);
   const [messages, setMessages] = useState([]);
 
   // on component mount fetch messages of selected room
@@ -38,7 +33,6 @@ const Chat = () => {
 
   const sendMessage = (e) => {
     e.preventDefault();
-
     // firebase operation - add message and info to firebase
     db.collection("chats").doc(chatId).collection("messages").add({
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -63,10 +57,9 @@ const Chat = () => {
       </div>
 
       <div className="chat__messages">
-
-          {messages.map(({ id, data }) => (
-            <Message key={id} id={id} contents={data} />
-          ))}
+        {messages.map(({ id, data }) => (
+          <Message key={id} id={id} contents={data} />
+        ))}
 
         <div ref={chatRef} />
       </div>
@@ -88,4 +81,10 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+const mapStoreStateToProps = (state) => {
+  return {
+    ...state,
+  };
+};
+
+export default connect(mapStoreStateToProps, null)(Chat);
