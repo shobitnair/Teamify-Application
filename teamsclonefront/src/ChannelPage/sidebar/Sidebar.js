@@ -6,6 +6,7 @@ import SidebarChat from "./SidebarChat.js";
 import { db, auth } from "../firebase";
 import { setChatId, setChatName } from "../../store/actions";
 import { connect } from "react-redux";
+import {Fab} from "@material-ui/core"
 import "./sidebar.css";
 
 const Sidebar = (props) => {
@@ -105,9 +106,9 @@ const Sidebar = (props) => {
             <Avatar src={user.photo}/>
             <small type="submit">Logout</small>
           </div>
-          <div id="sidebar__create" onClick={(e) => setOpen(!open)}>
-            <AddIcon style={{ paddingRight: "10px" }} />
-          </div>
+          <Fab id="sidebar__create" onClick={(e) => setOpen(!open)}>
+            <AddIcon/>
+          </Fab>
         </div>
 
         <div hidden={!open} id="channel_menu">

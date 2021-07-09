@@ -5,6 +5,7 @@
     height:60px;
     cursor: pointer;
     overflow-x:hidden;
+    overflow-y:hidden;
     border-bottom: 2px solid var(--room_h2);
 }
 

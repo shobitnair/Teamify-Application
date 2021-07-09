@@ -31,9 +31,15 @@ const ChannelPage = (props) => {
   return (
     <div >
       {user ? (
-        <div style={{ display: "flex" }}>
-          <Sidebar user={user} />
-          <Chat user={user}/>
+        <div >
+          <Grid container direction="row" xs={12}>
+          <Grid item style={{"width":"20%"}}>
+            <Sidebar user={user} />
+          </Grid>
+          <Grid item style={{"width":"80%"}}>
+            <Chat user={user}/>
+          </Grid>
+          </Grid>
         </div>
       ) : (
         <Login />
