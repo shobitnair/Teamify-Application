@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Avatar, TextField } from "@material-ui/core";
+import { Avatar } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import { Button, Grid } from "@material-ui/core";
 import SidebarChat from "./SidebarChat.js";
 import { db, auth } from "../firebase";
 import { setChatId, setChatName } from "../../store/actions";
 import { connect } from "react-redux";
-import {Fab} from "@material-ui/core"
-import "./sidebar.css";
+import { Fab, Collapse } from "@material-ui/core";
+import { LightTooltip } from "../../RoomPage/VideoSection/VideoDock/Tooltip";
 
 const Sidebar = (props) => {
   const { user, setChatIdAction, setChatNameAction } = props;
@@ -15,6 +15,7 @@ const Sidebar = (props) => {
   const [chats, setChats] = useState([]);
   const [rooms, setrooms] = useState([]);
   const [open, setOpen] = useState(false);
+  const [opened, setOpened] = useState(false);
   const [channel, setChannel] = useState("");
   const [password, setPassword] = useState("");
 
@@ -44,7 +45,6 @@ const Sidebar = (props) => {
       let added = false;
       chats.forEach((x) => {
         if (x.data.chatName === channel) {
-          console.log(x);
           added = true;
         }
       });
@@ -103,46 +103,59 @@ const Sidebar = (props) => {
       <div id="sidebar">
         <div id="sidebar__header">
           <div onClick={logOut}>
-            <Avatar src={user.photo}/>
+            <Avatar src={user.photo} />
             <small type="submit">Logout</small>
           </div>
-          <Fab id="sidebar__create" onClick={(e) => setOpen(!open)}>
-            <AddIcon/>
-          </Fab>
+          <LightTooltip title="Join / Create Room">
+            <div
+              id="sidebar__create"
+              onClick={(e) => {
+                setOpen(!open);
+                setOpened(true);
+              }}
+            >
+              <AddIcon />
+            </div>
+          </LightTooltip>
         </div>
 
-        <div hidden={!open} id="channel_menu">
-          <Grid container xs={12} justify="center">
-            <form>
-              <Grid item xs={12} justify="center">
-                <TextField
-                  placeholder="Channel Name"
-                  value={channel}
-                  onChange={(e) => setChannel(e.target.value)}
-                />
+        <Collapse hidden={!opened} in={open} id="channel_menu">
+          <Grid container xs={12} justify="center" direction="row">
+            <Grid item xs={12} justify="center">
+              <input
+                id="sidebar_input"
+                placeholder="Channel Name"
+                value={channel}
+                onChange={(e) => setChannel(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <input
+                id="sidebar_input"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Grid container xs={12} justify="center">
+                <Button onClick={addChat} id="sidebar_bt">
+                  Create
+                </Button>
               </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
+            </Grid>
+            <Grid item xs={12}>
+              <Grid container xs={12} justify="center">
+                <Button onClick={joinChat} id="sidebar_bt">
+                  Join
+                </Button>
               </Grid>
-              <Grid item xs={12}>
-                <Grid container xs={12} justify="center">
-                  <Button onClick={addChat}>Create</Button>
-                </Grid>
-              </Grid>
-              <Grid item xs={12}>
-                <Grid container xs={12} justify="center">
-                  <Button onClick={joinChat}>Join</Button>
-                </Grid>
-              </Grid>
-            </form>
+            </Grid>
           </Grid>
-        </div>
+        </Collapse>
 
         <div className="sidebar__chats">
+          <div id="channel_header">Your Channels</div>
           {rooms.map(({ id, data }) => (
             <SidebarChat key={id} id={id} chatName={data.chatName} />
           ))}

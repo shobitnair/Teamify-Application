@@ -1,8 +1,7 @@
 import { Avatar } from "@material-ui/core";
 import React, { forwardRef, useState } from "react";
 import { connect } from "react-redux";
-import "./message.css";
-import { Grid } from "@material-ui/core";
+import { Grid , Collapse} from "@material-ui/core";
 
 const Message = forwardRef(
   (
@@ -30,7 +29,7 @@ const Message = forwardRef(
                 <div id="message_bubble_A" onClick={showdetail}>
                   <div id="message_head_A">{author}</div>
                   {message}
-                  <div hidden={!show} id="chat_info">
+                  <Collapse in={show} id="chat_info">
                     <br />
                     <Avatar className="message__photo" src={photo} />
                     <br />
@@ -38,7 +37,7 @@ const Message = forwardRef(
                     <br />
                     {new Date(timestamp?.toDate()).toLocaleString()}
                     <br />
-                  </div>
+                  </Collapse>
                 </div>
               </Grid>
             </Grid>

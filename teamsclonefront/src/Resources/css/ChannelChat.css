@@ -2,13 +2,12 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    border-left:2px solid rgb(1,1,1,0.2);
-    background: var(--room_h3);
+    background: var(--chat_bg);
   }
   
   .chat__header {
     padding: 10px;
-    background-color: var(--room_h);
+    background-color:var(--chat_head);;
     height:50px;
   }
   
@@ -21,6 +20,7 @@
   #message_input_block{
     margin-top:10px;
     width:100%;
+
   }
   
   #message_input {
@@ -43,14 +43,14 @@
   #message_util {
     font-size: 20px;
     color:var(--room_hf2);
-    width: 100%;
+    width: 40px;
     height:30px;
     padding:5px;
     margin-top:10px;
     text-align: center;
     background-color: var(--room_h2);
     border-bottom: solid 6px var(--room_h2);
-    z-index:2;
+    z-index:5;
   }
 
   
@@ -63,23 +63,31 @@
     margin-top:10px;
     overflow-y: scroll;
     overflow-x:hidden;
-    background-color:var(--room_h3);
   }
   
 #video_action{
   position:fixed;
   right:5px;
-  top:5px;
+  top:15px;
   background:var(--room_h2);
-  font-size:25px;
+  font-size:15px;
   color:var(--room_hf2);
 }
 
 #join_action{
   position:fixed;
-  right:65px;
-  top:5px;
+  right:75px;
+  top:15px;
   background:var(--room_h2);
-  font-size:20px;
+  font-size:15px;
+  color:var(--room_hf2);
+}
+
+#back_action{
+  position:fixed;
+  right:145px;
+  top:15px;
+  background:var(--room_h2);
+  font-size:15px;
   color:var(--room_hf2);
 }

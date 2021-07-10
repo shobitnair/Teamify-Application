@@ -22,7 +22,7 @@
   font-size:10px;
   font-weight: 500;
   margin-bottom:3px; 
-  margin-left: 5px;
+  margin-left: 10px;
   color: var(--room_hf2);
 }
 
@@ -37,7 +37,7 @@
   padding:3px 10px 10px 10px;
   font-size:max(15px,0.9vw);
   align-self:flex-end;
-  margin-right: 5px;
+  margin-right: 10px;
   border-radius: 3px;
   font-weight:450;
   text-align:right;

@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
-import "./chat.css";
 import Message from "./Message";
 import { db } from "../firebase";
 import firebase from "firebase";
 import { connect } from "react-redux";
 import { useRef } from "react";
-import {Grid , Fab} from "@material-ui/core"
-import VideoCallIcon from '@material-ui/icons/VideoCall';
-import {useHistory} from "react-router-dom"
+import {setPage} from "../../store/actions"
+import { Grid, Button , Hidden} from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const Chat = (props) => {
-  const { user, chatName, chatId } = props;
+  const { user, chatName, chatId , setPageAction } = props;
   const chatRef = useRef(null);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
-  let history = useHistory();
 
   // on component mount fetch messages of selected room
   useEffect(() => {
@@ -30,14 +28,15 @@ const Chat = (props) => {
               data: doc.data(),
             }))
           );
-          chatRef?.current?.scrollIntoView({ behavior: "smooth" });
+          var element = document.getElementById("chat__messages");
+          element.scrollTop = element.scrollHeight;
         });
     }
   }, [chatId]);
 
   const sendMessage = (e) => {
     // firebase operation - add message and info to firebase
-    if(input === "")return;
+    if (input === "") return;
     db.collection("chats").doc(chatId).collection("messages").add({
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       message: input,
@@ -47,7 +46,6 @@ const Chat = (props) => {
       displayName: user.displayName,
     });
     // target the empty div to trigger chat scroll to last msg
-    chatRef?.current?.scrollIntoView({ behavior: "smooth" });
     setInput("");
   };
 
@@ -61,11 +59,24 @@ const Chat = (props) => {
 
   return (
     <div className="chat">
-      <Fab id="video_action" onClick={()=>history.push('join-room?host=true')}><VideoCallIcon/></Fab>
-      <Fab id="join_action" onClick={()=>history.push('join-room')}><i class="fas fa-external-link-square-alt"></i></Fab>
+      <Link to="join-room?host=true" target="_blank" rel="noopener noreferrer" >
+      <Button
+        id="video_action"
+      >
+        Host
+      </Button></Link>
+      <Link to="join-room" target="_blank" rel="noopener noreferrer" >
+      <Button id="join_action">
+        Join
+      </Button></Link>
+      <Hidden mdUp>
+        <Button id="back_action" onClick={() => setPageAction(false)}>
+          Back
+        </Button>
+      </Hidden>
       <div className="chat__header">
         <div id="header_text">
-          Channel <br/> <span className="chat__name">{chatName}</span>
+          Channel <br /> <span className="chat__name">{chatName}</span>
         </div>
       </div>
 
@@ -79,30 +90,30 @@ const Chat = (props) => {
 
       {/* chat input */}
       <div>
-      <Grid container xs={12} direction="row" id="message_input_block">
-        <Grid item xs={10}>
-          <textarea
-          id="message_input"
-            disabled={!chatId}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyPressed}
-            placeholder={!chatId ? "Please select a Channel first" : "Type..."}
-            type="text"
-          />
-        </Grid>
-        <Grid item xs={1}>
+        <Grid container xs={12} direction="row" id="message_input_block">
+          <Grid item xs={10}>
+            <textarea
+              id="message_input"
+              disabled={!chatId}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyPressed}
+              placeholder={
+                !chatId ? "Please select a Channel first" : "Type a new message"
+              }
+              type="text"
+            />
+          </Grid>
+          <Grid item xs={1}>
             <div id="message_util" onClick={sendMessage}>
               <i class="fas fa-paper-plane"></i>
             </div>
+          </Grid>
         </Grid>
-      </Grid>
       </div>
     </div>
   );
 };
-
-
 
 const mapStoreStateToProps = (state) => {
   return {
@@ -110,4 +121,10 @@ const mapStoreStateToProps = (state) => {
   };
 };
 
-export default connect(mapStoreStateToProps, null)(Chat);
+const mapDispatchToProps =(dispatch) =>{
+  return{
+    setPageAction: (page) => dispatch(setPage(page)),
+  }
+}
+
+export default connect(mapStoreStateToProps, mapDispatchToProps)(Chat);

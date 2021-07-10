@@ -1,0 +1,80 @@
+#sidebar {
+    flex: 0.2;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x:hidden;
+    background-color:var(--side_bg);
+}
+
+#sidebar__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 50px;
+    background-color:var(--room_h);
+    color:var(--room_hf);
+    font-size: 15px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+
+#channel_menu{
+    height:250px;
+    border-bottom: 1px solid lightgray;
+}
+
+
+#sidebar__create{
+    display: flex;
+    align-items: center;
+    border-radius:3px;
+    padding:5px;
+    cursor: pointer;
+    background: var(--room_h2);
+    color:var(--room_hf2);
+}
+
+.sidebar__chats {
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+#channel_header{
+    font-weight: 500;
+    text-align: left;
+    border-bottom:3px solid var(--room_hf2);
+    width:95%;
+    height:30px;
+    font-size: max(14,1.2vw);
+    margin-top: 10px;
+    margin-left: 10px;
+    color:var(--room_hf2); 
+}
+
+#sidebar_bt{
+  background-color:var(--join_p);
+  color:var(--join_btf);
+  margin-top:10px;
+  width:100px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  z-index:3;
+  margin-bottom:10px;
+}
+
+#sidebar_input{
+  font-size: 17px;
+  border:5px solid var(--join_t3);
+  background:var(--join_t2);
+  width:80%;
+  border-radius:5px;
+  color:var(--join_tf);
+  padding:10px;
+  margin-top: 10px;
+  margin-bottom:5px;
+  margin-left:3%;
+  z-index:3;
+}

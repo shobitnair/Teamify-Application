@@ -99,7 +99,7 @@ const JoinRoomContent = (props) => {
                 <Button
                   id="bt2"
                   disabled={JoinClicked}
-                  onClick={() => history.push("/")}
+                  onClick={() => history.goBack()}
                 >
                   Cancel
                 </Button>

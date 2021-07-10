@@ -19,6 +19,14 @@ const HomeButtons = () => {
         <Grid item>
           <Button 
           id="bt_default"
+          onClick={()=>{history.push("/channel")}}
+          >
+            Channel
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button 
+          id="bt_default"
           onClick={() => {history.push("/join-room?host=true");}}
           >
             Host a Meeting
@@ -30,14 +38,6 @@ const HomeButtons = () => {
           onClick={() => {history.push("/join-room")}}
           >
             Join a Meeting
-          </Button>
-        </Grid>
-        <Grid item>
-          <Button 
-          id="bt_default"
-          onClick={()=>{history.push("/channel")}}
-          >
-            Channel
           </Button>
         </Grid>
       </Grid>

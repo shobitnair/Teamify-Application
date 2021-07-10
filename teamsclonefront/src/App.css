@@ -17,7 +17,7 @@
 
     --room_h:#6264A7;
     --room_h2:#E2E2F6;
-    --room_h3:#F4F4FC;
+    --room_h3:#f3f2f1;
     --room_hf:#F4F4FC;
     --room_hf2:#33344A;
     --room_font_b1:#faf9f8;;
@@ -25,13 +25,17 @@
     --room_bubble1:#6264A7;
     --room_bubble2:#E2E2F6;
     --room_bg:#BDBDE6;
-    --room_dock:#F4F4FC;
+    --room_dock:#f3f2f1;
     --room_dockicon:#6264A7;
-    --room_navbg:#E2E2F6;
+    --room_navbg:#f3f2f1;
     --room_navicon:#6264A7;
 
     --over1:#6264A7;
     --over2:#33344A;
+
+    --side_bg:#f3f2f1;
+    --chat_bg:#BDBDE6;
+    --chat_head:#464775;
 }
 
 .theme_dark{
@@ -50,9 +54,9 @@
     --join_tf:#faf9f8;
     --join_btf:#faf9f8;
 
-    --room_h:#323130;
+    --room_h3:#323130;
     --room_h2:#484644;
-    --room_h3:#252423;
+    --room_h:#252423;
     --room_hf:#faf9f8;
     --room_hf2:#faf9f8;
     --room_font_b1:#faf9f8;;
@@ -60,13 +64,17 @@
     --room_bubble1:#464775;
     --room_bubble2:#484644;
     --room_bg:#605e5c;
-    --room_dock:#252423;
-    --room_dockicon:#8B8CC7;;
-    --room_navbg:#252423;;
+    --room_dock:#323130;
+    --room_dockicon:#8B8CC7;
+    --room_navbg:#323130;;
     --room_navicon:#8B8CC7;
 
     --over1:#6264A7;
     --over2:#33344A;
+
+    --side_bg:#605e5c;
+    --chat_bg:#252423;
+    --chat_head:black;
 }
 
 
@@ -77,10 +85,10 @@
 
 #themer{
     position:fixed;
-    bottom:-30px;
-    right:-40px;
+    top:40%;
+    left:-30px;
     z-index:1000;
     margin-right:20px;
-    background-color:rgb(0,0,0,0.3);
+    background-color:rgba(255, 255, 255, 0.2);
     font-size: 30px;
 }

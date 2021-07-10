@@ -1,13 +1,12 @@
 import { Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { setChatId, setChatName } from "../../store/actions";
+import { setChatId, setChatName , setPage} from "../../store/actions";
 import { db } from "../firebase";
-import "./sidebarChat.css";
 import { Grid } from "@material-ui/core";
 
 const SidebarChat = (props) => {
-  const { id, chatName, setChatIdAction, setChatNameAction } = props;
+  const { id, chatName, setChatIdAction, setChatNameAction , setPageAction } = props;
   const [chatInfo, setChatInfo] = useState("");
 
   // on component mount fetch room by id and get its messages
@@ -28,6 +27,7 @@ const SidebarChat = (props) => {
       onClick={() => {
         setChatIdAction(id);
         setChatNameAction(chatName);
+        setPageAction(true);
       }}
       id="channel_bar"
     >
@@ -45,6 +45,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setChatIdAction: (chatId) => dispatch(setChatId(chatId)),
     setChatNameAction: (chatName) => dispatch(setChatName(chatName)),
+    setPageAction: (page) => dispatch(setPage(page))
   };
 };
 

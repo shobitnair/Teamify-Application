@@ -12,6 +12,7 @@ const initState = {
   user:"",
   chatId: "",
   chatName: "",
+  page:false,
 };
 
 const reducer = (state = initState, action) => {
@@ -70,6 +71,11 @@ const reducer = (state = initState, action) => {
       return{
         ...state,
         chatName: action.chatName,
+      }
+    case Actions.SET_PAGE :
+      return{
+        ...state,
+        page: action.page
       }
     default:
       return state;

@@ -10,6 +10,7 @@ const Actions = {
   SET_USER: "SET_USER",
   SET_CHATID: "SET_CHATID",
   SET_CHATNAME: "SET_CHATNAME",
+  SET_PAGE: "SET_PAGE",
 };
 
 export const setIdentity = (identity) => {
@@ -86,6 +87,13 @@ export const setChatName = (chatName) =>{
   return{
     type: Actions.SET_CHATNAME,
     chatName,
+  }
+}
+
+export const setPage = (page) =>{
+  return{
+    type: Actions.SET_PAGE,
+    page,
   }
 }
 

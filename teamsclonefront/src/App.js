@@ -15,6 +15,10 @@ import "./resources/css/Overlay.css";
 import "./resources/css/RoomPage.css";
 import "./resources/css/VideoSection.css";
 import "./resources/css/ParticipantSection.css";
+import "./resources/css/ChannelChat.css";
+import "./resources/css/ChannelMessage.css";
+import "./resources/css/ChannelSidebar.css";
+import "./resources/css/ChannelSidebarContent.css";
 
 function App() {
   const [theme, setTheme] = useState("theme_default");
