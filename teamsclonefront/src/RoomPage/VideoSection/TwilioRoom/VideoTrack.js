@@ -47,6 +47,8 @@ const VideoTrack = ({ track, name, count }) => {
     else if (!isSmall && width === medium) setwidth(small);
   };
 
+
+  // Contains a single video Block , rendered directly to DOm
   return ReactDOM.createPortal(
     <>
       <div

@@ -5,6 +5,9 @@ import { store } from "../../../store/store";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// contains server interaction functions with twilio API
+
+//utility to find if device is mobile.( different video render method)
 var windowWidth =
   window.screen.width < window.outerWidth
     ? window.screen.width

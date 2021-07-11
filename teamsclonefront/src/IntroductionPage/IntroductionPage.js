@@ -2,15 +2,16 @@ import React, { useEffect } from "react";
 import HomeButtons from "./HomeButtons";
 import { connect } from "react-redux";
 import { setIsRoomHost } from "../store/actions";
-import "../resources/css/IntroductionPage.css"
-import home6 from "../resources/images/home6.svg"
-import home5 from "../resources/images/home5.svg"
-import home7 from "../resources/images/home7.svg"
-import {
-  Grid,
-} from "@material-ui/core"
+import "../resources/css/IntroductionPage.css";
+import home6 from "../resources/images/home6.svg";
+import home5 from "../resources/images/home5.svg";
+import home7 from "../resources/images/home7.svg";
+import { Grid } from "@material-ui/core";
 
-
+/* 
+Basic Intro Page Grid layout with responsiveness handled for mobiles 
+xs is for small devices , md for medium and above.
+*/
 
 const IntroductionPage = ({ setIsRoomHostAction }) => {
   useEffect(() => {
@@ -20,20 +21,23 @@ const IntroductionPage = ({ setIsRoomHostAction }) => {
   return (
     <>
       <Grid container id="whole">
-        <Grid item xs={11} md={8} id="Grid1">
-          <img src={home6} id="logo1"/>
+        {/**row1 */}
+        <Grid item xs={11} md={8} id="height40">
+          <img src={home6} id="top_left_img" />
         </Grid>
-        <Grid item xs={1} md={4} id="Grid1">
+        <Grid item xs={1} md={4} id="height40"/>
+        {/**row2 */}
+        <Grid item xs={1} md={4} id="height20"/>
+        <Grid item xs={10} md={4} id="height20">
+          <HomeButtons />
         </Grid>
-        <Grid item xs={1} md={4} id="Grid2"></Grid>
-        <Grid item xs={10} md={4} id="Grid2">
-          <HomeButtons/>
+        <Grid item xs={1} md={4} id="height20"/>
+        {/**row3 */}
+        <Grid item xs={1} md={4} id="height40"/>
+        <Grid item xs={11} md={8} id="height40">
+          <img src={home5} id="bottom_right_img"></img>
         </Grid>
-        <Grid item xs={1} md={4} id="Grid2"></Grid>
-        <Grid item xs={1} md={4} id="Grid1"></Grid>
-        <Grid item xs={11} md={8} id="Grid1">
-          <img src={home5} id="logo2"></img>
-        </Grid>
+
       </Grid>
     </>
   );

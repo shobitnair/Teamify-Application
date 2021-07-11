@@ -1,16 +1,14 @@
 
 
-#Grid1{
+#height40{
   height:40%;
 
 }
-
-#Grid2{
+#height20{
     height:20%;
 }
 
-
-#logo1{
+#top_left_img{
     height:80%;
     width: 90%;
     border-radius:5px;
@@ -21,7 +19,7 @@
     padding:5px;
 }
 
-#logo2{
+#bottom_right_img{
     height:80%;
     width: 90%;
     border-radius:5px;
@@ -35,10 +33,10 @@
 #bt_default{
     background-color:var(--intro_p);
     color:white;
-    padding:10px;
+    padding:7px;
     width:min(50vw,200px);
     margin-top:5px;
-    font-size:min(2vh , 25px);
+    font-size:min(2vh , 20px);
     box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
 }
 

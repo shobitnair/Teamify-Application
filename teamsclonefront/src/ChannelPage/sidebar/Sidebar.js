@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Avatar } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
-import { Button, Grid } from "@material-ui/core";
 import SidebarChat from "./SidebarChat.js";
 import { db, auth } from "../firebase";
 import { setChatId, setChatName } from "../../store/actions";
 import { connect } from "react-redux";
-import { Fab, Collapse } from "@material-ui/core";
+import { Collapse , Button  ,Grid , Avatar } from "@material-ui/core";
 import { LightTooltip } from "../../RoomPage/VideoSection/VideoDock/Tooltip";
+import FlipMove from "react-flip-move";
+import { Flip } from "react-toastify";
 
 const Sidebar = (props) => {
   const { user, setChatIdAction, setChatNameAction } = props;
@@ -54,7 +54,7 @@ const Sidebar = (props) => {
           password: password,
           host: user.email,
         });
-        alert("Channel created , Join the channel to update your Channel feed");
+        alert("Channel created , Join the channel to add it to your Channel feed");
       } else alert("This Channel Name already exists");
     } else alert("Both credentials are required");
     setOpen(false);
@@ -83,7 +83,7 @@ const Sidebar = (props) => {
         });
         if (!joined) {
           alert("Invalid Channel Credentials");
-        } else alert("Channel succesfully added");
+        }
       } else alert("You are already a member of this Channel");
     } else alert("Both credentials are required");
     setOpen(false);
@@ -118,9 +118,12 @@ const Sidebar = (props) => {
             </div>
           </LightTooltip>
         </div>
-
+        
+        {/** Hidden Menu triggered when "+" is clicked */}
         <Collapse hidden={!opened} in={open} id="channel_menu">
           <Grid container xs={12} justify="center" direction="row">
+
+            {/**Input to enter Channel name */}
             <Grid item xs={12} justify="center">
               <input
                 id="sidebar_input"
@@ -129,6 +132,8 @@ const Sidebar = (props) => {
                 onChange={(e) => setChannel(e.target.value)}
               />
             </Grid>
+
+            {/**Input to enter password */}
             <Grid item xs={12}>
               <input
                 id="sidebar_input"
@@ -137,6 +142,8 @@ const Sidebar = (props) => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Grid>
+
+            {/**Create channel button */}
             <Grid item xs={12}>
               <Grid container xs={12} justify="center">
                 <Button onClick={addChat} id="sidebar_bt">
@@ -144,6 +151,8 @@ const Sidebar = (props) => {
                 </Button>
               </Grid>
             </Grid>
+
+            {/**Join channel button */}
             <Grid item xs={12}>
               <Grid container xs={12} justify="center">
                 <Button onClick={joinChat} id="sidebar_bt">
@@ -151,14 +160,19 @@ const Sidebar = (props) => {
                 </Button>
               </Grid>
             </Grid>
+
           </Grid>
         </Collapse>
 
         <div className="sidebar__chats">
           <div id="channel_header">Your Channels</div>
-          {rooms.map(({ id, data }) => (
-            <SidebarChat key={id} id={id} chatName={data.chatName} />
+          <FlipMove>
+          {rooms.map(({ id, data , index }) => (
+            <div id={index}>
+              <SidebarChat key={id} id={id} chatName={data.chatName} />
+            </div>
           ))}
+          </FlipMove>
         </div>
       </div>
     </>

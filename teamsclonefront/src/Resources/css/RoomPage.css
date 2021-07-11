@@ -68,7 +68,7 @@
 #nav_bt{
   z-index:50;
   color:var(--room_navicon);
-  font-size:20px;
+  font-size:25px;
   height:90%;
   width:33%;
 }

@@ -10,10 +10,10 @@ const ChatSection = () => {
           Messages
       </Grid>
       <Grid item xs={12} id="chat_bubble_block">
-        <Messages></Messages>
+        <Messages/>
       </Grid>
       <Grid item xs={12} id="chat_input_block">
-        <NewMessage></NewMessage>
+        <NewMessage/>
       </Grid>
     </>
   );

@@ -1,6 +1,9 @@
 import React from "react";
 import "../resources/css/Overlay.css"
 
+//Loader animation overlay before video meeting begins.
+//controlled using a ASYNC function
+
 const Overlay = () => {
   return (
     <div className="overlay_container">

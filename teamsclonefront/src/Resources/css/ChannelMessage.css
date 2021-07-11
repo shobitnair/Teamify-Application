@@ -39,7 +39,7 @@
   align-self:flex-end;
   margin-right: 10px;
   border-radius: 3px;
-  font-weight:450;
+  font-weight:550;
   text-align:right;
 }
 
@@ -47,7 +47,7 @@
   word-wrap: break-word;
   background-color:var(--room_bubble2);
   color:var(--room_font_b2);
-  font-weight:500;
+  font-weight:600;
   height:fit-content;
   padding:3px 10px 10px 10px;
   max-width: 70%;

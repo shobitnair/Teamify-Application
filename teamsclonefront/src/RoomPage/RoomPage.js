@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from "react";
-import ParticipantsSection from "./ParticipantsSection/ParticipantsSection";
-import VideoSection from "./VideoSection/VideoSection";
-import ChatSection from "./ChatSection/ChatSection";
+import React, { useEffect} from "react";
 import RoomPageMobile from "./RoomPageMobile";
 import RoomPageLarge from "./RoomPageLarge";
 import { connect } from "react-redux";
@@ -9,7 +6,7 @@ import { setTwilioAccessToken } from "../store/actions";
 import { getTokenFromTwilio } from "../utils/twilioUtils";
 import Overlay from "./Overlay";
 import { useHistory } from "react-router-dom";
-import { Grid, Hidden } from "@material-ui/core";
+import { Hidden } from "@material-ui/core";
 
 const RoomPage = (props) => {
   const { identity, setTwilioAccessTokenAction, roomId, showOverlay } = props;
@@ -34,6 +31,8 @@ const RoomPage = (props) => {
   );
 };
 
+
+// Obtain and update twilio API states in redux.
 const mapStoreStateToProps = (state) => {
   return {
     ...state,

@@ -12,7 +12,6 @@ const NewMessage = () => {
     if (message === "") return;
     //send message and scroll down immediately after that.
     await sendMessageUsingDataChannel(message, true);
-    updateScroll();
     setMessage("");
   };
 
@@ -23,12 +22,6 @@ const NewMessage = () => {
       sendMessage();
     }
   };
-
-  //function to immediately scroll the chatbox down.
-  function updateScroll() {
-    var element = document.getElementById("chat_bubble_block");
-    element.scrollTop = element.scrollHeight;
-  }
 
   const handleTextChange = (event) => {
     setMessage(event.target.value);

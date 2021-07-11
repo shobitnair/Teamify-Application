@@ -5,7 +5,7 @@ import Login from "./login/Login";
 import Sidebar from "./sidebar/Sidebar";
 import Chat from "./chat/Chat";
 import { auth } from "./firebase";
-import { Grid, Hidden , Button , Collapse} from "@material-ui/core";
+import { Grid, Hidden , Collapse} from "@material-ui/core";
 
 
 const ChannelPage = (props) => {
@@ -67,6 +67,7 @@ const ChannelPage = (props) => {
     </div>
   );
 };
+
 
 const mapStoreStateToProps = (state) => {
   return {

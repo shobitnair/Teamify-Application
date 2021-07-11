@@ -3,27 +3,22 @@ import { connect } from "react-redux";
 import { connectToRoom } from "../../utils/twilioUtils";
 import TwilioRoom from "./TwilioRoom/TwilioRoom";
 
+// use twilio API to set up streams
 
 const Videos = ({ room, setRoom, roomId, twilioAccessToken }) => {
-  useEffect(() => {
-    if (twilioAccessToken) {
-      connectToRoom(twilioAccessToken, roomId, setRoom);
-    }
-  }, [twilioAccessToken]);
+	useEffect(() => {
+		if (twilioAccessToken) {
+			connectToRoom(twilioAccessToken, roomId, setRoom);
+		}
+	}, [twilioAccessToken]);
 
-  return (
-    <>
-      <div>{room && <TwilioRoom room={room} />}</div>
-    </>
-  );
+	return <div>{room && <TwilioRoom room={room} />}</div>;
 };
 
 const mapStoreStateToProps = (state) => {
-  return {
-    ...state,
-  };
+	return {
+		...state,
+	};
 };
-
-
 
 export default connect(mapStoreStateToProps)(Videos);

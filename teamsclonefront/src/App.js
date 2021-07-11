@@ -7,7 +7,7 @@ import ChannelPage from "./ChannelPage/ChannelPage"
 import { Fab } from "@material-ui/core";
 import { LightTooltip } from "./RoomPage/VideoSection/VideoDock/Tooltip";
 
-import "./App.css";
+import "./resources/css/App.css";
 import "./resources/css/ChatSection.css";
 import "./resources/css/IntroductionPage.css";
 import "./resources/css/JoinRoomPage.css";
@@ -21,6 +21,7 @@ import "./resources/css/ChannelSidebar.css";
 import "./resources/css/ChannelSidebarContent.css";
 
 function App() {
+  //Theme states 
   const [theme, setTheme] = useState("theme_default");
   const handleChange = () => {
     if (theme === "theme_default") setTheme("theme_dark");
@@ -29,10 +30,13 @@ function App() {
 
   return (
     <>
+      {/**Global theme changing hover button */}
       <div className={theme} id="main">
         <LightTooltip title="Change Theme">
           <Fab onClick={handleChange} aria-label="add" id="themer"></Fab>
         </LightTooltip>
+
+        {/**All routing pages in the application */}
         <Router>
           <Switch>
             <Route path="/channel">
@@ -49,6 +53,7 @@ function App() {
             </Route>
           </Switch>
         </Router>
+
       </div>
     </>
   );

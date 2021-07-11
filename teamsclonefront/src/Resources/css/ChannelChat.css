@@ -3,6 +3,7 @@
     flex-direction: column;
     height: 100vh;
     background: var(--chat_bg);
+    z-index:10;
   }
   
   .chat__header {
@@ -14,7 +15,7 @@
  #header_text{
     font-weight: 500;
     color: white;
-    font-size:20px;
+    font-size:17px;
   }
   
   #message_input_block{
@@ -63,6 +64,7 @@
     margin-top:10px;
     overflow-y: scroll;
     overflow-x:hidden;
+    scroll-behavior: smooth;
   }
   
 #video_action{

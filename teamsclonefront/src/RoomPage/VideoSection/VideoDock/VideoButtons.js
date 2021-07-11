@@ -7,10 +7,6 @@ import SwitchToScreenSharingButton from "./SwitchToScreenSharingButton";
 import ShareLinkButton from "./ShareLinkButton";
 import {
   Grid,
-  Button,
-  makeStyles,
-  withStyles,
-  Tooltip,
 } from "@material-ui/core";
 
 //Omit screenshare feature for mobile devices.
@@ -21,7 +17,7 @@ var windowWidth =
 var isSmall = windowWidth <= 960;
 
 const VideoButtons = (props) => {
-  const { roomId, room, connectOnlyWithAudio } = props;
+  const { roomId, room} = props;
   //console.log("a",roomId);
   return (
     <>

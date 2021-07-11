@@ -6,9 +6,27 @@ import {
 } from '@material-ui/core'
 
 
+// component containes three buttons to handle the initial event
+// Either Host , Join or enter the Channel Section.
+
+
 const HomeButtons = () => {
 
   let history = useHistory();
+
+  // a single button grid item
+  const Path = ({next , text}) =>{
+    return(
+      <Grid item>
+        <Button 
+        id="bt_default"
+        onClick = {()=>history.push(next)}>
+          {text}
+        </Button>
+      </Grid>
+    )
+  }
+  
   return (
     <>
       <Grid 
@@ -16,30 +34,9 @@ const HomeButtons = () => {
       xs={12}
       alignItems="center"
       direction="column">
-        <Grid item>
-          <Button 
-          id="bt_default"
-          onClick={()=>{history.push("/channel")}}
-          >
-            Channel
-          </Button>
-        </Grid>
-        <Grid item>
-          <Button 
-          id="bt_default"
-          onClick={() => {history.push("/join-room?host=true");}}
-          >
-            Host a Meeting
-          </Button> 
-        </Grid>
-        <Grid item>
-          <Button 
-          id="bt_default"
-          onClick={() => {history.push("/join-room")}}
-          >
-            Join a Meeting
-          </Button>
-        </Grid>
+        <Path next="/channel" text="Channel"/> 
+        <Path next="/join-room?host=true" text="Host a Meeting"/>
+        <Path next="/join-room" text="Join a Meeting"/>
       </Grid>
     </>
   );

@@ -12,7 +12,7 @@
 
 
 #video_dock{
-  height:min(50px,6%);
+  height:min(40px,6%);
   width:94%;
   margin-left:3%;
   background-color:#f3f3f3;
@@ -87,7 +87,7 @@ video {
   #leave_bt{
     height:90%;
     width:20%;
-    font-size:20px;
+    font-size:25px;
     color:var(--s);
   }
   

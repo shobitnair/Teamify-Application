@@ -3,6 +3,8 @@ import VideoButtons from "./VideoDock/VideoButtons";
 import Videos from "./Videos";
 import { Grid } from "@material-ui/core";
 
+// contains the video dock and the video elements
+
 const VideoSection = () => {
   const [room, setRoom] = useState(null);
 

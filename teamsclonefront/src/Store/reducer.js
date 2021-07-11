@@ -3,7 +3,6 @@ import Actions from "./actions";
 const initState = {
   identity: "",
   isRoomHost: false,
-  connectOnlyWithAudio: false,
   roomId: null,
   twilioAccessToken: null,
   showOverlay: true,
@@ -26,11 +25,6 @@ const reducer = (state = initState, action) => {
       return {
         ...state,
         isRoomHost: action.isRoomHost,
-      };
-    case Actions.SET_CONNECT_ONLY_WITH_AUDIO:
-      return {
-        ...state,
-        connectOnlyWithAudio: action.onlyWithAudio,
       };
     case Actions.SET_ROOM_ID:
       return {
