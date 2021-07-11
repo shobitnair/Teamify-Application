@@ -20,6 +20,7 @@ import "./resources/css/ChannelMessage.css";
 import "./resources/css/ChannelSidebar.css";
 import "./resources/css/ChannelSidebarContent.css";
 
+
 function App() {
   //Theme states 
   const [theme, setTheme] = useState("theme_default");

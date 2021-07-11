@@ -71,6 +71,7 @@ const reducer = (state = initState, action) => {
         ...state,
         page: action.page
       }
+    
     default:
       return state;
   }

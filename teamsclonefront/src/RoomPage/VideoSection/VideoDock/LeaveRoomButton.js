@@ -12,7 +12,6 @@ const LeaveRoomButton = ({ room }) => {
     window.location.href = siteUrl;
   };
 
-  
   return (
     <LightTooltip title="Leave Room">
       <Button onClick={handleLeaveEvent} id="leave_bt">

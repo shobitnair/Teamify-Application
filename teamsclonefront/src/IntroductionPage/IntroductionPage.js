@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import HomeButtons from "./HomeButtons";
 import { connect } from "react-redux";
-import { setIsRoomHost } from "../store/actions";
+import { setIsRoomHost , setTwilioAccessToken , setRoomId , setIdentity} from "../store/actions";
 import "../resources/css/IntroductionPage.css";
 import home6 from "../resources/images/home6.svg";
 import home5 from "../resources/images/home5.svg";
@@ -13,9 +13,13 @@ Basic Intro Page Grid layout with responsiveness handled for mobiles
 xs is for small devices , md for medium and above.
 */
 
-const IntroductionPage = ({ setIsRoomHostAction }) => {
+const IntroductionPage = (props) => {
   useEffect(() => {
-    setIsRoomHostAction(false);
+    //Reset user states when intropage is opened. afte refreshing.
+    props.setIsRoomHostAction(false);
+    props.setTwilioAccessTokenAction(null);
+    props.setRoomIdAction(null);
+    props.setIdentityAction(null);
   }, []);
 
   return (
@@ -46,6 +50,9 @@ const IntroductionPage = ({ setIsRoomHostAction }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     setIsRoomHostAction: (isRoomHost) => dispatch(setIsRoomHost(isRoomHost)),
+    setTwilioAccessTokenAction: (accessToken) => dispatch(setTwilioAccessToken(accessToken)),
+    setRoomIdAction:(room) => dispatch(setRoomId(room)),
+    setIdentityAction:(identity)=>dispatch(setIdentity(identity)),
   };
 };
 

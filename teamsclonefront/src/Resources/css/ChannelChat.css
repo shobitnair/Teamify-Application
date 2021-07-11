@@ -52,6 +52,8 @@
     background-color: var(--room_h2);
     border-bottom: solid 6px var(--room_h2);
     z-index:5;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 
   
@@ -92,4 +94,10 @@
   background:var(--room_h2);
   font-size:15px;
   color:var(--room_hf2);
+}
+
+#emoji{
+  position:absolute;
+  bottom:80px;
+  margin-left:10px;
 }
