@@ -86,8 +86,8 @@
   #chat_input_block{
     margin-top:10px;
     width:100%;
-    bottom:30px;
-    position: absolute;;
+    bottom:50px;
+    position: fixed;
     background:var(--room_h3);
   }
   
