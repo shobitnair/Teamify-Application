@@ -5,6 +5,7 @@
     height:100%;
     background:var(--room_h3);
     z-index:2;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
   
   
@@ -56,6 +57,7 @@
     align-self:flex-end;
     margin-right: 5px;
     border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
   }
   
   #chat_bubble_B{
@@ -70,6 +72,8 @@
     width:fit-content;
     margin-left:5px;
     border-radius: 3px;
+    margin-top:3px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
   }
   
   
@@ -85,8 +89,7 @@
   
   #chat_input_block{
     margin-top:10px;
-    width:100%;
-    bottom:50px;
+    bottom:55px;
     position: fixed;
     background:var(--room_h3);
   }
@@ -95,29 +98,31 @@
     font-size: 14px;
     background-color:var(--room_h3); 
     color:var(--room_hf2);
-    padding:3px;
-    width:93%;
+    width:90%;
     height:40px;
     border-radius:5px;
     margin-top:5px;
-    margin-left: 5px;
+    margin-left: 3%;
     word-wrap: break-word;
     font-family:"Roboto";
     border: solid 5px var(--room_h2);
     z-index:1;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
   }
   
   #chat_util {
     font-size: 20px;
     color:var(--room_hf2);
-    width: 70%;
-    height:40px;
-    padding:5px;
-    margin-top:5px;
+    height:30px;
+    width:30px;
+    padding:6px;
+    bottom:90%;
+    right:4%;
     text-align: center;
-    background-color: var(--room_h2);
-    border-bottom: solid 6px var(--room_h2);
-    z-index:2;
+    position:absolute;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: var(--room_h2);
   }
 
   

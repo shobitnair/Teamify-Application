@@ -29,12 +29,12 @@
     background-color:var(--room_h3); 
     color:var(--room_hf2);
     padding:3px;
-    width:90%;
+    width:94%;
     height:30px;
     border-radius:5px;
     margin-top:10px;
     margin-bottom: 10px;;
-    margin-left:10%;
+    margin-left:5%;
     word-wrap: break-word;
     font-family:"Roboto";
     border: solid 5px var(--room_h2);
@@ -51,7 +51,7 @@
     text-align: center;
     background-color: var(--room_h2);
     border-bottom: solid 6px var(--room_h2);
-    z-index:5;
+    z-index:15;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
   }
@@ -91,9 +91,9 @@
   position:fixed;
   right:145px;
   top:15px;
-  background:var(--room_h2);
+  background:var(--s);
   font-size:15px;
-  color:var(--room_hf2);
+  color:white;
 }
 
 #emoji{

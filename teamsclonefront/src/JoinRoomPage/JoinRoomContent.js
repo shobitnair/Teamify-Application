@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { connect } from "react-redux";
 import JoinRoomInputs from "./JoinRoomInputs";
 import { useHistory } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { checkIfRoomExists } from "../utils/twilioUtils";
 import {
-	setConnectOnlyWithAudio,
 	setIdentity,
 	setRoomId,
 } from "../store/actions";
@@ -19,6 +18,7 @@ const JoinRoomContent = (props) => {
 	const [nameValue, setNameValue] = useState("");
 	const [JoinClicked, setJoinClicked] = useState(false);
 	const history = useHistory();
+
 
 	//Function to handle Join/Host room input feild event.
 	const handleJoinToRoom = async () => {
@@ -53,7 +53,7 @@ const JoinRoomContent = (props) => {
 		return (
 			<div id="button_container">
 				<Grid item xs={12}>
-					<LinearProgress hidden={!JoinClicked} />
+					<LinearProgress />
 					<Button id="bt1" onClick={handleJoinToRoom}>
 						{isRoomHost ? "Host" : "Join"}
 					</Button>

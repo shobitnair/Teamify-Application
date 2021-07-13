@@ -9,14 +9,16 @@
     margin-top: 5px;
     padding:7px;
     color:var(--room_hf2);
-    height:60px;
+    height:70px;
+    cursor:pointer;
 }
 
 #channel_name{
-    font-size:20px;
-    font-weight:500;
+    font-size:17px;
+    font-weight:700;
     width:100%;
     color:var(--room_hf2);
+    cursor:pointer;
 }
 
 #last_message{
@@ -28,7 +30,7 @@
 }
 
 #channel_bar:hover {
-    opacity:0.7;
+    transform:translateX(3px);
 }
 
 

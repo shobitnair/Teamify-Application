@@ -19,6 +19,7 @@
   background-color: var(--room_dock);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   
 }
 

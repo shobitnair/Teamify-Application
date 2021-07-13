@@ -41,6 +41,7 @@
   border-radius: 3px;
   font-weight:550;
   text-align:right;
+  cursor: pointer;
 }
 
 #message_bubble_B{
@@ -56,6 +57,7 @@
   margin-left:5px;
   margin-top:7px;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 #chat_info{

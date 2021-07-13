@@ -16,7 +16,7 @@ const RoomPageLarge = () => {
       </Grid>
 
       <Grid item style={{ width: "20%"}}>
-        <div id="chat"> <ChatSection /></div>
+        <div id="chat"> <ChatSection mobile={false} /></div>
       </Grid>
       
     </Grid>

@@ -43,7 +43,7 @@ const RoomPageMobile = () => {
 
         <Grid item xs={12} hidden={page !== "message"}>
           <div id="chat">
-            <ChatSection />
+            <ChatSection mobile={true} />
           </div>
         </Grid>
       </Grid>

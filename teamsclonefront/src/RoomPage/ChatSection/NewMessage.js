@@ -30,7 +30,7 @@ const NewMessage = () => {
   return (
     <div>
       <Grid container direction="row">
-        <Grid item xs={10}>
+        <Grid item xs={12}>
           <textarea
             id="chat_input"
             value={message}
@@ -40,13 +40,13 @@ const NewMessage = () => {
             onKeyDown={handleKeyPressed}
           />
         </Grid>
-        <Grid item xs={2}>
+
           <LightTooltip title="Send Message">
             <div id="chat_util" src={SendMessageButton} onClick={sendMessage}>
               <i class="fas fa-paper-plane"></i>
             </div>
           </LightTooltip>
-        </Grid>
+
       </Grid>
     </div>
   );

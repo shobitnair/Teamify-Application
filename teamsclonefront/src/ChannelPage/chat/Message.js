@@ -1,13 +1,16 @@
 import { Avatar } from "@material-ui/core";
 import React, { forwardRef, useState } from "react";
 import { connect } from "react-redux";
-import { Grid, Collapse } from "@material-ui/core";
+import { Grid, Collapse, Button } from "@material-ui/core";
+import { db } from "../firebase";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Message = forwardRef(
 	(
 		{
 			user,
 			id,
+			chatId,
 			contents: { timestamp, displayName, email, message, photo, uid },
 		},
 		ref
@@ -18,15 +21,35 @@ const Message = forwardRef(
 		};
 		const author = user.displayName === displayName ? "You" : displayName;
 
+		const messageDelete = () => {
+			let temp = { timestamp, displayName, email, message, photo, uid };
+			temp.message = "Message Deleted";
+			db.collection("chats")
+				.doc(chatId)
+				.collection("messages")
+				.doc(id)
+				.update(temp);
+		};
+
 		let hiddenDetails = (
-			<Collapse in={show} id="chat_info">
-				<br />
+			<Collapse in={show && message !== "Message Deleted"} id="chat_info">
+				<hr />
 				<Avatar className="message__photo" src={photo} />
 				<br />
 				{email}
 				<br />
 				{new Date(timestamp?.toDate()).toLocaleString()}
-				<br />
+				<hr/>
+				<div hidden={author !== "You"}>
+					<Button onClick={messageDelete}>
+						<i class="far fa-trash-alt"></i>Delete
+					</Button>
+				</div>
+				<CopyToClipboard text={String(message)}>
+					<Button onClick={() => alert("Message copied to Clipboard")}>
+						<i class="far fa-copy"></i> Copy
+					</Button>
+				</CopyToClipboard>
 			</Collapse>
 		);
 

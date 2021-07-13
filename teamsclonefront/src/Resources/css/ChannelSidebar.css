@@ -6,6 +6,7 @@
     flex-direction: column;
     overflow-x:hidden;
     background-color:var(--side_bg);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 #sidebar__header {
@@ -25,6 +26,7 @@
 #channel_menu{
     height:250px;
     border-bottom: 1px solid lightgray;
+    padding:5px;
 }
 
 
@@ -58,22 +60,22 @@
 #sidebar_bt{
   background-color:var(--join_p);
   color:var(--join_btf);
-  margin-top:10px;
+  margin-top:5px;
   width:100px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  margin-bottom:10px;
+  margin-bottom:5px;
 }
 
 #sidebar_input{
-  font-size: 17px;
-  border:5px solid var(--join_t3);
+  font-size: 13px;
+  border:3px solid var(--join_t3);
   background:var(--join_t2);
-  width:80%;
+  width:70%;
   border-radius:5px;
   color:var(--join_tf);
   padding:10px;
   margin-top: 10px;
   margin-bottom:5px;
-  margin-left:3%;
+  margin-left:10%;
 
 }
