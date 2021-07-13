@@ -63,7 +63,8 @@ This disciplined process upon MS Teams Clone development gave me the following b
 
 ## Challenges faced ( My Journey )
 
-https://github.com/shobitnair/TeamsClone/commits/main 
+>- https://github.com/shobitnair/TeamsClone/commits/main 
+>
 Being inclined in doing competitive programming most of my time  , it was a very new for me to enter into software development. I had to begin everything from scratch and learn JavaScript and react during the first week. I couldn't initially understand any documentation and I could feel the pressure soaring. However , doing one fixed task at a time really worked out in long run.
 
 >My second week was inclined in seting up the minimum features demanded by the program. Once it was set , i tested it , took feedback from my mentors and added additional features and made sure it works well without any bugs.
