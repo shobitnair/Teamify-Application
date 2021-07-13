@@ -7,11 +7,11 @@
 Microsoft Teams Clone is an attempt to bring the features to life of the robust and popular video conferencing application - Microsoft Teams. 
 This project was done as a part of 1 month Microsoft Engage program 2021 , in which all candidates were given a task to make a video calling application and last week had a surprise adopt feature to add chatting feature.
 
->**Aim:**  While the world has crumbled down because of the ongoing pandemic, the only thing that is binding us together right now is being connected through social media platforms and get a chance to talk to our friends, family and co-workers through video conferencing platforms such as Microsoft Teams.
+>**Problem:**  The world has crumbled down because of the ongoing pandemic, there is minimal connectivity between people and it is getting hard to perform tasks in which group discussions , gathering are required. Eg :- Conducting Interviews , Normal School/College routines , Community Meetings Etc:-
 
->**Solution:**  This application uses a quick and easy way to connect two or more people. You can create Channels ( Place were a group of people can chat and share messages ). Do anonymous meetings and send unique meeting ID to make others join your meeting and do video-conferencing. Simple  , easy to  use UI has been used and webpage is compatible with any device.
+>**Solution:**  This application uses a quick and easy way to connect two or more people (upto 50 ). You can create Channels ( Place were a group of people can chat and share important messages ). Do anonymous meetings and send unique meeting ID to make others join your meeting and do video-conferencing. Simple  , easy to  use UI has been used and webpage is compatible with any device (so that there is noone restricted from being able to use this application ).
 
->**Learnings:**  I would like to thank my mentors - Ankur Singh and Ayush Meghwani ,  I was able to progress myself from just knowing very few or nothing about web development to making a fully responsive React application. Their valuable opinions after each sprint helped me make this application reach its current potential. Moreover , I'm grateful to  the entire Microsoft team for allowing me this great oppurtunity to learn under your guidance.
+>**Learnings:**  I would like to thank my mentors - Ankur Singh and Ayush Meghwani ,  With their help and timely guidance , I was able to progress myself from just knowing very few or nothing about web development to making a fully responsive React application. Their valuable opinions after each sprint helped me make this application reach its current potential. Moreover , I'm grateful to  the entire Microsoft team for allowing me this great oppurtunity to learn under their guidance.
 
 # Features and Installation
 
@@ -65,20 +65,20 @@ This disciplined process upon MS Teams Clone development gave me the following b
 
 >- https://github.com/shobitnair/TeamsClone/commits/main 
 >
-Being inclined in doing competitive programming most of my time  , it was a very new for me to enter into software development. I had to begin everything from scratch and learn JavaScript and react during the first week. I couldn't initially understand any documentation and I could feel the pressure soaring. However , doing one fixed task at a time really worked out in long run.
+Being inclined in doing competitive programming most of my time  , it was a very new for me to enter into software development. I had to begin everything from scratch and learn JavaScript and React during the first week. I couldn't initially understand any documentation and I could feel the pressure soaring. However , doing one fixed task at a time really worked out in long run (Using Agile Methodology) .
 
->My second week was inclined in seting up the minimum features demanded by the program. Once it was set , i tested it , took feedback from my mentors and added additional features and made sure it works well without any bugs.
+>My second week was inclined in setting up the minimum features demanded by the program. Once it was executed and tested rigourously , I took feedback from my mentors and added additional features and made sure it works well without any bugs before the next phase.
 
->Although we had limited time , I wanted to  make sure that the application that should be usable in any device. I gave intense care during building the UI/UX features of the application (during 3rd week) and tested the application in mobile , Tablets as well as large screen computers. It was very challenging to set up a grid based flexbox system to arrange each components to work perfectly in any device dimension.
+>Although we had limited time , I wanted to  make sure that the application should be usable in any device. I gave intense care during building the UI/UX features of the application (during 3rd week) and tested the application in mobile , Tablets as well as large screen computers. It was very challenging to set up a grid based flexbox system to arrange each components to work perfectly in any device dimension. The CSS files are highly customizable and adding a new theme or editing an existing components is now a peice of cake , whether it be resizing it or changing its nature.
 
 >Deployment was a very new thing for me and it was hard to figure out initially , however everything went smooth once i got hold of how to set up the express server.
 
->During the Adopt phase , I was happy that the additional feature was to set up a chat since I already had it. However , being able to chat before and after the meet was something I did not set up , neither was I expecting.
-My Mentors assisted me greatly with their suggestions during this phase to motivate me to build the feature using Firebase. ( Learned the basics and about handling the database  using the first 2-3 days of Week 4).
+>During the Adopt phase , I was happy that the additional feature was to set up a chat since I already had it. However , being able to chat before and after the meet was something I did not have already set in my application, neither was I expecting.
+My Mentors assisted me greatly with their suggestions during this phase to motivate me to build the feature using Firebase. ( Learned the basics and about handling the database  using the first 2-3 days of Week 4). After Learning Firebase and Firestore , I set up a google Authentication system and a Groupchat (Channel) feature which works on and off the video conferencing without affecting its flow.
 
->All these challenges were less of challenges and more of lessons, lessons to help me have an even better development process in the future so that I can incorporate the customers' requests and requirements easily and efficiently. 
+>All these challenges were less of challenges and more of lessons, lessons to help me have an even better development process in the future so that I can incorporate the customers' requests and requirements easily and efficiently in near future.
 
-## Features to be added in future.
+## Features that can be added in future.
 
  - Ability to make Host control , to mute other participants.
  - Screen Record the Meeting.
