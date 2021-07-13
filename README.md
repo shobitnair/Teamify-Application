@@ -83,10 +83,12 @@ My Mentors assisted me greatly with their suggestions during this phase to motiv
  - Noise Cancellation and video Overlays.
 
 ## Screenshots
+
 >Host Meeting Page ( PC - light Mode)
-**![](https://lh5.googleusercontent.com/rGNVWLfe3aTwSetW-66qusJDy8fWmhBhB9Fvi6jimZGPwxCi_QcUxyfgFinOvNZqSB-zEXlrJ7ywgtg5OHHxCyUhhZ5_uRNMgGJkNNmy_7fljk3Fzxl-YOIsqZeO016eaa2eWH-E)***
+**![](https://lh5.googleusercontent.com/rGNVWLfe3aTwSetW-66qusJDy8fWmhBhB9Fvi6jimZGPwxCi_QcUxyfgFinOvNZqSB-zEXlrJ7ywgtg5OHHxCyUhhZ5_uRNMgGJkNNmy_7fljk3Fzxl-YOIsqZeO016eaa2eWH-E)**
+
 >Home Page (mobile - Dark Mode)
-![](https://lh4.googleusercontent.com/XhFO7nuPzjUpGUzEHC8Aximbne37-gnQ8gM3zvnIc_Im0l71WuOOlbBVq3BD5-pNhF1mLs_kWdk0jqS0X-pta6Vo6TGGAelJb-QzER9OP0fCV7gxAjZY-IIQQFhc4AL4cLL_PB2-)**
+**![](https://lh4.googleusercontent.com/XhFO7nuPzjUpGUzEHC8Aximbne37-gnQ8gM3zvnIc_Im0l71WuOOlbBVq3BD5-pNhF1mLs_kWdk0jqS0X-pta6Vo6TGGAelJb-QzER9OP0fCV7gxAjZY-IIQQFhc4AL4cLL_PB2-)**
 
 >Host Meeting Page (Mobile - Dark Mode)
 **![](https://lh6.googleusercontent.com/1xPiVV2QxQ_yt3UORDRKfygTuifxzEDZWF_FA5XMX6OcstsM1EvCIq9JUlt5RKq5KQ_X4nqC6WC_g5mE8QcL3Ux28cw7ppkztspu3rmVB9qN7EY7qW0DTPfhhV4Nlulr-xUKOfEj)**
