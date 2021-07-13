@@ -11,7 +11,7 @@ This project was done as a part of 1 month Microsoft Engage program 2021 , in wh
 
 >**Solution:**  This application uses a quick and easy way to connect two or more people. You can create Channels ( Place were a group of people can chat and share messages ). Do anonymous meetings and send unique meeting ID to make others join your meeting and do video-conferencing. Simple  , easy to  use UI has been used and webpage is compatible with any device.
 
->**Learnings:**  I would like to thank my mentors - Ankur Singh and Ayush Meghwani ,  I was able to progress myself from just knowing very few or nothing about web development to making a fully responsive React application. Their valuable opinions after each sprint help me make this application reach its current potential.
+>**Learnings:**  I would like to thank my mentors - Ankur Singh and Ayush Meghwani ,  I was able to progress myself from just knowing very few or nothing about web development to making a fully responsive React application. Their valuable opinions after each sprint helped me make this application reach its current potential. Moreover , I'm grateful to  the entire Microsoft team for allowing me this great oppurtunity to learn under your guidance.
 
 # Features and Installation
 
