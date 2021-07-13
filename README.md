@@ -1,7 +1,8 @@
 # Teams Clone Project
-[Website 1 : AWS Amplify](https://main.d2elfmh3h63jsw.amplifyapp.com/) (preferred)
-[Website 2 : Heroku](https://teamsclone2021.herokuapp.com/) (takes time to load)
-Video Demo
+- [Website 1 : AWS Amplify](https://main.d2elfmh3h63jsw.amplifyapp.com/) (preferred)
+- [Website 2 : Heroku](https://teamsclone2021.herokuapp.com/) (takes time to load)
+- Video Demo
+
 **![](https://lh5.googleusercontent.com/Okcu5cVZRIjzOgxEByHniitcHUl3C7NOSuV3URodHa3V7bvcg1b4NPgvI_m2jiWgiTu58cWPYBeNgnLoj4jZ-5W3chYbnNQOIOIPT-KOkiDIP-XzI2eG_60KcfZH9-Akn4eoashb)**
 Microsoft Teams Clone is an attempt to bring the features to life of the robust and popular video conferencing application - Microsoft Teams. 
 This project was done as a part of 1 month Microsoft Engage program 2021 , in which all candidates were given a task to make a video calling application and last week had a surprise adopt feature to add chatting feature.
@@ -35,6 +36,7 @@ My aim was to be able to create an application that can serve purpose to maximum
 
  >- Its WebRTC based.
  >- All Video , Audio , Screen and user data tracks can be controlled by you.
+ >- Can help me connect upto 50 participants easily.
  >- Highly customizable
  >- Highly Documented
  >- Provides access to their STUN/TURN servers
@@ -75,6 +77,7 @@ My Mentors assisted me greatly with their suggestions during this phase to motiv
 ## Features to be added in future.
 
  - Ability to make Host control , to mute other participants.
+ - Screen Record the Meeting.
  - Ability to set video quality manually.
  - More themes. (Light and Dark theme are already present)
  - Ability to delete a Channel
