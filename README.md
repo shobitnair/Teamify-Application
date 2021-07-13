@@ -1,7 +1,7 @@
 # Teams Clone Project
 - [Website 1 : AWS Amplify](https://main.d2elfmh3h63jsw.amplifyapp.com/) (preferred)
 - [Website 2 : Heroku](https://teamsclone2021.herokuapp.com/) (takes time to load)
-- Video Demo
+- [Video Demo](https://youtu.be/aQgeJZ_ZlNY)
 
 **![](https://lh5.googleusercontent.com/Okcu5cVZRIjzOgxEByHniitcHUl3C7NOSuV3URodHa3V7bvcg1b4NPgvI_m2jiWgiTu58cWPYBeNgnLoj4jZ-5W3chYbnNQOIOIPT-KOkiDIP-XzI2eG_60KcfZH9-Akn4eoashb)**
 Microsoft Teams Clone is an attempt to bring the features to life of the robust and popular video conferencing application - Microsoft Teams. 
