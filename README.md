@@ -63,9 +63,11 @@ This disciplined process upon MS Teams Clone development gave me the following b
 
 ## Challenges faced ( My Journey )
 
-Being inclined in doing competitive programming most of my time  , it was a very new for me to enter into software development. I had begin everything from scratch and learn JavaScript and react during the first week. I couldn't initially understand any documentation initially and I could feel the pressure soaring. However , doing one fixed task at a time really worked out in long run.
+Being inclined in doing competitive programming most of my time  , it was a very new for me to enter into software development. I had to begin everything from scratch and learn JavaScript and react during the first week. I couldn't initially understand any documentation and I could feel the pressure soaring. However , doing one fixed task at a time really worked out in long run.
 
->Although we had limited time , I wanted to  make sure that the application that I make should be usable in any device. I gave intense care during building the UI/UX features of the application and tested the application in mobile , Tablets as well as large screen computers. It was very challenging to set up a grid based flexbox system to arrange each components to work perfectly in any device dimension.
+>My second week was inclined in seting up the minimum features demanded by the program. Once it was set , i tested it , took feedback from my mentors and added additional features and made sure it works well without any bugs.
+
+>Although we had limited time , I wanted to  make sure that the application that should be usable in any device. I gave intense care during building the UI/UX features of the application (during 3rd week) and tested the application in mobile , Tablets as well as large screen computers. It was very challenging to set up a grid based flexbox system to arrange each components to work perfectly in any device dimension.
 
 >Deployment was a very new thing for me and it was hard to figure out initially , however everything went smooth once i got hold of how to set up the express server.
 
