@@ -9,7 +9,7 @@ This project was done as a part of 1 month Microsoft Engage program 2021 , in wh
 
 >**Aim:**  While the world has crumbled down because of the ongoing pandemic, the only thing that is binding us together right now is being connected through social media platforms and get a chance to talk to our friends, family and co-workers through video conferencing platforms such as Microsoft Teams.
 
->**Solution:**  This application uses a quick and easy way to connect 
+>**Solution:**  This application uses a quick and easy way to connect two or more people. You can create Channels ( Place were a group of people can chat and share messages ). Do anonymous meetings and send unique meeting ID to make others join your meeting and do video-conferencing. Simple  , easy to  use UI has been used and webpage is compatible with any device.
 
 >**Learnings:**  I would like to thank my mentors - Ankur Singh and Ayush Meghwani ,  I was able to progress myself from just knowing very few or nothing about web development to making a fully responsive React application. Their valuable opinions after each sprint help me make this application reach its current potential.
 
