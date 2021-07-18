@@ -42,6 +42,7 @@ My aim was to be able to create an application that can serve purpose to maximum
  >- Provides access to their STUN/TURN servers
  >- Can set your own server option , (Peer-to-peer or Server based group call)
  >- Basically  , anything that we could do using WebRTC API , but in a much easier and manageable manner.
+ >- It provide you support at both frontend and backend to listend various activity like people joining and leaving call, their tracks like audio and video and many more. It gives you a JWT token which is used for sessions to add people in a video conference.
 
  ## Why AWS Amplify ? (For Deployment)
  
