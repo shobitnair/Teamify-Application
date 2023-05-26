@@ -1,5 +1,5 @@
 # Teams Clone Project
-- [Website 1 : AWS Amplify](https://main.d2elfmh3h63jsw.amplifyapp.com/) (preferred)
+- [Website 1 : Vercel]([https://teams-clone-2021.vercel.app/]) (preferred)
 - [Website 2 : Heroku](https://teamsclone2021.herokuapp.com/) (takes time to load)
 - [Video Demo](https://youtu.be/aQgeJZ_ZlNY)
 
